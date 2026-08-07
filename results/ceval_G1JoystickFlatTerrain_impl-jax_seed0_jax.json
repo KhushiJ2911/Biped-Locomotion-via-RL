@@ -1,0 +1,107 @@
+{
+  "env": "G1JoystickFlatTerrain",
+  "ckpt": "checkpoints/G1JoystickFlatTerrain_impl-jax_seed0",
+  "mjx_impl": "jax",
+  "max_steps": 1000,
+  "episodes": [
+    {
+      "episode": 0,
+      "command": [
+        0.23337292671203613,
+        0.04628562927246094,
+        -0.3169240951538086
+      ],
+      "mjx_length": 1000,
+      "c_length": 1000,
+      "mjx_terminated": false,
+      "c_terminated": false,
+      "mjx_track_err": 0.11976870321622118,
+      "c_track_err": 0.11923830275543049
+    },
+    {
+      "episode": 1,
+      "command": [
+        -0.9044697284698486,
+        0.33180320262908936,
+        0.8299095630645752
+      ],
+      "mjx_length": 1000,
+      "c_length": 1000,
+      "mjx_terminated": false,
+      "c_terminated": false,
+      "mjx_track_err": 0.7097116258144379,
+      "c_track_err": 0.4290765479469056
+    },
+    {
+      "episode": 2,
+      "command": [
+        0.42082905769348145,
+        -0.3875685930252075,
+        0.9018404483795166
+      ],
+      "mjx_length": 1000,
+      "c_length": 1000,
+      "mjx_terminated": false,
+      "c_terminated": false,
+      "mjx_track_err": 0.4849014699347317,
+      "c_track_err": 0.2748802066669289
+    },
+    {
+      "episode": 3,
+      "command": [
+        -0.44150376319885254,
+        -0.06493997573852539,
+        0.5700788497924805
+      ],
+      "mjx_length": 1000,
+      "c_length": 1000,
+      "mjx_terminated": false,
+      "c_terminated": false,
+      "mjx_track_err": 0.3223677668850869,
+      "c_track_err": 0.18657379776435357
+    },
+    {
+      "episode": 4,
+      "command": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mjx_length": 1000,
+      "c_length": 1000,
+      "mjx_terminated": false,
+      "c_terminated": false,
+      "mjx_track_err": 0.1734580398593098,
+      "c_track_err": 0.10729228460701178
+    },
+    {
+      "episode": 5,
+      "command": [
+        0.07566952705383301,
+        -0.13684594631195068,
+        0.35926127433776855
+      ],
+      "mjx_length": 1000,
+      "c_length": 1000,
+      "mjx_terminated": false,
+      "c_terminated": false,
+      "mjx_track_err": 0.22360233809519559,
+      "c_track_err": 0.09056670667099372
+    },
+    {
+      "episode": 6,
+      "command": [
+        -0.45684266090393066,
+        -0.36852526664733887,
+        -0.48009252548217773
+      ],
+      "mjx_length": 1000,
+      "c_length": 1000,
+      "mjx_terminated": false,
+      "c_terminated": false,
+      "mjx_track_err": 0.4741690270490944,
+      "c_track_err": 0.2879540910422012
+    }
+  ],
+  "complete": false
+}

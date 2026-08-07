@@ -1,0 +1,20 @@
+=== seed 0  2026-08-07T18:11:36+05:30 ===
+[cenv] nu=29 obs_dim=103 (expected 103)
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run 6g57h8fq
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260807_181146-6g57h8fq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ceval_G1JoystickFlatTerrain_impl-jax_seed0_jax
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/6g57h8fq
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/6g57h8fq
+  ep   0  mjx_len=1000 c_len=1000  track mjx=0.120 c=0.119
+  ep   1  mjx_len=1000 c_len=1000  track mjx=0.710 c=0.429
+  ep   2  mjx_len=1000 c_len=1000  track mjx=0.485 c=0.275
+  ep   3  mjx_len=1000 c_len=1000  track mjx=0.322 c=0.187
+  ep   4  mjx_len=1000 c_len=1000  track mjx=0.173 c=0.107
+  ep   5  mjx_len=1000 c_len=1000  track mjx=0.224 c=0.091
+  ep   6  mjx_len=1000 c_len=1000  track mjx=0.474 c=0.288

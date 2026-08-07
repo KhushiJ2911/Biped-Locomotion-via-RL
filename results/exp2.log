@@ -1,0 +1,80 @@
+=== Experiment 2 ===
+env=G1JoystickFlatTerrain impl=jax timesteps=50000000 seeds=3 envs=512
+started 2026-08-06T02:36:15+05:30
+
+--- TRAIN seed=0 impl=jax  2026-08-06T02:36:15+05:30  GPU 64C ---
+[jax] backend=gpu devices=[CudaDevice(id=0)]
+[compat] reinstated jax.device_put_replicated for brax
+[env] impl=jax naconmax=8192 njmax=90
+[cfg] timesteps=50,000,000 num_envs=512 batch=256
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run xxuqkuty
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260806_023623-xxuqkuty
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run G1JoystickFlatTerrain_impl-jax_seed0
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/xxuqkuty
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/xxuqkuty
+[train] G1JoystickFlatTerrain ...
+[   138.2s] step=         0  reward=   -6.34 +- 1.84
+[  1501.8s] step= 2,785,280  reward=   -3.32 +- 0.94
+[  2712.0s] step= 5,570,560  reward=   -2.95 +- 1.11
+[  4577.2s] step= 8,355,840  reward=   -2.68 +- 1.03
+[  5681.1s] step=11,141,120  reward=   -2.41 +- 0.88
+[  6727.2s] step=13,926,400  reward=   -2.49 +- 1.26
+[  7762.6s] step=16,711,680  reward=   -2.15 +- 0.95
+[  8791.0s] step=19,496,960  reward=   -2.17 +- 1.04
+[  9811.3s] step=22,282,240  reward=   -2.07 +- 1.34
+[ 10847.1s] step=25,067,520  reward=   -1.97 +- 1.84
+[ 11871.3s] step=27,852,800  reward=   -1.74 +- 2.97
+[ 12890.3s] step=30,638,080  reward=   -1.23 +- 3.54
+[ 13902.4s] step=33,423,360  reward=   -0.97 +- 4.37
+[ 14912.4s] step=36,208,640  reward=   -0.02 +- 5.22
+[ 16055.7s] step=38,993,920  reward=    0.45 +- 4.96
+[ 17069.8s] step=41,779,200  reward=    1.09 +- 6.40
+[ 18082.8s] step=44,564,480  reward=    1.91 +- 6.09
+[ 19092.7s] step=47,349,760  reward=    3.54 +- 7.01
+[ 20103.5s] step=50,135,040  reward=    4.23 +- 7.02
+[ 21112.4s] step=52,920,320  reward=    3.17 +- 6.56
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading history steps 18-19, summary, console lines 21-21
+wandb: 
+wandb: Run history:
+wandb:             eval/avg_episode_length ▁▁▁▁▁▁▁▁▂▂▃▄▅▅▆▇▇██▇
+wandb:                 eval/episode_reward ▁▃▃▃▄▄▄▄▄▄▄▄▅▅▅▆▆██▇
+wandb:     eval/episode_reward/action_rate ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: eval/episode_reward/action_rate_std ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           eval/episode_reward/alive ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       eval/episode_reward/alive_std ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/episode_reward/ang_vel_xy ▁▇▇███████▇▆▅▅▄▃▄▃▃▃
+wandb:  eval/episode_reward/ang_vel_xy_std ▅▃▂▁▂▁▁▂▁▃▄▅▇▇▆▇▇█▇▇
+wandb:     eval/episode_reward/base_height ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: eval/episode_reward/base_height_std ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                                 +62 ...
+wandb: 
+wandb: Run summary:
+wandb:                          checkpoint /home/keyu/Downloads...
+wandb:             eval/avg_episode_length 483.48438
+wandb:                 eval/episode_reward 3.16996
+wandb:     eval/episode_reward/action_rate 0
+wandb: eval/episode_reward/action_rate_std 0
+wandb:           eval/episode_reward/alive 0
+wandb:       eval/episode_reward/alive_std 0
+wandb:      eval/episode_reward/ang_vel_xy -85.01303
+wandb:  eval/episode_reward/ang_vel_xy_std 39.03644
+wandb:     eval/episode_reward/base_height 0
+wandb:                                 +66 ...
+wandb: 
+wandb: 🚀 View run G1JoystickFlatTerrain_impl-jax_seed0 at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/xxuqkuty
+wandb: ⭐️ View project at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260806_023623-xxuqkuty/logs
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/checkpoints/G1JoystickFlatTerrain_impl-jax_seed0
+[cooldown] 180s (GPU Failed to initialize NVML: Driver/library version mismatch
+NVML library version: 580.173
+?C)

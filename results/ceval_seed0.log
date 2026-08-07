@@ -1,0 +1,13 @@
+[cenv] nu=29 obs_dim=103 (expected 103)
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run 1v42vyq3
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260807_132628-1v42vyq3
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ceval_G1JoystickFlatTerrain_impl-jax_seed0_jax
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/1v42vyq3
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/1v42vyq3
+  ep   0  mjx_len=1000 c_len=1000  track mjx=0.120 c=0.119

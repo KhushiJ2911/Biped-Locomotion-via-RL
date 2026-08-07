@@ -1,0 +1,116 @@
+{
+  "dt": 0.002,
+  "steps": 500,
+  "engines": [
+    "c",
+    "jax",
+    "warp"
+  ],
+  "free_fall": {
+    "c": {
+      "err_vs_continuous": 0.009809999999994545,
+      "err_vs_discrete_euler": 4.440892098500626e-15,
+      "final_z": 5.085190000000005
+    },
+    "jax": {
+      "err_vs_continuous": 0.009803028106689204,
+      "err_vs_discrete_euler": 6.971893309781763e-06,
+      "final_z": 5.0851969718933105
+    },
+    "warp": {
+      "err_vs_continuous": 0.009803028106689204,
+      "err_vs_discrete_euler": 6.971893309781763e-06,
+      "final_z": 5.0851969718933105
+    }
+  },
+  "free_fall_reference": {
+    "z_continuous_final": 5.095,
+    "z_discrete_euler_final": 5.085190000000001,
+    "note": "err_vs_discrete_euler is the one that indicates a bug; err_vs_continuous is dominated by expected discretisation error."
+  },
+  "pendulum": {
+    "c": {
+      "energy_initial": 19.645312691655914,
+      "energy_final": 19.66276560107116,
+      "abs_drift": 0.017452909415247575,
+      "rel_drift": 0.000888400693294155,
+      "max_abs_drift": 0.027018335450314623
+    },
+    "jax": {
+      "energy_initial": 19.645313120741267,
+      "energy_final": 19.662779185509574,
+      "abs_drift": 0.01746606476830692,
+      "rel_drift": 0.0008890703172283101,
+      "max_abs_drift": 0.027024147652259245
+    },
+    "warp": {
+      "energy_initial": 19.645313120741267,
+      "energy_final": 19.662779185509574,
+      "abs_drift": 0.01746606476830692,
+      "rel_drift": 0.0008890703172283101,
+      "max_abs_drift": 0.027024147652259245
+    }
+  },
+  "incline_sliding": {
+    "c": {
+      "x_final": 1.1801692927670688,
+      "x_analytic": 1.1781436183311982,
+      "abs_err_m": 0.00202567443587065,
+      "vx_final": 2.3650399993367675,
+      "rel_err": 0.0017193781847581126
+    },
+    "jax": {
+      "x_final": 1.1802643537521362,
+      "x_analytic": 1.1781436183311982,
+      "abs_err_m": 0.002120735420938047,
+      "vx_final": 2.363389015197754,
+      "rel_err": 0.00180006527891905
+    },
+    "warp": {
+      "x_final": 1.1801732778549194,
+      "x_analytic": 1.1781436183311982,
+      "abs_err_m": 0.00202965952372125,
+      "vx_final": 2.3650434017181396,
+      "rel_err": 0.0017227606992398737
+    }
+  },
+  "incline_sliding_case": {
+    "theta_deg": 30.0,
+    "mu": 0.3,
+    "regime": "sliding",
+    "a_analytic": 2.3562872366623964,
+    "x_analytic": 1.1781436183311982,
+    "cone": "pyramidal"
+  },
+  "incline_static": {
+    "c": {
+      "x_final": 0.0011479484143665885,
+      "x_analytic": 0.0,
+      "abs_err_m": 0.0011479484143665885,
+      "vx_final": 0.0010948497464749322,
+      "rel_err": null
+    },
+    "jax": {
+      "x_final": 0.0011282139457762241,
+      "x_analytic": 0.0,
+      "abs_err_m": 0.0011282139457762241,
+      "vx_final": 0.0010697440011426806,
+      "rel_err": null
+    },
+    "warp": {
+      "x_final": 0.0011479438981041312,
+      "x_analytic": 0.0,
+      "abs_err_m": 0.0011479438981041312,
+      "vx_final": 0.0010948433773592114,
+      "rel_err": null
+    }
+  },
+  "incline_static_case": {
+    "theta_deg": 15.0,
+    "mu": 0.8,
+    "regime": "static",
+    "a_analytic": 0.0,
+    "x_analytic": 0.0,
+    "cone": "pyramidal"
+  }
+}

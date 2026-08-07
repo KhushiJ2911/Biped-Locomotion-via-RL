@@ -1,0 +1,8 @@
+[jax] backend=gpu devices=[CudaDevice(id=0)]
+[compat] reinstated jax.device_put_replicated for brax
+[env] impl=jax naconmax=8192 njmax=90
+[cfg] timesteps=60,000 num_envs=512 batch=256
+[train] G1JoystickFlatTerrain ...
+[   162.2s] step=         0  reward=   -6.39 +- 2.03
+[   362.2s] step=   163,840  reward=   -5.26 +- 1.42
+[   564.1s] step=   327,680  reward=   -5.05 +- 1.52

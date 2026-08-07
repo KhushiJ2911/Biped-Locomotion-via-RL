@@ -1,0 +1,579 @@
+=== Experiment 2 ===
+env=G1JoystickFlatTerrain impl=jax timesteps=50000000 seeds=3 envs=512
+started 2026-08-06T09:54:55+05:30
+
+--- TRAIN seed=1 impl=jax  2026-08-06T09:54:55+05:30  GPU 52C ---
+[jax] backend=gpu devices=[CudaDevice(id=0)]
+[compat] reinstated jax.device_put_replicated for brax
+[env] impl=jax naconmax=8192 njmax=90
+[cfg] timesteps=50,000,000 num_envs=512 batch=256
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run gc4fwd1i
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260806_095506-gc4fwd1i
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run G1JoystickFlatTerrain_impl-jax_seed1
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/gc4fwd1i
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/gc4fwd1i
+[train] G1JoystickFlatTerrain ...
+[   145.7s] step=         0  reward=   -5.75 +- 2.19
+[   740.5s] step= 2,785,280  reward=   -3.26 +- 0.91
+[  1308.6s] step= 5,570,560  reward=   -2.86 +- 1.03
+[  1857.2s] step= 8,355,840  reward=   -2.65 +- 0.86
+[  2374.8s] step=11,141,120  reward=   -2.55 +- 1.05
+[  2890.8s] step=13,926,400  reward=   -2.50 +- 1.10
+[  3405.9s] step=16,711,680  reward=   -2.17 +- 0.96
+[  3922.1s] step=19,496,960  reward=   -2.31 +- 1.49
+[  4439.2s] step=22,282,240  reward=   -2.15 +- 1.53
+[  4956.6s] step=25,067,520  reward=   -2.07 +- 2.42
+[  5472.9s] step=27,852,800  reward=   -1.59 +- 2.79
+[  5987.5s] step=30,638,080  reward=   -1.20 +- 3.55
+[  6503.2s] step=33,423,360  reward=   -0.65 +- 4.89
+[  7020.6s] step=36,208,640  reward=    0.27 +- 4.49
+[  7533.3s] step=38,993,920  reward=    1.72 +- 5.21
+[  8043.7s] step=41,779,200  reward=    1.33 +- 6.10
+[  8557.2s] step=44,564,480  reward=    2.19 +- 6.28
+[  9071.8s] step=47,349,760  reward=    2.53 +- 6.63
+[  9590.9s] step=50,135,040  reward=    3.05 +- 5.88
+[ 10112.4s] step=52,920,320  reward=    2.91 +- 6.59
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading config.yaml; uploading output.log
+wandb: uploading history steps 18-19, summary, console lines 21-21
+wandb: 
+wandb: Run history:
+wandb:             eval/avg_episode_length ▁▁▁▁▁▁▁▂▂▃▃▄▅▆▇▇▇███
+wandb:                 eval/episode_reward ▁▃▃▃▄▄▄▄▄▄▄▅▅▆▇▇▇███
+wandb:     eval/episode_reward/action_rate ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: eval/episode_reward/action_rate_std ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           eval/episode_reward/alive ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       eval/episode_reward/alive_std ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/episode_reward/ang_vel_xy ▁▇▇██████▇▇▆▅▄▃▃▃▃▂▂
+wandb:  eval/episode_reward/ang_vel_xy_std █▃▂▁▁▁▁▁▁▃▄▅▆▆█▆▇▇▇▇
+wandb:     eval/episode_reward/base_height ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: eval/episode_reward/base_height_std ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                                 +62 ...
+wandb: 
+wandb: Run summary:
+wandb:                          checkpoint /home/keyu/Downloads...
+wandb:             eval/avg_episode_length 472.6875
+wandb:                 eval/episode_reward 2.90764
+wandb:     eval/episode_reward/action_rate 0
+wandb: eval/episode_reward/action_rate_std 0
+wandb:           eval/episode_reward/alive 0
+wandb:       eval/episode_reward/alive_std 0
+wandb:      eval/episode_reward/ang_vel_xy -89.05362
+wandb:  eval/episode_reward/ang_vel_xy_std 40.55728
+wandb:     eval/episode_reward/base_height 0
+wandb:                                 +66 ...
+wandb: 
+wandb: 🚀 View run G1JoystickFlatTerrain_impl-jax_seed1 at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/gc4fwd1i
+wandb: ⭐️ View project at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260806_095506-gc4fwd1i/logs
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/checkpoints/G1JoystickFlatTerrain_impl-jax_seed1
+[cooldown] 180s (GPU 80C)
+[cooldown] done (GPU 55C)
+
+--- TRAIN seed=2 impl=jax  2026-08-06T12:46:45+05:30  GPU 55C ---
+[jax] backend=gpu devices=[CudaDevice(id=0)]
+[compat] reinstated jax.device_put_replicated for brax
+[env] impl=jax naconmax=8192 njmax=90
+[cfg] timesteps=50,000,000 num_envs=512 batch=256
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run 89ftxx03
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260806_124649-89ftxx03
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run G1JoystickFlatTerrain_impl-jax_seed2
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/89ftxx03
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/89ftxx03
+[train] G1JoystickFlatTerrain ...
+[   115.3s] step=         0  reward=   -4.88 +- 1.93
+[   733.9s] step= 2,785,280  reward=   -3.01 +- 0.81
+[  1451.7s] step= 5,570,560  reward=   -2.89 +- 0.99
+[  2208.9s] step= 8,355,840  reward=   -2.70 +- 1.06
+[  3113.0s] step=11,141,120  reward=   -2.61 +- 1.12
+[  4654.8s] step=13,926,400  reward=   -2.25 +- 1.00
+[  6093.5s] step=16,711,680  reward=   -2.17 +- 1.01
+[  7460.8s] step=19,496,960  reward=   -2.12 +- 1.20
+[  8731.8s] step=22,282,240  reward=   -2.25 +- 2.09
+[ 10090.7s] step=25,067,520  reward=   -1.72 +- 1.56
+[ 11373.7s] step=27,852,800  reward=   -1.44 +- 2.52
+[ 12346.7s] step=30,638,080  reward=   -0.97 +- 2.73
+[ 12944.7s] step=33,423,360  reward=   -0.28 +- 4.40
+[ 13640.7s] step=36,208,640  reward=   -0.58 +- 5.21
+[ 14385.2s] step=38,993,920  reward=    1.05 +- 5.34
+[ 15444.6s] step=41,779,200  reward=    1.96 +- 4.82
+[ 16701.2s] step=44,564,480  reward=    1.75 +- 5.67
+[ 18015.0s] step=47,349,760  reward=    2.76 +- 6.52
+[ 19463.1s] step=50,135,040  reward=    3.64 +- 6.33
+[ 20911.7s] step=52,920,320  reward=    2.86 +- 7.41
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:             eval/avg_episode_length ▁▁▁▁▁▁▂▂▂▂▃▄▅▅▆▇▇███
+wandb:                 eval/episode_reward ▁▃▃▃▃▃▃▃▃▄▄▄▅▅▆▇▆▇█▇
+wandb:     eval/episode_reward/action_rate ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: eval/episode_reward/action_rate_std ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           eval/episode_reward/alive ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       eval/episode_reward/alive_std ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/episode_reward/ang_vel_xy ▁▇▇██████▇▇▆▄▄▃▂▂▁▁▁
+wandb:  eval/episode_reward/ang_vel_xy_std █▃▂▂▁▁▁▁▃▃▄▅▆▇▆▇▇▇▇▇
+wandb:     eval/episode_reward/base_height ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: eval/episode_reward/base_height_std ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                                 +62 ...
+wandb: 
+wandb: Run summary:
+wandb:                          checkpoint /home/keyu/Downloads...
+wandb:             eval/avg_episode_length 475.49219
+wandb:                 eval/episode_reward 2.85951
+wandb:     eval/episode_reward/action_rate 0
+wandb: eval/episode_reward/action_rate_std 0
+wandb:           eval/episode_reward/alive 0
+wandb:       eval/episode_reward/alive_std 0
+wandb:      eval/episode_reward/ang_vel_xy -85.98491
+wandb:  eval/episode_reward/ang_vel_xy_std 38.86123
+wandb:     eval/episode_reward/base_height 0
+wandb:                                 +66 ...
+wandb: 
+wandb: 🚀 View run G1JoystickFlatTerrain_impl-jax_seed2 at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/89ftxx03
+wandb: ⭐️ View project at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260806_124649-89ftxx03/logs
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/checkpoints/G1JoystickFlatTerrain_impl-jax_seed2
+[cooldown] 180s (GPU 86C)
+[cooldown] GPU still 71C, waiting
+[cooldown] GPU still 71C, waiting
+[cooldown] GPU still 70C, waiting
+[cooldown] GPU still 70C, waiting
+[cooldown] GPU still 69C, waiting
+[cooldown] GPU still 69C, waiting
+[cooldown] GPU still 68C, waiting
+[cooldown] GPU still 68C, waiting
+[cooldown] GPU still 67C, waiting
+[cooldown] GPU still 67C, waiting
+[cooldown] GPU still 66C, waiting
+[cooldown] GPU still 66C, waiting
+[cooldown] GPU still 66C, waiting
+[cooldown] GPU still 66C, waiting
+[cooldown] GPU still 65C, waiting
+[cooldown] GPU still 65C, waiting
+[cooldown] GPU still 65C, waiting
+[cooldown] GPU still 65C, waiting
+[cooldown] GPU still 65C, waiting
+[cooldown] GPU still 64C, waiting
+[cooldown] GPU still 64C, waiting
+[cooldown] GPU still 64C, waiting
+[cooldown] GPU still 64C, waiting
+[cooldown] GPU still 64C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] done (GPU 62C)
+
+=== EVALUATION ===
+
+--- EVAL seed=0  2026-08-06T19:09:29+05:30 ---
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run ere0a89e
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260806_190931-ere0a89e
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run eval_G1JoystickFlatTerrain_impl-jax_seed0
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/ere0a89e
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/ere0a89e
+[eval] impl=jax ...
+    return=12.78+-0.77  len=658.6  term_rate=0.734
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+Module mujoco.mjx.warp.ffi 7a22eb4 load on device 'cuda:0' took 26.48 ms  (cached)
+[eval] impl=warp ...
+Module mujoco.mjx.third_party.mujoco_warp._src.smooth 47158eb load on device 'cuda:0' took 1529.63 ms  (cached)
+Module _nxn_broadphase__locals__kernel_7c49670b 7c49670 load on device 'cuda:0' took 41.62 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_7478614f 7478614 load on device 'cuda:0' took 1985.36 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_7478614f 9a07e2c load on device 'cuda:0' took 1977.22 ms  (cached)
+Module _primitive_narrowphase__locals__primitive_narrowphase_46febab4 46febab load on device 'cuda:0' took 318.97 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.constraint 36c8060 load on device 'cuda:0' took 18.87 ms  (cached)
+Module _friction_dof__locals__kernel_b6332f7a b6332f7 load on device 'cuda:0' took 64.62 ms  (cached)
+Module _limit_slide_hinge__locals__kernel_697e08d0 697e08d load on device 'cuda:0' took 70.61 ms  (cached)
+Module _efc_contact_init__locals__kernel_c7fda836 c7fda83 load on device 'cuda:0' took 41.35 ms  (cached)
+Module _efc_contact_jac_sparse__locals__kernel_c4f13e50 c4f13e5 load on device 'cuda:0' took 39.39 ms  (cached)
+Module _efc_contact_update__locals__kernel_a9f93c23 a9f93c2 load on device 'cuda:0' took 61.13 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.sensor de892d8 load on device 'cuda:0' took 1148.57 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.forward 81c85c8 load on device 'cuda:0' took 525.36 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.passive efc109c load on device 'cuda:0' took 518.50 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.forward fc5c4e4 load on device 'cuda:0' took 532.09 ms  (cached)
+Module _qfrc_smooth__locals__kernel_f1330af6 f1330af load on device 'cuda:0' took 26.93 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.support ca784c5 load on device 'cuda:0' took 62.88 ms  (cached)
+Module _tile_cholesky_factorize_solve_block__locals__kernel_e27b9fca dda0549 load on device 'cuda:0' took 785.58 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.solver 4a1f2fb load on device 'cuda:0' took 789.52 ms  (cached)
+Module _solve_init_jaref_kernel__locals__kernel_559e7c49 559e7c4 load on device 'cuda:0' took 49.51 ms  (cached)
+Module mul_m_kernel__locals___mul_m_dc7994af dc7994a load on device 'cuda:0' took 71.52 ms  (cached)
+Module _update_constraint_efc__locals__kernel_03323b94 03323b9 load on device 'cuda:0' took 46.74 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_7cb4d020 7cb4d02 load on device 'cuda:0' took 17.63 ms  (cached)
+Module _update_gradient_grad__locals__kernel_d86449f3 d86449f load on device 'cuda:0' took 25.01 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.solver 12792dc load on device 'cuda:0' took 772.31 ms  (cached)
+Module _update_gradient_cholesky_blocked__locals__kernel_778902d2 ffa0a79 load on device 'cuda:0' took 469.06 ms  (cached)
+Module _linesearch_jv_fused_kernel__locals__kernel_32d7d22d 32d7d22 load on device 'cuda:0' took 47.90 ms  (cached)
+Module _linesearch_iterative_kernel__locals__kernel_22e43c97 10448a4 load on device 'cuda:0' took 207.01 ms  (cached)
+Module _update_constraint_efc__locals__kernel_15adf655 15adf65 load on device 'cuda:0' took 48.62 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_b5db5058 b5db505 load on device 'cuda:0' took 28.17 ms  (cached)
+Module _update_gradient_grad__locals__kernel_d814f8c9 d814f8c load on device 'cuda:0' took 25.58 ms  (cached)
+Module _update_gradient_cholesky_blocked_skip_unchanged__locals__kernel_87ea2fc6 ae7a53b load on device 'cuda:0' took 474.99 ms  (cached)
+Module _solve_zero_search_dot__locals__kernel_1643cbe8 1643cbe load on device 'cuda:0' took 19.32 ms  (cached)
+Module _solve_search_update__locals__kernel_d3efa558 d3efa55 load on device 'cuda:0' took 26.05 ms  (cached)
+Module _contact_sort__locals__contact_sort_cf9c4d37 76a2477 load on device 'cuda:0' took 47.15 ms  (cached)
+Module _next_time_builder__locals___next_time_eb151a48 eb151a4 load on device 'cuda:0' took 34.11 ms  (cached)
+    return=13.21+-0.74  len=667.9  term_rate=0.734
+[gap] warp vs jax: mean=+0.4309+-0.3787  mean|d|=1.8094  max|d|=17.2643  effect=+0.101
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/eval_G1JoystickFlatTerrain_impl-jax_seed0.json
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading summary, console lines 48-50
+wandb: 
+wandb: Run summary:
+wandb:          gap_warp_vs_jax/identical False
+wandb:        gap_warp_vs_jax/max_abs_gap 17.26429
+wandb:       gap_warp_vs_jax/mean_abs_gap 1.80942
+wandb:           gap_warp_vs_jax/mean_gap 0.43087
+wandb:       gap_warp_vs_jax/mean_gap_sem 0.37871
+wandb:            gap_warp_vs_jax/n_pairs 128
+wandb: gap_warp_vs_jax/paired_effect_size 0.10056
+wandb:                    jax/length_mean 658.57031
+wandb:                     jax/n_episodes 128
+wandb:                    jax/return_mean 12.78101
+wandb:                                +11 ...
+wandb: 
+wandb: 🚀 View run eval_G1JoystickFlatTerrain_impl-jax_seed0 at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/ere0a89e
+wandb: ⭐️ View project at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260806_190931-ere0a89e/logs
+[cooldown] 180s (GPU 81C)
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 64C, waiting
+[cooldown] GPU still 64C, waiting
+[cooldown] GPU still 64C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 61C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 61C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 61C, waiting
+[cooldown] GPU still 61C, waiting
+[cooldown] GPU still 61C, waiting
+[cooldown] GPU still 61C, waiting
+[cooldown] GPU still 61C, waiting
+[cooldown] GPU still 61C, waiting
+[cooldown] GPU still 61C, waiting
+[cooldown] GPU still 61C, waiting
+[cooldown] GPU still 61C, waiting
+[cooldown] GPU still 61C, waiting
+[cooldown] GPU still 61C, waiting
+[cooldown] GPU still 61C, waiting
+[cooldown] GPU still 61C, waiting
+[cooldown] GPU still 61C, waiting
+[cooldown] GPU still 61C, waiting
+[cooldown] done (GPU 61C)
+
+--- EVAL seed=1  2026-08-06T19:46:25+05:30 ---
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run kqf3nqr7
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260806_194626-kqf3nqr7
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run eval_G1JoystickFlatTerrain_impl-jax_seed1
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/kqf3nqr7
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/kqf3nqr7
+[eval] impl=jax ...
+    return=12.93+-0.77  len=644.6  term_rate=0.727
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+Module mujoco.mjx.warp.ffi 7a22eb4 load on device 'cuda:0' took 0.51 ms  (cached)
+[eval] impl=warp ...
+Module mujoco.mjx.third_party.mujoco_warp._src.smooth 47158eb load on device 'cuda:0' took 6.88 ms  (cached)
+Module _nxn_broadphase__locals__kernel_7c49670b 7c49670 load on device 'cuda:0' took 0.74 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_7478614f 7478614 load on device 'cuda:0' took 2.64 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_7478614f 9a07e2c load on device 'cuda:0' took 2.38 ms  (cached)
+Module _primitive_narrowphase__locals__primitive_narrowphase_46febab4 46febab load on device 'cuda:0' took 1.05 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.constraint 36c8060 load on device 'cuda:0' took 0.58 ms  (cached)
+Module _friction_dof__locals__kernel_b6332f7a b6332f7 load on device 'cuda:0' took 0.82 ms  (cached)
+Module _limit_slide_hinge__locals__kernel_697e08d0 697e08d load on device 'cuda:0' took 0.69 ms  (cached)
+Module _efc_contact_init__locals__kernel_c7fda836 c7fda83 load on device 'cuda:0' took 0.64 ms  (cached)
+Module _efc_contact_jac_sparse__locals__kernel_c4f13e50 c4f13e5 load on device 'cuda:0' took 0.60 ms  (cached)
+Module _efc_contact_update__locals__kernel_a9f93c23 a9f93c2 load on device 'cuda:0' took 0.63 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.sensor de892d8 load on device 'cuda:0' took 3.11 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.forward 81c85c8 load on device 'cuda:0' took 1.52 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.passive efc109c load on device 'cuda:0' took 1.49 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.forward fc5c4e4 load on device 'cuda:0' took 1.40 ms  (cached)
+Module _qfrc_smooth__locals__kernel_f1330af6 f1330af load on device 'cuda:0' took 0.55 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.support ca784c5 load on device 'cuda:0' took 0.69 ms  (cached)
+Module _tile_cholesky_factorize_solve_block__locals__kernel_e27b9fca dda0549 load on device 'cuda:0' took 35.24 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.solver 4a1f2fb load on device 'cuda:0' took 2.46 ms  (cached)
+Module _solve_init_jaref_kernel__locals__kernel_559e7c49 559e7c4 load on device 'cuda:0' took 0.79 ms  (cached)
+Module mul_m_kernel__locals___mul_m_dc7994af dc7994a load on device 'cuda:0' took 0.68 ms  (cached)
+Module _update_constraint_efc__locals__kernel_03323b94 03323b9 load on device 'cuda:0' took 0.77 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_7cb4d020 7cb4d02 load on device 'cuda:0' took 0.49 ms  (cached)
+Module _update_gradient_grad__locals__kernel_d86449f3 d86449f load on device 'cuda:0' took 0.54 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.solver 12792dc load on device 'cuda:0' took 1.99 ms  (cached)
+Module _update_gradient_cholesky_blocked__locals__kernel_778902d2 ffa0a79 load on device 'cuda:0' took 77.56 ms  (cached)
+Module _linesearch_jv_fused_kernel__locals__kernel_32d7d22d 32d7d22 load on device 'cuda:0' took 0.76 ms  (cached)
+Module _linesearch_iterative_kernel__locals__kernel_22e43c97 10448a4 load on device 'cuda:0' took 0.89 ms  (cached)
+Module _update_constraint_efc__locals__kernel_15adf655 15adf65 load on device 'cuda:0' took 0.80 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_b5db5058 b5db505 load on device 'cuda:0' took 0.57 ms  (cached)
+Module _update_gradient_grad__locals__kernel_d814f8c9 d814f8c load on device 'cuda:0' took 0.54 ms  (cached)
+Module _update_gradient_cholesky_blocked_skip_unchanged__locals__kernel_87ea2fc6 ae7a53b load on device 'cuda:0' took 76.80 ms  (cached)
+Module _solve_zero_search_dot__locals__kernel_1643cbe8 1643cbe load on device 'cuda:0' took 0.53 ms  (cached)
+Module _solve_search_update__locals__kernel_d3efa558 d3efa55 load on device 'cuda:0' took 0.51 ms  (cached)
+Module _contact_sort__locals__contact_sort_cf9c4d37 76a2477 load on device 'cuda:0' took 0.62 ms  (cached)
+Module _next_time_builder__locals___next_time_eb151a48 eb151a4 load on device 'cuda:0' took 0.70 ms  (cached)
+    return=12.91+-0.80  len=638.7  term_rate=0.734
+[gap] warp vs jax: mean=-0.0219+-0.3904  mean|d|=1.6031  max|d|=27.5684  effect=-0.005
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/eval_G1JoystickFlatTerrain_impl-jax_seed1.json
+wandb: updating run metadata
+wandb: uploading config.yaml; uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading wandb-summary.json
+wandb: uploading summary, console lines 48-50
+wandb: 
+wandb: Run summary:
+wandb:          gap_warp_vs_jax/identical False
+wandb:        gap_warp_vs_jax/max_abs_gap 27.56838
+wandb:       gap_warp_vs_jax/mean_abs_gap 1.60306
+wandb:           gap_warp_vs_jax/mean_gap -0.02195
+wandb:       gap_warp_vs_jax/mean_gap_sem 0.39041
+wandb:            gap_warp_vs_jax/n_pairs 128
+wandb: gap_warp_vs_jax/paired_effect_size -0.00497
+wandb:                    jax/length_mean 644.5625
+wandb:                     jax/n_episodes 128
+wandb:                    jax/return_mean 12.93164
+wandb:                                +11 ...
+wandb: 
+wandb: 🚀 View run eval_G1JoystickFlatTerrain_impl-jax_seed1 at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/kqf3nqr7
+wandb: ⭐️ View project at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260806_194626-kqf3nqr7/logs
+[cooldown] 180s (GPU 80C)
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 61C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 61C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] done (GPU 58C)
+
+--- EVAL seed=2  2026-08-06T20:07:29+05:30 ---
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run ubzywh1o
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260806_200731-ubzywh1o
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run eval_G1JoystickFlatTerrain_impl-jax_seed2
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/ubzywh1o
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/ubzywh1o
+[eval] impl=jax ...
+    return=11.86+-0.75  len=614.0  term_rate=0.773
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+Module mujoco.mjx.warp.ffi 7a22eb4 load on device 'cuda:0' took 0.48 ms  (cached)
+[eval] impl=warp ...
+Module mujoco.mjx.third_party.mujoco_warp._src.smooth 47158eb load on device 'cuda:0' took 6.39 ms  (cached)
+Module _nxn_broadphase__locals__kernel_7c49670b 7c49670 load on device 'cuda:0' took 0.64 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_7478614f 7478614 load on device 'cuda:0' took 2.18 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_7478614f 9a07e2c load on device 'cuda:0' took 2.07 ms  (cached)
+Module _primitive_narrowphase__locals__primitive_narrowphase_46febab4 46febab load on device 'cuda:0' took 1.04 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.constraint 36c8060 load on device 'cuda:0' took 0.52 ms  (cached)
+Module _friction_dof__locals__kernel_b6332f7a b6332f7 load on device 'cuda:0' took 0.74 ms  (cached)
+Module _limit_slide_hinge__locals__kernel_697e08d0 697e08d load on device 'cuda:0' took 0.64 ms  (cached)
+Module _efc_contact_init__locals__kernel_c7fda836 c7fda83 load on device 'cuda:0' took 0.56 ms  (cached)
+Module _efc_contact_jac_sparse__locals__kernel_c4f13e50 c4f13e5 load on device 'cuda:0' took 0.52 ms  (cached)
+Module _efc_contact_update__locals__kernel_a9f93c23 a9f93c2 load on device 'cuda:0' took 0.55 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.sensor de892d8 load on device 'cuda:0' took 2.67 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.forward 81c85c8 load on device 'cuda:0' took 1.26 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.passive efc109c load on device 'cuda:0' took 1.26 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.forward fc5c4e4 load on device 'cuda:0' took 1.26 ms  (cached)
+Module _qfrc_smooth__locals__kernel_f1330af6 f1330af load on device 'cuda:0' took 0.49 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.support ca784c5 load on device 'cuda:0' took 0.62 ms  (cached)
+Module _tile_cholesky_factorize_solve_block__locals__kernel_e27b9fca dda0549 load on device 'cuda:0' took 31.62 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.solver 4a1f2fb load on device 'cuda:0' took 2.19 ms  (cached)
+Module _solve_init_jaref_kernel__locals__kernel_559e7c49 559e7c4 load on device 'cuda:0' took 0.71 ms  (cached)
+Module mul_m_kernel__locals___mul_m_dc7994af dc7994a load on device 'cuda:0' took 0.63 ms  (cached)
+Module _update_constraint_efc__locals__kernel_03323b94 03323b9 load on device 'cuda:0' took 0.50 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_7cb4d020 7cb4d02 load on device 'cuda:0' took 0.41 ms  (cached)
+Module _update_gradient_grad__locals__kernel_d86449f3 d86449f load on device 'cuda:0' took 0.43 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.solver 12792dc load on device 'cuda:0' took 1.87 ms  (cached)
+Module _update_gradient_cholesky_blocked__locals__kernel_778902d2 ffa0a79 load on device 'cuda:0' took 70.04 ms  (cached)
+Module _linesearch_jv_fused_kernel__locals__kernel_32d7d22d 32d7d22 load on device 'cuda:0' took 0.68 ms  (cached)
+Module _linesearch_iterative_kernel__locals__kernel_22e43c97 10448a4 load on device 'cuda:0' took 0.81 ms  (cached)
+Module _update_constraint_efc__locals__kernel_15adf655 15adf65 load on device 'cuda:0' took 0.56 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_b5db5058 b5db505 load on device 'cuda:0' took 0.48 ms  (cached)
+Module _update_gradient_grad__locals__kernel_d814f8c9 d814f8c load on device 'cuda:0' took 0.46 ms  (cached)
+Module _update_gradient_cholesky_blocked_skip_unchanged__locals__kernel_87ea2fc6 ae7a53b load on device 'cuda:0' took 70.64 ms  (cached)
+Module _solve_zero_search_dot__locals__kernel_1643cbe8 1643cbe load on device 'cuda:0' took 0.46 ms  (cached)
+Module _solve_search_update__locals__kernel_d3efa558 d3efa55 load on device 'cuda:0' took 0.43 ms  (cached)
+Module _contact_sort__locals__contact_sort_cf9c4d37 76a2477 load on device 'cuda:0' took 0.63 ms  (cached)
+Module _next_time_builder__locals___next_time_eb151a48 eb151a4 load on device 'cuda:0' took 0.57 ms  (cached)
+    return=12.43+-0.76  len=630.4  term_rate=0.758
+[gap] warp vs jax: mean=+0.5702+-0.4409  mean|d|=2.1214  max|d|=27.0781  effect=+0.114
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/eval_G1JoystickFlatTerrain_impl-jax_seed2.json
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading summary, console lines 48-50
+wandb: 
+wandb: Run summary:
+wandb:          gap_warp_vs_jax/identical False
+wandb:        gap_warp_vs_jax/max_abs_gap 27.07814
+wandb:       gap_warp_vs_jax/mean_abs_gap 2.12141
+wandb:           gap_warp_vs_jax/mean_gap 0.57023
+wandb:       gap_warp_vs_jax/mean_gap_sem 0.44094
+wandb:            gap_warp_vs_jax/n_pairs 128
+wandb: gap_warp_vs_jax/paired_effect_size 0.11431
+wandb:                    jax/length_mean 614.00781
+wandb:                     jax/n_episodes 128
+wandb:                    jax/return_mean 11.85644
+wandb:                                +11 ...
+wandb: 
+wandb: 🚀 View run eval_G1JoystickFlatTerrain_impl-jax_seed2 at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/ubzywh1o
+wandb: ⭐️ View project at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260806_200731-ubzywh1o/logs
+[cooldown] 180s (GPU 78C)
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 63C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 62C, waiting
+[cooldown] GPU still 61C, waiting
+[cooldown] GPU still 60C, waiting
+[cooldown] done (GPU 59C)
+
+=== DONE 2026-08-06T20:17:43+05:30 ===
+Cross-backend gaps:      results/eval_*.json
+Seed-to-seed null model: compare return_mean across seeds within one backend

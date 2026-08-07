@@ -1,0 +1,57 @@
+Warp CUDA error 100: no CUDA-capable device is detected (in function init_cuda_driver, /builds/omniverse/warp/warp/native/cuda_util.cpp:319)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/keyu/Downloads/Biped-Locomotion-via-RL/sim2sim/train.py", line 117, in <module>
+    main()
+  File "/home/keyu/Downloads/Biped-Locomotion-via-RL/sim2sim/train.py", line 97, in main
+    _, params, _ = train_fn(
+                   ^^^^^^^^^
+  File "/home/keyu/miniconda3/envs/biped/lib/python3.11/site-packages/brax/training/agents/ppo/train.py", line 756, in train
+    training_state = jax.device_put_replicated(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/keyu/miniconda3/envs/biped/lib/python3.11/site-packages/jax/_src/deprecations.py", line 54, in getattr
+    raise AttributeError(message)
+AttributeError: jax.device_put_replicated is deprecated; use jax.device_put instead. See https://docs.jax.dev/en/latest/migrate_pmap.html#drop-in-replacements for a drop-in replacement.
+[jax] backend=cpu devices=[CpuDevice(id=0)]
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, CUDA driver not available (NVRTC compilation available)
+   Devices:
+     "cpu"      : "x86_64"
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+[cfg] timesteps=40,960 num_envs=64 batch=256
+[train] G1JoystickFlatTerrain ...
+Module mujoco.mjx.warp.ffi 7a22eb4 load on device 'cpu' took 1.08 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.smooth 10b3caa load on device 'cpu' took 3.39 ms  (cached)
+Module _nxn_broadphase__locals__kernel_7c49670b 9e37b2c load on device 'cpu' took 0.88 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_7478614f 88cd4b3 load on device 'cpu' took 0.56 ms  (cached)
+Module _primitive_narrowphase__locals__primitive_narrowphase_46febab4 e8f54c7 load on device 'cpu' took 2.90 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.constraint 2ae647e load on device 'cpu' took 0.38 ms  (cached)
+Module _friction_dof__locals__kernel_b6332f7a 962b0d9 load on device 'cpu' took 0.59 ms  (cached)
+Module _limit_slide_hinge__locals__kernel_697e08d0 55a7144 load on device 'cpu' took 0.27 ms  (cached)
+Module _efc_contact_init__locals__kernel_c7fda836 8637653 load on device 'cpu' took 0.61 ms  (cached)
+Module _efc_contact_jac_sparse__locals__kernel_c4f13e50 0695036 load on device 'cpu' took 0.52 ms  (cached)
+Module _efc_contact_update__locals__kernel_a9f93c23 3b09058 load on device 'cpu' took 4.32 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.sensor b7b2442 load on device 'cpu' took 0.56 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.forward d081820 load on device 'cpu' took 0.54 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.passive 107170e load on device 'cpu' took 0.96 ms  (cached)
+Module _qfrc_smooth__locals__kernel_f1330af6 b34c599 load on device 'cpu' took 0.59 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.support eb04c70 load on device 'cpu' took 0.75 ms  (cached)
+Module _tile_cholesky_factorize_solve_block__locals__kernel_e27b9fca 3cb9ec2 load on device 'cpu' took 0.55 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.solver fa2e8eb load on device 'cpu' took 16.51 ms  (cached)
+Module _solve_init_jaref_kernel__locals__kernel_559e7c49 49218d5 load on device 'cpu' took 0.42 ms  (cached)
+Module mul_m_kernel__locals___mul_m_dc7994af c81eb4a load on device 'cpu' took 0.28 ms  (cached)
+Module _update_constraint_efc__locals__kernel_03323b94 91b7ddd load on device 'cpu' took 0.38 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_7cb4d020 c46f299 load on device 'cpu' took 0.24 ms  (cached)
+Module _update_gradient_grad__locals__kernel_d86449f3 3138067 load on device 'cpu' took 0.25 ms  (cached)
+Module _update_gradient_cholesky_blocked__locals__kernel_778902d2 2edd2ee load on device 'cpu' took 0.55 ms  (cached)
+Module _linesearch_jv_fused_kernel__locals__kernel_32d7d22d 6bb4806 load on device 'cpu' took 0.64 ms  (cached)
+Module _linesearch_iterative_kernel__locals__kernel_22e43c97 b294cc3 load on device 'cpu' took 0.64 ms  (cached)
+Module _update_constraint_efc__locals__kernel_15adf655 c582a3c load on device 'cpu' took 4.59 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_b5db5058 1eca58b load on device 'cpu' took 0.54 ms  (cached)
+Module _update_gradient_grad__locals__kernel_d814f8c9 294aecf load on device 'cpu' took 0.47 ms  (cached)
+Module _update_gradient_cholesky_blocked_skip_unchanged__locals__kernel_87ea2fc6 1dfb817 load on device 'cpu' took 0.48 ms  (cached)
+Module _solve_zero_search_dot__locals__kernel_1643cbe8 035de80 load on device 'cpu' took 5.02 ms  (cached)
+Module _solve_search_update__locals__kernel_d3efa558 c51a797 load on device 'cpu' took 0.34 ms  (cached)
+Module _contact_sort__locals__contact_sort_cf9c4d37 4a5bec8 load on device 'cpu' took 0.68 ms  (cached)

@@ -1,0 +1,47 @@
+[render] JAX pinned to CPU; pass --gpu if no training is running
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+[rollout] impl=jax
+Module mujoco.mjx.warp.ffi 7a22eb4 load on device 'cpu' took 12.73 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.smooth 10b3caa load on device 'cpu' took 1.55 ms  (cached)
+Module _nxn_broadphase__locals__kernel_7c49670b 9e37b2c load on device 'cpu' took 0.70 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_7478614f 88cd4b3 load on device 'cpu' took 1.12 ms  (cached)
+Module _primitive_narrowphase__locals__primitive_narrowphase_46febab4 e8f54c7 load on device 'cpu' took 1.75 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.constraint 2ae647e load on device 'cpu' took 0.63 ms  (cached)
+Module _friction_dof__locals__kernel_b6332f7a 962b0d9 load on device 'cpu' took 0.81 ms  (cached)
+Module _limit_slide_hinge__locals__kernel_697e08d0 55a7144 load on device 'cpu' took 0.58 ms  (cached)
+Module _efc_contact_init__locals__kernel_c7fda836 8637653 load on device 'cpu' took 0.62 ms  (cached)
+Module _efc_contact_jac_sparse__locals__kernel_c4f13e50 0695036 load on device 'cpu' took 0.57 ms  (cached)
+Module _efc_contact_update__locals__kernel_a9f93c23 3b09058 load on device 'cpu' took 0.68 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.sensor b7b2442 load on device 'cpu' took 1.06 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.forward d081820 load on device 'cpu' took 0.53 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.passive 107170e load on device 'cpu' took 0.69 ms  (cached)
+Module _qfrc_smooth__locals__kernel_f1330af6 b34c599 load on device 'cpu' took 0.34 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.support eb04c70 load on device 'cpu' took 0.52 ms  (cached)
+Module _tile_cholesky_factorize_solve_block__locals__kernel_e27b9fca 3cb9ec2 load on device 'cpu' took 0.33 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.solver fa2e8eb load on device 'cpu' took 1.73 ms  (cached)
+Module _solve_init_jaref_kernel__locals__kernel_559e7c49 49218d5 load on device 'cpu' took 0.53 ms  (cached)
+Module mul_m_kernel__locals___mul_m_dc7994af c81eb4a load on device 'cpu' took 0.48 ms  (cached)
+Module _update_constraint_efc__locals__kernel_03323b94 91b7ddd load on device 'cpu' took 0.51 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_7cb4d020 c46f299 load on device 'cpu' took 0.45 ms  (cached)
+Module _update_gradient_grad__locals__kernel_d86449f3 3138067 load on device 'cpu' took 0.48 ms  (cached)
+Module _update_gradient_cholesky_blocked__locals__kernel_778902d2 2edd2ee load on device 'cpu' took 0.59 ms  (cached)
+Module _linesearch_jv_fused_kernel__locals__kernel_32d7d22d 6bb4806 load on device 'cpu' took 0.49 ms  (cached)
+Module _linesearch_iterative_kernel__locals__kernel_22e43c97 b294cc3 load on device 'cpu' took 0.62 ms  (cached)
+Module _update_constraint_efc__locals__kernel_15adf655 c582a3c load on device 'cpu' took 0.54 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_b5db5058 1eca58b load on device 'cpu' took 0.66 ms  (cached)
+Module _update_gradient_grad__locals__kernel_d814f8c9 294aecf load on device 'cpu' took 0.49 ms  (cached)
+Module _update_gradient_cholesky_blocked_skip_unchanged__locals__kernel_87ea2fc6 1dfb817 load on device 'cpu' took 0.59 ms  (cached)
+Module _solve_zero_search_dot__locals__kernel_1643cbe8 035de80 load on device 'cpu' took 0.49 ms  (cached)
+Module _solve_search_update__locals__kernel_d3efa558 c51a797 load on device 'cpu' took 0.48 ms  (cached)
+Module _contact_sort__locals__contact_sort_cf9c4d37 4a5bec8 load on device 'cpu' took 0.51 ms  (cached)
+[rollout] impl=warp
+Module _next_time_builder__locals___next_time_eb151a48 3c649a9 load on device 'cpu' took 3.23 ms  (cached)
+/home/keyu/miniconda3/envs/biped/lib/python3.11/subprocess.py:1885: RuntimeWarning: os.fork() was called. os.fork() is incompatible with multithreaded code, and JAX is multithreaded, so this will likely lead to a deadlock.
+  self.pid = _fork_exec(
+[saved] results/anim_policy_seed0.mp4  (201 frames @ 25fps)

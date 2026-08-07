@@ -1,0 +1,422 @@
+=== cross-embodiment finished; follow-up queue starting 2026-08-07T00:03:07+05:30 ===
+
+=== [1/3] T1 at n=30 seeds  2026-08-07T00:03:07+05:30 ===
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run pp7c6tr4
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260807_000310-pp7c6tr4
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run divergence_T1JoystickFlatTerrain
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/pp7c6tr4
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/pp7c6tr4
+[load] T1JoystickFlatTerrain
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+[model] nq=30 nv=29 nu=23 dt=0.002 solver=2 iters=3 cone=0
+[plan] duration=1.0s -> 500 baseline steps
+[1/14] baseline ...
+Module mujoco.mjx.warp.ffi 7a22eb4 load on device 'cuda:0' took 0.43 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.smooth 47158eb load on device 'cuda:0' took 5.69 ms  (cached)
+Module _nxn_broadphase__locals__kernel_7c49670b 7c49670 load on device 'cuda:0' took 0.41 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_e2bfbf76 e2bfbf7 load on device 'cuda:0' took 1.81 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_e2bfbf76 1a1ec09 load on device 'cuda:0' took 1.75 ms  (cached)
+Module _primitive_narrowphase__locals__primitive_narrowphase_e4de7519 e4de751 load on device 'cuda:0' took 11.77 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.constraint 36c8060 load on device 'cuda:0' took 0.39 ms  (cached)
+Module _friction_dof__locals__kernel_88836a0e 88836a0 load on device 'cuda:0' took 0.47 ms  (cached)
+Module _limit_slide_hinge__locals__kernel_cfd8e9a4 cfd8e9a load on device 'cuda:0' took 1.25 ms  (cached)
+Module _efc_contact_init__locals__kernel_9628e96c 9628e96 load on device 'cuda:0' took 0.38 ms  (cached)
+Module _efc_contact_jac_dense__locals__kernel_3b922c03 8e18e6b load on device 'cuda:0' took 0.43 ms  (cached)
+Module _efc_contact_update__locals__kernel_a9f93c23 a9f93c2 load on device 'cuda:0' took 0.40 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.sensor de892d8 load on device 'cuda:0' took 2.04 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.forward 81c85c8 load on device 'cuda:0' took 1.51 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.passive efc109c load on device 'cuda:0' took 1.41 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.forward fc5c4e4 load on device 'cuda:0' took 1.02 ms  (cached)
+Module _qfrc_smooth__locals__kernel_f1330af6 f1330af load on device 'cuda:0' took 0.35 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.support ca784c5 load on device 'cuda:0' took 0.41 ms  (cached)
+Module _tile_cholesky_factorize_solve_block__locals__kernel_2e35702e 0b1bec0 load on device 'cuda:0' took 30.92 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.solver 4a1f2fb load on device 'cuda:0' took 1.72 ms  (cached)
+Module _solve_init_jaref_kernel__locals__kernel_a833742b a833742 load on device 'cuda:0' took 3.89 ms  (cached)
+Module mul_m_kernel__locals___mul_m_dc7994af dc7994a load on device 'cuda:0' took 0.54 ms  (cached)
+Module _update_constraint_efc__locals__kernel_03323b94 03323b9 load on device 'cuda:0' took 0.39 ms  (cached)
+Module _update_constraint_init_qfrc_constraint_dense__locals__kernel_ac49ec68 ac49ec6 load on device 'cuda:0' took 0.35 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_7cb4d020 7cb4d02 load on device 'cuda:0' took 0.34 ms  (cached)
+Module _update_gradient_grad__locals__kernel_d86449f3 d86449f load on device 'cuda:0' took 0.32 ms  (cached)
+Module _update_gradient_JTDAJ_dense_tiled__locals__kernel_ce20bbe9 d84bb02 load on device 'cuda:0' took 1.74 ms  (cached)
+Module _update_gradient_cholesky__locals__kernel_99b06433 44c3919 load on device 'cuda:0' took 33.04 ms  (cached)
+Module _linesearch_iterative_kernel__locals__kernel_980b5bd9 194ed26 load on device 'cuda:0' took 0.67 ms  (cached)
+Module _update_constraint_efc__locals__kernel_15adf655 15adf65 load on device 'cuda:0' took 0.40 ms  (cached)
+Module _update_constraint_init_qfrc_constraint_dense__locals__kernel_fe3ad948 fe3ad94 load on device 'cuda:0' took 0.39 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_b5db5058 b5db505 load on device 'cuda:0' took 0.33 ms  (cached)
+Module _update_gradient_grad__locals__kernel_d814f8c9 d814f8c load on device 'cuda:0' took 0.35 ms  (cached)
+Module _update_gradient_cholesky__locals__kernel_2d19e3b5 6b101e4 load on device 'cuda:0' took 34.32 ms  (cached)
+Module _solve_zero_search_dot__locals__kernel_1643cbe8 1643cbe load on device 'cuda:0' took 0.39 ms  (cached)
+Module _solve_search_update__locals__kernel_d3efa558 d3efa55 load on device 'cuda:0' took 0.42 ms  (cached)
+Module _contact_sort__locals__contact_sort_cf9c4d37 76a2477 load on device 'cuda:0' took 0.41 ms  (cached)
+Module _next_time_builder__locals___next_time_eb151a48 eb151a4 load on device 'cuda:0' took 0.38 ms  (cached)
+    c|jax      base_pos=5.403e-04+-2.3e-04  base_rot=1.232e-03+-4.9e-04  (n=30)
+    c|warp     base_pos=5.245e-04+-2.4e-04  base_rot=1.299e-03+-5.1e-04  (n=30)
+    jax|warp   base_pos=3.367e-04+-6.1e-05  base_rot=9.493e-04+-1.6e-04  (n=30)
+[2/14] iterations=10 ...
+    c|jax      base_pos=1.521e-04+-2.2e-05  base_rot=4.531e-04+-6.2e-05  (n=30)
+    c|warp     base_pos=7.193e-05+-1.4e-05  base_rot=2.665e-04+-6.9e-05  (n=30)
+    jax|warp   base_pos=1.603e-04+-1.8e-05  base_rot=5.198e-04+-7.8e-05  (n=30)
+[3/14] iterations=50 ...
+    c|jax      base_pos=1.521e-04+-2.2e-05  base_rot=4.531e-04+-6.2e-05  (n=30)
+    c|warp     base_pos=7.194e-05+-1.4e-05  base_rot=2.666e-04+-6.9e-05  (n=30)
+    jax|warp   base_pos=1.603e-04+-1.8e-05  base_rot=5.199e-04+-7.8e-05  (n=30)
+[4/14] iterations=100 ...
+    c|jax      base_pos=1.521e-04+-2.2e-05  base_rot=4.531e-04+-6.2e-05  (n=30)
+    c|warp     base_pos=7.195e-05+-1.4e-05  base_rot=2.666e-04+-6.9e-05  (n=30)
+    jax|warp   base_pos=1.603e-04+-1.8e-05  base_rot=5.199e-04+-7.8e-05  (n=30)
+[5/14] ls_iterations=20 ...
+Module _linesearch_iterative_kernel__locals__kernel_052c77d4 6f1406e load on device 'cuda:0' took 0.76 ms  (cached)
+    c|jax      base_pos=3.335e-04+-6.4e-05  base_rot=9.140e-04+-1.6e-04  (n=30)
+    c|warp     base_pos=3.106e-04+-9.0e-05  base_rot=7.316e-04+-1.6e-04  (n=30)
+    jax|warp   base_pos=3.497e-04+-8.0e-05  base_rot=9.859e-04+-1.8e-04  (n=30)
+[6/14] cone=1 ...
+Module _efc_contact_init__locals__kernel_2cc75266 2cc7526 load on device 'cuda:0' took 4.36 ms  (cached)
+Module _efc_contact_jac_dense__locals__kernel_e2575c4e 97b6082 load on device 'cuda:0' took 1.60 ms  (cached)
+Module _efc_contact_update__locals__kernel_3a72c71f 3a72c71 load on device 'cuda:0' took 1.33 ms  (cached)
+Module _linesearch_iterative_kernel__locals__kernel_a443389c 24478a0 load on device 'cuda:0' took 1.55 ms  (cached)
+Module _solve_zero_search_dot__locals__kernel_bc23b2f3 bc23b2f load on device 'cuda:0' took 0.85 ms  (cached)
+Module _solve_search_update__locals__kernel_b23eb7e4 b23eb7e load on device 'cuda:0' took 0.72 ms  (cached)
+    c|jax      base_pos=4.574e-04+-1.5e-04  base_rot=8.610e-04+-1.7e-04  (n=30)
+    c|warp     base_pos=3.271e-04+-1.5e-04  base_rot=5.416e-04+-1.8e-04  (n=30)
+    jax|warp   base_pos=2.701e-04+-1.7e-05  base_rot=6.599e-04+-4.1e-05  (n=30)
+[7/14] timestep=0.001 ...
+    c|jax      base_pos=3.465e-04+-7.3e-05  base_rot=9.742e-04+-1.6e-04  (n=30)
+    c|warp     base_pos=1.939e-04+-8.8e-05  base_rot=5.830e-04+-2.0e-04  (n=30)
+    jax|warp   base_pos=2.582e-04+-1.2e-05  base_rot=7.581e-04+-5.9e-05  (n=30)
+[8/14] timestep=0.004 ...
+    c|jax      base_pos=9.916e-04+-5.6e-04  base_rot=2.165e-03+-1.2e-03  (n=30)
+    c|warp     base_pos=1.252e-03+-5.8e-04  base_rot=2.889e-03+-1.2e-03  (n=30)
+    jax|warp   base_pos=6.045e-04+-1.6e-04  base_rot=1.472e-03+-4.5e-04  (n=30)
+[9/14] friction_scale=0.5 ...
+    c|jax      base_pos=1.927e-03+-4.7e-04  base_rot=4.437e-03+-1.1e-03  (n=30)
+    c|warp     base_pos=1.924e-03+-4.7e-04  base_rot=5.020e-03+-1.3e-03  (n=30)
+    jax|warp   base_pos=1.315e-03+-1.6e-04  base_rot=3.026e-03+-4.4e-04  (n=30)
+[10/14] friction_scale=2.0 ...
+    c|jax      base_pos=2.717e-04+-1.4e-05  base_rot=7.278e-04+-3.8e-05  (n=30)
+    c|warp     base_pos=8.020e-05+-1.6e-05  base_rot=1.664e-04+-4.1e-05  (n=30)
+    jax|warp   base_pos=2.736e-04+-1.4e-05  base_rot=7.546e-04+-3.6e-05  (n=30)
+[11/14] solref_scale=0.5 ...
+    c|jax      base_pos=2.493e-03+-4.4e-04  base_rot=8.508e-03+-1.7e-03  (n=30)
+    c|warp     base_pos=2.095e-03+-4.2e-04  base_rot=7.285e-03+-1.7e-03  (n=30)
+    jax|warp   base_pos=2.829e-03+-5.6e-04  base_rot=9.745e-03+-2.1e-03  (n=30)
+[12/14] solref_scale=2.0 ...
+    c|jax      base_pos=1.543e-04+-4.4e-05  base_rot=2.879e-04+-6.3e-05  (n=30)
+    c|warp     base_pos=1.608e-04+-6.3e-05  base_rot=3.162e-04+-1.1e-04  (n=30)
+    jax|warp   base_pos=1.408e-04+-4.9e-05  base_rot=2.850e-04+-9.0e-05  (n=30)
+[13/14] armature_scale=0.5 ...
+    c|jax      base_pos=4.061e-04+-5.6e-05  base_rot=1.139e-03+-1.6e-04  (n=30)
+    c|warp     base_pos=3.607e-04+-7.4e-05  base_rot=7.725e-04+-1.6e-04  (n=30)
+    jax|warp   base_pos=4.195e-04+-7.8e-05  base_rot=1.147e-03+-2.0e-04  (n=30)
+[14/14] armature_scale=2.0 ...
+    c|jax      base_pos=2.762e-04+-1.1e-04  base_rot=6.870e-04+-2.3e-04  (n=30)
+    c|warp     base_pos=1.942e-04+-1.1e-04  base_rot=4.806e-04+-2.3e-04  (n=30)
+    jax|warp   base_pos=1.899e-04+-3.4e-05  base_rot=5.180e-04+-9.4e-05  (n=30)
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/divergence_T1JoystickFlatTerrain.json
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/traj_T1JoystickFlatTerrain.npz
+wandb: uploading summary, console lines 109-111; updating run metadata
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading summary, console lines 112-113
+wandb: 
+wandb: Run summary:
+wandb:       armature_scale=0.5/c|jax/base_pos_err_m 0.00041
+wandb:   armature_scale=0.5/c|jax/base_pos_err_m_sem 6e-05
+wandb:     armature_scale=0.5/c|jax/base_rot_err_rad 0.00114
+wandb: armature_scale=0.5/c|jax/base_rot_err_rad_sem 0.00016
+wandb:       armature_scale=0.5/c|jax/joint_rmse_rad 0.00063
+wandb:   armature_scale=0.5/c|jax/joint_rmse_rad_sem 0.00011
+wandb:            armature_scale=0.5/c|jax/qvel_rmse 0.03316
+wandb:        armature_scale=0.5/c|jax/qvel_rmse_sem 0.00993
+wandb:      armature_scale=0.5/c|warp/base_pos_err_m 0.00036
+wandb:  armature_scale=0.5/c|warp/base_pos_err_m_sem 7e-05
+wandb:                                          +326 ...
+wandb: 
+wandb: 🚀 View run divergence_T1JoystickFlatTerrain at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/pp7c6tr4
+wandb: ⭐️ View project at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260807_000310-pp7c6tr4/logs
+[cooldown] 120s (GPU 66C)
+
+=== [2/3] noise floor at Exp2 settings  2026-08-07T02:00:37+05:30 ===
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run 77elsndq
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260807_020041-77elsndq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run noisefloor_G1JoystickFlatTerrain_impl-jax_seed0
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/77elsndq
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/77elsndq
+
+=== 16 episodes x 1000 steps, 3 identical repeats ===
+  repeat 0: return=14.473843  len=704.688
+  repeat 1: return=14.413780  len=685.000
+  repeat 2: return=15.892906  len=748.312
+  -> sd=0.837174  range=1.479126  (9.91% of mean)
+
+=== 64 episodes x 1000 steps, 3 identical repeats ===
+  repeat 0: return=14.129114  len=697.312
+  repeat 1: return=13.402006  len=667.906
+  repeat 2: return=13.002018  len=658.141
+  -> sd=0.571405  range=1.127096  (8.34% of mean)
+
+=== 128 episodes x 1000 steps, 3 identical repeats ===
+  repeat 0: return=12.978550  len=662.367
+  repeat 1: return=13.027782  len=658.375
+  repeat 2: return=12.787762  len=656.336
+  -> sd=0.126777  range=0.240021  (1.86% of mean)
+
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/noisefloor_G1JoystickFlatTerrain_impl-jax_seed0.json
+
+Any effect smaller than the sd above is unresolvable at that episode count, regardless of statistical treatment.
+wandb: updating run metadata
+wandb: uploading config.yaml; uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading summary, console lines 17-22
+wandb: 
+wandb: Run summary:
+wandb:          ep128/mean 12.93136
+wandb:         ep128/range 0.24002
+wandb: ep128/rel_range_pct 1.85611
+wandb:            ep128/sd 0.12678
+wandb:           ep16/mean 14.92684
+wandb:          ep16/range 1.47913
+wandb:  ep16/rel_range_pct 9.90917
+wandb:             ep16/sd 0.83717
+wandb:           ep64/mean 13.51105
+wandb:          ep64/range 1.1271
+wandb:                  +2 ...
+wandb: 
+wandb: 🚀 View run noisefloor_G1JoystickFlatTerrain_impl-jax_seed0 at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/77elsndq
+wandb: ⭐️ View project at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260807_020041-77elsndq/logs
+[cooldown] 120s (GPU 73C)
+
+=== [3/3] dose-response, 3 seeds  2026-08-07T02:20:36+05:30 ===
+--- dose-response seed=0 ---
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run pfvpcmui
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260807_022039-pfvpcmui
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run dose_G1JoystickFlatTerrain_impl-jax_seed0
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/pfvpcmui
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/pfvpcmui
+[ref] unperturbed ...
+    return=9.039+-0.615 len=454.1 term=0.391
+  solref_scale=0.25  dose=1.012e+00 m  return=    nan  drop=   +nan (+nan%)  term=1.000
+  solref_scale=0.5   dose=5.085e-03 m  return=  6.651  drop= +2.388 (+26.4%)  term=0.500
+  solref_scale=0.75  dose=1.557e-03 m  return=  8.978  drop= +0.061 (+0.7%)  term=0.375
+  solref_scale=1.5   dose=3.084e-03 m  return=  8.577  drop= +0.461 (+5.1%)  term=0.453
+  solref_scale=2.0   dose=9.390e-03 m  return=  6.862  drop= +2.177 (+24.1%)  term=0.562
+  solref_scale=3.0   dose=2.128e-02 m  return=  0.201  drop= +8.838 (+97.8%)  term=0.906
+  solref_scale=5.0   dose=4.104e-02 m  return= -2.934  drop=+11.973 (+132.5%)  term=1.000
+  solref_scale=8.0   dose=6.363e-02 m  return= -3.281  drop=+12.320 (+136.3%)  term=1.000
+  friction_scale=0.2   dose=1.176e-02 m  return=-17.934  drop=+26.973 (+298.4%)  term=0.656
+  friction_scale=0.4   dose=5.896e-03 m  return=  4.830  drop= +4.209 (+46.6%)  term=0.438
+  friction_scale=0.6   dose=3.286e-03 m  return=  8.668  drop= +0.371 (+4.1%)  term=0.359
+  friction_scale=1.5   dose=2.071e-03 m  return=  8.529  drop= +0.510 (+5.6%)  term=0.469
+  friction_scale=2.5   dose=4.770e-03 m  return=  7.757  drop= +1.282 (+14.2%)  term=0.578
+  friction_scale=4.0   dose=2.223e-02 m  return=  4.223  drop= +4.816 (+53.3%)  term=0.688
+  armature_scale=0.4   dose=3.137e-03 m  return=  8.563  drop= +0.476 (+5.3%)  term=0.406
+  armature_scale=0.6   dose=1.688e-03 m  return=  8.798  drop= +0.241 (+2.7%)  term=0.391
+  armature_scale=0.8   dose=1.011e-03 m  return=  9.144  drop= -0.106 (-1.2%)  term=0.375
+  armature_scale=1.5   dose=1.649e-03 m  return=  9.162  drop= -0.123 (-1.4%)  term=0.375
+  armature_scale=2.5   dose=3.506e-03 m  return=  9.132  drop= -0.093 (-1.0%)  term=0.375
+  armature_scale=4.0   dose=5.550e-03 m  return=  9.102  drop= -0.063 (-0.7%)  term=0.344
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/doseresponse_G1JoystickFlatTerrain_impl-jax_seed0.json
+wandb: uploading data; updating run metadata
+wandb: uploading wandb-summary.json; uploading config.yaml; uploading output.log
+wandb: uploading config.yaml; uploading output.log
+wandb: 
+wandb: Run history:
+wandb:       dose/base_pos_err_m █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     dose/base_rot_err_rad █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      param/armature_scale ▁▁▂▃▅█
+wandb:      param/friction_scale ▁▁▂▃▅█
+wandb:        param/solref_scale ▁▁▁▂▃▃▅█
+wandb:      response/length_mean ▁▇██▇▅▂▂▆███▇▆██████
+wandb:      response/return_drop  ▂▁▁▂▃▄▄█▂▁▁▁▂▁▁▁▁▁▁
+wandb: response/return_drop_frac  ▂▁▁▂▃▄▄█▂▁▁▁▂▁▁▁▁▁▁
+wandb:      response/return_mean  ▇██▇▆▅▅▁▇███▇██████
+wandb: response/termination_rate █▃▁▂▃▇██▄▂▁▂▃▅▂▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:   dose/base_pos_err_m 0.00555
+wandb: dose/base_rot_err_rad 0.00916
+wandb:  param/armature_scale 4
+wandb:  param/friction_scale 4
+wandb:    param/solref_scale 8
+wandb: reference/length_mean 454.09375
+wandb:  reference/n_episodes 64
+wandb: reference/return_mean 9.03888
+wandb:  reference/return_sem 0.61519
+wandb:  reference/return_std 4.92153
+wandb:                    +7 ...
+wandb: 
+wandb: 🚀 View run dose_G1JoystickFlatTerrain_impl-jax_seed0 at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/pfvpcmui
+wandb: ⭐️ View project at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260807_022039-pfvpcmui/logs
+[cooldown] 120s (GPU 78C)
+--- dose-response seed=1 ---
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run rhd89uq6
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260807_024848-rhd89uq6
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run dose_G1JoystickFlatTerrain_impl-jax_seed1
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/rhd89uq6
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/rhd89uq6
+[ref] unperturbed ...
+    return=9.622+-0.529 len=469.3 term=0.375
+  solref_scale=0.25  dose=1.012e+00 m  return=    nan  drop=   +nan (+nan%)  term=1.000
+  solref_scale=0.5   dose=5.085e-03 m  return=  6.140  drop= +3.482 (+36.2%)  term=0.578
+  solref_scale=0.75  dose=1.557e-03 m  return=  9.542  drop= +0.080 (+0.8%)  term=0.375
+  solref_scale=1.5   dose=3.084e-03 m  return=  8.935  drop= +0.687 (+7.1%)  term=0.438
+  solref_scale=2.0   dose=9.390e-03 m  return=  7.448  drop= +2.174 (+22.6%)  term=0.516
+  solref_scale=3.0   dose=2.128e-02 m  return= -0.534  drop=+10.156 (+105.5%)  term=0.938
+  solref_scale=5.0   dose=4.104e-02 m  return= -3.209  drop=+12.831 (+133.4%)  term=1.000
+  solref_scale=8.0   dose=6.363e-02 m  return= -3.336  drop=+12.958 (+134.7%)  term=1.000
+  friction_scale=0.2   dose=1.176e-02 m  return=-23.143  drop=+32.765 (+340.5%)  term=0.672
+  friction_scale=0.4   dose=5.896e-03 m  return=  4.909  drop= +4.713 (+49.0%)  term=0.359
+  friction_scale=0.6   dose=3.286e-03 m  return=  8.996  drop= +0.626 (+6.5%)  term=0.297
+  friction_scale=1.5   dose=2.071e-03 m  return=  9.514  drop= +0.108 (+1.1%)  term=0.391
+  friction_scale=2.5   dose=4.770e-03 m  return=  8.035  drop= +1.587 (+16.5%)  term=0.531
+  friction_scale=4.0   dose=2.223e-02 m  return=  3.672  drop= +5.950 (+61.8%)  term=0.719
+  armature_scale=0.4   dose=3.137e-03 m  return=  9.163  drop= +0.459 (+4.8%)  term=0.438
+  armature_scale=0.6   dose=1.688e-03 m  return=  9.304  drop= +0.318 (+3.3%)  term=0.406
+  armature_scale=0.8   dose=1.011e-03 m  return=  9.443  drop= +0.179 (+1.9%)  term=0.422
+  armature_scale=1.5   dose=1.649e-03 m  return=  9.768  drop= -0.146 (-1.5%)  term=0.375
+  armature_scale=2.5   dose=3.506e-03 m  return=  9.679  drop= -0.057 (-0.6%)  term=0.344
+  armature_scale=4.0   dose=5.550e-03 m  return=  9.841  drop= -0.219 (-2.3%)  term=0.312
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/doseresponse_G1JoystickFlatTerrain_impl-jax_seed1.json
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:       dose/base_pos_err_m █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     dose/base_rot_err_rad █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      param/armature_scale ▁▁▂▃▅█
+wandb:      param/friction_scale ▁▁▂▃▅█
+wandb:        param/solref_scale ▁▁▁▂▃▃▅█
+wandb:      response/length_mean ▁▆██▇▄▂▂▆███▇▆██████
+wandb:      response/return_drop  ▂▁▁▂▃▄▄█▂▁▁▁▂▁▁▁▁▁▁
+wandb: response/return_drop_frac  ▂▁▁▂▃▄▄█▂▁▁▁▂▁▁▁▁▁▁
+wandb:      response/return_mean  ▇██▇▆▅▅▁▇███▇██████
+wandb: response/termination_rate █▄▂▂▃▇██▅▂▁▂▃▅▂▂▂▂▁▁
+wandb: 
+wandb: Run summary:
+wandb:   dose/base_pos_err_m 0.00555
+wandb: dose/base_rot_err_rad 0.00916
+wandb:  param/armature_scale 4
+wandb:  param/friction_scale 4
+wandb:    param/solref_scale 8
+wandb: reference/length_mean 469.26562
+wandb:  reference/n_episodes 64
+wandb: reference/return_mean 9.62201
+wandb:  reference/return_sem 0.52948
+wandb:  reference/return_std 4.23581
+wandb:                    +7 ...
+wandb: 
+wandb: 🚀 View run dose_G1JoystickFlatTerrain_impl-jax_seed1 at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/rhd89uq6
+wandb: ⭐️ View project at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260807_024848-rhd89uq6/logs
+[cooldown] 120s (GPU 77C)
+--- dose-response seed=2 ---
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run xff7l8vh
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260807_031722-xff7l8vh
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run dose_G1JoystickFlatTerrain_impl-jax_seed2
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/xff7l8vh
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/xff7l8vh
+[ref] unperturbed ...
+    return=9.085+-0.577 len=454.7 term=0.469
+  solref_scale=0.25  dose=1.012e+00 m  return=    nan  drop=   +nan (+nan%)  term=1.000
+  solref_scale=0.5   dose=5.085e-03 m  return=  6.255  drop= +2.830 (+31.1%)  term=0.562
+  solref_scale=0.75  dose=1.557e-03 m  return=  8.653  drop= +0.432 (+4.8%)  term=0.453
+  solref_scale=1.5   dose=3.084e-03 m  return=  8.214  drop= +0.871 (+9.6%)  term=0.422
+  solref_scale=2.0   dose=9.390e-03 m  return=  5.760  drop= +3.325 (+36.6%)  term=0.625
+  solref_scale=3.0   dose=2.128e-02 m  return= -0.747  drop= +9.832 (+108.2%)  term=0.953
+  solref_scale=5.0   dose=4.104e-02 m  return= -2.800  drop=+11.885 (+130.8%)  term=1.000
+  solref_scale=8.0   dose=6.363e-02 m  return= -3.251  drop=+12.336 (+135.8%)  term=1.000
+  friction_scale=0.2   dose=1.176e-02 m  return=-20.989  drop=+30.074 (+331.0%)  term=0.625
+  friction_scale=0.4   dose=5.896e-03 m  return=  3.684  drop= +5.401 (+59.5%)  term=0.516
+  friction_scale=0.6   dose=3.286e-03 m  return=  8.381  drop= +0.704 (+7.8%)  term=0.359
+  friction_scale=1.5   dose=2.071e-03 m  return=  8.242  drop= +0.843 (+9.3%)  term=0.516
+  friction_scale=2.5   dose=4.770e-03 m  return=  7.574  drop= +1.511 (+16.6%)  term=0.531
+  friction_scale=4.0   dose=2.223e-02 m  return=  3.910  drop= +5.175 (+57.0%)  term=0.703
+  armature_scale=0.4   dose=3.137e-03 m  return=  8.260  drop= +0.825 (+9.1%)  term=0.500
+  armature_scale=0.6   dose=1.688e-03 m  return=  8.824  drop= +0.262 (+2.9%)  term=0.453
+  armature_scale=0.8   dose=1.011e-03 m  return=  9.045  drop= +0.040 (+0.4%)  term=0.469
+  armature_scale=1.5   dose=1.649e-03 m  return=  8.707  drop= +0.378 (+4.2%)  term=0.484
+  armature_scale=2.5   dose=3.506e-03 m  return=  8.945  drop= +0.140 (+1.5%)  term=0.469
+  armature_scale=4.0   dose=5.550e-03 m  return=  8.457  drop= +0.628 (+6.9%)  term=0.484
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/doseresponse_G1JoystickFlatTerrain_impl-jax_seed2.json
+wandb: updating run metadata
+wandb: uploading history steps 19-19, summary, console lines 22-23
+wandb: uploading config.yaml; uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading data
+wandb: 
+wandb: Run history:
+wandb:       dose/base_pos_err_m █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     dose/base_rot_err_rad █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      param/armature_scale ▁▁▂▃▅█
+wandb:      param/friction_scale ▁▁▂▃▅█
+wandb:        param/solref_scale ▁▁▁▂▃▃▅█
+wandb:      response/length_mean ▁▇██▇▄▂▂▆▇█▇▇▆██████
+wandb:      response/return_drop  ▂▁▁▂▃▄▄█▂▁▁▁▂▁▁▁▁▁▁
+wandb: response/return_drop_frac  ▂▁▁▂▃▄▄█▂▁▁▁▂▁▁▁▁▁▁
+wandb:      response/return_mean  ▇██▇▆▅▅▁▇███▇██████
+wandb: response/termination_rate █▃▂▂▄▇██▄▃▁▃▃▅▃▂▂▂▂▂
+wandb: 
+wandb: Run summary:
+wandb:   dose/base_pos_err_m 0.00555
+wandb: dose/base_rot_err_rad 0.00916
+wandb:  param/armature_scale 4
+wandb:  param/friction_scale 4
+wandb:    param/solref_scale 8
+wandb: reference/length_mean 454.6875
+wandb:  reference/n_episodes 64
+wandb: reference/return_mean 9.08506
+wandb:  reference/return_sem 0.57703
+wandb:  reference/return_std 4.61627
+wandb:                    +7 ...
+wandb: 
+wandb: 🚀 View run dose_G1JoystickFlatTerrain_impl-jax_seed2 at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/xff7l8vh
+wandb: ⭐️ View project at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260807_031722-xff7l8vh/logs
+[cooldown] 120s (GPU 77C)
+
+=== FOLLOW-UP QUEUE DONE 2026-08-07T03:45:58+05:30 ===

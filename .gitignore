@@ -1,0 +1,22 @@
+# Personal - not part of the project
+Khushi_CV*
+
+# Session transcript: contains home paths and machine details
+export/
+
+# Large regenerable artefacts: raw trajectories, recomputable from the JSONs
+results/*.npz
+
+# Corrupted Op3 sweeps - kept locally as evidence, not published
+results/INVALID_op3_nefc_overflow/
+
+# Already synced to the W&B cloud
+wandb/
+
+# Videos - attach to the paper rather than versioning
+*.mp4
+*.png
+
+# Python
+__pycache__/
+*.pyc

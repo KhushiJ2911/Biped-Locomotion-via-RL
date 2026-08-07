@@ -1,0 +1,7 @@
+[rollout] solref_scale=1     dose=0.00e+00 m  survived 400/400 steps
+[rollout] solref_scale=2     dose=5.57e-03 m  survived 400/400 steps
+[rollout] solref_scale=5     dose=2.74e-02 m  survived 117/400 steps (fell at 116)
+[rollout] solref_scale=8     dose=4.54e-02 m  survived 57/400 steps (fell at 56)
+/home/keyu/miniconda3/envs/biped/lib/python3.11/subprocess.py:1885: RuntimeWarning: os.fork() was called. os.fork() is incompatible with multithreaded code, and JAX is multithreaded, so this will likely lead to a deadlock.
+  self.pid = _fork_exec(
+[saved] results/anim_dose_ladder_v2.mp4  (201 frames @ 25fps)

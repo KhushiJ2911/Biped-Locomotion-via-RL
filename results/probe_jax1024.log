@@ -1,0 +1,8 @@
+[jax] backend=gpu devices=[CudaDevice(id=0)]
+[compat] reinstated jax.device_put_replicated for brax
+[env] impl=jax naconmax=8192 njmax=90
+[cfg] timesteps=1,000 num_envs=1024 batch=256
+[train] G1JoystickFlatTerrain ...
+[   160.6s] step=         0  reward=   -6.36 +- 1.83
+[   410.7s] step=   163,840  reward=   -5.05 +- 1.39
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/checkpoints/G1JoystickFlatTerrain_impl-jax_seed0

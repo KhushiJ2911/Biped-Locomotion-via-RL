@@ -1,0 +1,112 @@
+[load] G1JoystickFlatTerrain
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+[model] nq=36 nv=35 nu=29 dt=0.002 solver=2 iters=3 cone=0
+[plan] duration=1.0s -> 500 baseline steps
+[1/14] baseline ...
+Module mujoco.mjx.warp.ffi 7a22eb4 load on device 'cuda:0' took 0.45 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.smooth 47158eb load on device 'cuda:0' took 6.13 ms  (cached)
+Module _nxn_broadphase__locals__kernel_7c49670b 7c49670 load on device 'cuda:0' took 0.50 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_7478614f 7478614 load on device 'cuda:0' took 2.83 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_7478614f 9a07e2c load on device 'cuda:0' took 1.90 ms  (cached)
+Module _primitive_narrowphase__locals__primitive_narrowphase_46febab4 46febab load on device 'cuda:0' took 0.87 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.constraint 36c8060 load on device 'cuda:0' took 0.47 ms  (cached)
+Module _friction_dof__locals__kernel_b6332f7a b6332f7 load on device 'cuda:0' took 0.90 ms  (cached)
+Module _limit_slide_hinge__locals__kernel_697e08d0 697e08d load on device 'cuda:0' took 0.58 ms  (cached)
+Module _efc_contact_init__locals__kernel_c7fda836 c7fda83 load on device 'cuda:0' took 0.54 ms  (cached)
+Module _efc_contact_jac_sparse__locals__kernel_c4f13e50 c4f13e5 load on device 'cuda:0' took 0.50 ms  (cached)
+Module _efc_contact_update__locals__kernel_a9f93c23 a9f93c2 load on device 'cuda:0' took 0.66 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.sensor de892d8 load on device 'cuda:0' took 4.31 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.forward 81c85c8 load on device 'cuda:0' took 1.25 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.passive efc109c load on device 'cuda:0' took 1.65 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.forward fc5c4e4 load on device 'cuda:0' took 2.54 ms  (cached)
+Module _qfrc_smooth__locals__kernel_f1330af6 f1330af load on device 'cuda:0' took 0.62 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.support ca784c5 load on device 'cuda:0' took 0.64 ms  (cached)
+Module _tile_cholesky_factorize_solve_block__locals__kernel_e27b9fca dda0549 load on device 'cuda:0' took 37.09 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.solver 4a1f2fb load on device 'cuda:0' took 3.07 ms  (cached)
+Module _solve_init_jaref_kernel__locals__kernel_559e7c49 559e7c4 load on device 'cuda:0' took 1.01 ms  (cached)
+Module mul_m_kernel__locals___mul_m_dc7994af dc7994a load on device 'cuda:0' took 0.50 ms  (cached)
+Module _update_constraint_efc__locals__kernel_03323b94 03323b9 load on device 'cuda:0' took 0.95 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_7cb4d020 7cb4d02 load on device 'cuda:0' took 0.87 ms  (cached)
+Module _update_gradient_grad__locals__kernel_d86449f3 d86449f load on device 'cuda:0' took 0.65 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.solver 12792dc load on device 'cuda:0' took 2.55 ms  (cached)
+Module _update_gradient_cholesky_blocked__locals__kernel_778902d2 ffa0a79 load on device 'cuda:0' took 89.34 ms  (cached)
+Module _linesearch_jv_fused_kernel__locals__kernel_32d7d22d 32d7d22 load on device 'cuda:0' took 0.95 ms  (cached)
+Module _linesearch_iterative_kernel__locals__kernel_22e43c97 10448a4 load on device 'cuda:0' took 1.62 ms  (cached)
+Module _update_constraint_efc__locals__kernel_15adf655 15adf65 load on device 'cuda:0' took 0.56 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_b5db5058 b5db505 load on device 'cuda:0' took 1.06 ms  (cached)
+Module _update_gradient_grad__locals__kernel_d814f8c9 d814f8c load on device 'cuda:0' took 0.89 ms  (cached)
+Module _update_gradient_cholesky_blocked_skip_unchanged__locals__kernel_87ea2fc6 ae7a53b load on device 'cuda:0' took 97.25 ms  (cached)
+Module _solve_zero_search_dot__locals__kernel_1643cbe8 1643cbe load on device 'cuda:0' took 0.52 ms  (cached)
+Module _solve_search_update__locals__kernel_d3efa558 d3efa55 load on device 'cuda:0' took 0.68 ms  (cached)
+Module _contact_sort__locals__contact_sort_cf9c4d37 76a2477 load on device 'cuda:0' took 0.86 ms  (cached)
+Module _next_time_builder__locals___next_time_eb151a48 eb151a4 load on device 'cuda:0' took 0.44 ms  (cached)
+    c|jax      base_pos=3.354e-03+-7.6e-04  base_rot=6.381e-03+-1.2e-03  (n=10)
+    c|warp     base_pos=4.120e-04+-8.6e-05  base_rot=1.914e-03+-4.4e-04  (n=10)
+    jax|warp   base_pos=3.385e-03+-8.1e-04  base_rot=6.468e-03+-1.3e-03  (n=10)
+[2/14] iterations=10 ...
+    c|jax      base_pos=3.739e-03+-1.1e-03  base_rot=7.083e-03+-1.9e-03  (n=10)
+    c|warp     base_pos=3.211e-04+-8.2e-05  base_rot=8.519e-04+-2.4e-04  (n=10)
+    jax|warp   base_pos=3.803e-03+-1.1e-03  base_rot=7.065e-03+-1.9e-03  (n=10)
+[3/14] iterations=50 ...
+    c|jax      base_pos=3.739e-03+-1.1e-03  base_rot=7.083e-03+-1.9e-03  (n=10)
+    c|warp     base_pos=2.972e-04+-8.4e-05  base_rot=8.518e-04+-2.3e-04  (n=10)
+    jax|warp   base_pos=3.793e-03+-1.1e-03  base_rot=6.860e-03+-1.9e-03  (n=10)
+[4/14] iterations=100 ...
+    c|jax      base_pos=3.739e-03+-1.1e-03  base_rot=7.083e-03+-1.9e-03  (n=10)
+    c|warp     base_pos=3.470e-04+-8.8e-05  base_rot=7.919e-04+-2.3e-04  (n=10)
+    jax|warp   base_pos=3.819e-03+-1.1e-03  base_rot=6.949e-03+-1.9e-03  (n=10)
+[5/14] ls_iterations=20 ...
+Module _linesearch_iterative_kernel__locals__kernel_0299e478 3218f73 load on device 'cuda:0' took 1022.48 ms  (compiled)
+    c|jax      base_pos=3.356e-03+-8.1e-04  base_rot=5.993e-03+-1.3e-03  (n=10)
+    c|warp     base_pos=3.073e-04+-8.2e-05  base_rot=1.785e-03+-5.8e-04  (n=10)
+    jax|warp   base_pos=3.393e-03+-8.2e-04  base_rot=5.824e-03+-1.3e-03  (n=10)
+[6/14] cone=1 ...
+Module _efc_contact_init__locals__kernel_be870093 be87009 load on device 'cuda:0' took 453.89 ms  (compiled)
+Module _efc_contact_jac_sparse__locals__kernel_38bc4d2d 38bc4d2 load on device 'cuda:0' took 169.04 ms  (compiled)
+Module _efc_contact_update__locals__kernel_3a72c71f 3a72c71 load on device 'cuda:0' took 200.66 ms  (compiled)
+Module _linesearch_iterative_kernel__locals__kernel_6aa88687 8d0ada4 load on device 'cuda:0' took 1272.55 ms  (compiled)
+Module _solve_zero_search_dot__locals__kernel_bc23b2f3 bc23b2f load on device 'cuda:0' took 68.77 ms  (compiled)
+Module _solve_search_update__locals__kernel_b23eb7e4 b23eb7e load on device 'cuda:0' took 89.54 ms  (compiled)
+    c|jax      base_pos=3.238e-03+-9.4e-04  base_rot=5.093e-03+-1.6e-03  (n=10)
+    c|warp     base_pos=3.652e-04+-6.7e-05  base_rot=7.092e-04+-1.6e-04  (n=10)
+    jax|warp   base_pos=3.242e-03+-9.6e-04  base_rot=5.124e-03+-1.7e-03  (n=10)
+[7/14] timestep=0.001 ...
+    c|jax      base_pos=3.199e-03+-8.2e-04  base_rot=5.837e-03+-1.4e-03  (n=10)
+    c|warp     base_pos=2.498e-04+-7.2e-05  base_rot=9.370e-04+-2.2e-04  (n=10)
+    jax|warp   base_pos=3.147e-03+-8.3e-04  base_rot=5.763e-03+-1.5e-03  (n=10)
+[8/14] timestep=0.004 ...
+    c|jax      base_pos=5.025e-03+-1.2e-03  base_rot=9.417e-03+-2.0e-03  (n=10)
+    c|warp     base_pos=1.106e-03+-2.9e-04  base_rot=3.485e-03+-9.8e-04  (n=10)
+    jax|warp   base_pos=5.410e-03+-1.3e-03  base_rot=1.135e-02+-2.3e-03  (n=10)
+[9/14] friction_scale=0.5 ...
+    c|jax      base_pos=5.495e-03+-1.5e-03  base_rot=9.842e-03+-2.4e-03  (n=10)
+    c|warp     base_pos=1.091e-03+-3.6e-04  base_rot=3.508e-03+-1.0e-03  (n=10)
+    jax|warp   base_pos=5.295e-03+-1.4e-03  base_rot=9.886e-03+-2.4e-03  (n=10)
+[10/14] friction_scale=2.0 ...
+    c|jax      base_pos=2.174e-03+-5.0e-04  base_rot=2.423e-03+-6.3e-04  (n=10)
+    c|warp     base_pos=2.152e-04+-5.6e-05  base_rot=4.009e-04+-1.1e-04  (n=10)
+    jax|warp   base_pos=2.092e-03+-4.9e-04  base_rot=2.240e-03+-5.9e-04  (n=10)
+[11/14] solref_scale=0.5 ...
+    c|jax      base_pos=4.553e-03+-9.8e-04  base_rot=1.082e-02+-1.6e-03  (n=10)
+    c|warp     base_pos=2.132e-03+-3.1e-04  base_rot=5.786e-03+-1.4e-03  (n=10)
+    jax|warp   base_pos=4.871e-03+-1.0e-03  base_rot=1.100e-02+-1.4e-03  (n=10)
+[12/14] solref_scale=2.0 ...
+    c|jax      base_pos=4.447e-02+-1.1e-02  base_rot=6.014e-02+-1.6e-02  (n=10)
+    c|warp     base_pos=1.575e-03+-8.1e-04  base_rot=3.497e-03+-1.3e-03  (n=10)
+    jax|warp   base_pos=4.331e-02+-1.2e-02  base_rot=5.864e-02+-1.6e-02  (n=10)
+[13/14] armature_scale=0.5 ...
+    c|jax      base_pos=4.170e-03+-1.4e-03  base_rot=9.057e-03+-2.4e-03  (n=10)
+    c|warp     base_pos=1.063e-03+-3.7e-04  base_rot=2.188e-03+-5.4e-04  (n=10)
+    jax|warp   base_pos=4.872e-03+-1.4e-03  base_rot=9.126e-03+-2.4e-03  (n=10)
+[14/14] armature_scale=2.0 ...
+    c|jax      base_pos=2.110e-03+-4.4e-04  base_rot=3.138e-03+-5.6e-04  (n=10)
+    c|warp     base_pos=1.921e-04+-4.3e-05  base_rot=9.663e-04+-2.4e-04  (n=10)
+    jax|warp   base_pos=2.095e-03+-4.5e-04  base_rot=3.165e-03+-5.1e-04  (n=10)
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/divergence_G1JoystickFlatTerrain.json
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/traj_G1JoystickFlatTerrain.npz

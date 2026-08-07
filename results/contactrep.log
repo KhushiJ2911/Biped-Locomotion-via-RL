@@ -1,0 +1,101 @@
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run yxe1nulf
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260807_034503-yxe1nulf
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run contactrep_G1
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/yxe1nulf
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/yxe1nulf
+model A (as shipped) : npair=5
+model B (converted)  : npair=3
+converted contacts   : ['left_foot', 'right_foot']
+
+[sanity] MuJoCo-C, model A vs model B: base_pos diff = 0.000e+00 m
+  (should be small: the conversion is meant to preserve the physics)
+
+=== variant A_pairs (npair=5) ===
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+Module mujoco.mjx.warp.ffi 7a22eb4 load on device 'cuda:0' took 1.66 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.smooth 47158eb load on device 'cuda:0' took 7.78 ms  (cached)
+Module _nxn_broadphase__locals__kernel_7c49670b 7c49670 load on device 'cuda:0' took 0.97 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_7478614f 7478614 load on device 'cuda:0' took 3.73 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_7478614f 9a07e2c load on device 'cuda:0' took 3.48 ms  (cached)
+Module _primitive_narrowphase__locals__primitive_narrowphase_46febab4 46febab load on device 'cuda:0' took 2.91 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.constraint 36c8060 load on device 'cuda:0' took 1.03 ms  (cached)
+Module _friction_dof__locals__kernel_b6332f7a b6332f7 load on device 'cuda:0' took 4.62 ms  (cached)
+Module _limit_slide_hinge__locals__kernel_697e08d0 697e08d load on device 'cuda:0' took 1.03 ms  (cached)
+Module _efc_contact_init__locals__kernel_c7fda836 c7fda83 load on device 'cuda:0' took 0.95 ms  (cached)
+Module _efc_contact_jac_sparse__locals__kernel_c4f13e50 c4f13e5 load on device 'cuda:0' took 0.94 ms  (cached)
+Module _efc_contact_update__locals__kernel_a9f93c23 a9f93c2 load on device 'cuda:0' took 0.88 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.sensor de892d8 load on device 'cuda:0' took 3.57 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.forward 81c85c8 load on device 'cuda:0' took 1.85 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.passive efc109c load on device 'cuda:0' took 2.02 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.forward fc5c4e4 load on device 'cuda:0' took 1.99 ms  (cached)
+Module _qfrc_smooth__locals__kernel_f1330af6 f1330af load on device 'cuda:0' took 0.77 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.support ca784c5 load on device 'cuda:0' took 0.84 ms  (cached)
+Module _tile_cholesky_factorize_solve_block__locals__kernel_e27b9fca dda0549 load on device 'cuda:0' took 31.56 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.solver 4a1f2fb load on device 'cuda:0' took 5.89 ms  (cached)
+Module _solve_init_jaref_kernel__locals__kernel_559e7c49 559e7c4 load on device 'cuda:0' took 1.00 ms  (cached)
+Module mul_m_kernel__locals___mul_m_dc7994af dc7994a load on device 'cuda:0' took 0.84 ms  (cached)
+Module _update_constraint_efc__locals__kernel_03323b94 03323b9 load on device 'cuda:0' took 0.87 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_7cb4d020 7cb4d02 load on device 'cuda:0' took 0.80 ms  (cached)
+Module _update_gradient_grad__locals__kernel_d86449f3 d86449f load on device 'cuda:0' took 0.77 ms  (cached)
+Module mujoco.mjx.third_party.mujoco_warp._src.solver 12792dc load on device 'cuda:0' took 2.80 ms  (cached)
+Module _update_gradient_cholesky_blocked__locals__kernel_778902d2 ffa0a79 load on device 'cuda:0' took 72.15 ms  (cached)
+Module _linesearch_jv_fused_kernel__locals__kernel_32d7d22d 32d7d22 load on device 'cuda:0' took 1.65 ms  (cached)
+Module _linesearch_iterative_kernel__locals__kernel_22e43c97 10448a4 load on device 'cuda:0' took 1.68 ms  (cached)
+Module _update_constraint_efc__locals__kernel_15adf655 15adf65 load on device 'cuda:0' took 0.96 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_b5db5058 b5db505 load on device 'cuda:0' took 0.76 ms  (cached)
+Module _update_gradient_grad__locals__kernel_d814f8c9 d814f8c load on device 'cuda:0' took 0.76 ms  (cached)
+Module _update_gradient_cholesky_blocked_skip_unchanged__locals__kernel_87ea2fc6 ae7a53b load on device 'cuda:0' took 77.38 ms  (cached)
+Module _solve_zero_search_dot__locals__kernel_1643cbe8 1643cbe load on device 'cuda:0' took 1.82 ms  (cached)
+Module _solve_search_update__locals__kernel_d3efa558 d3efa55 load on device 'cuda:0' took 1.13 ms  (cached)
+Module _contact_sort__locals__contact_sort_cf9c4d37 76a2477 load on device 'cuda:0' took 0.96 ms  (cached)
+Module _next_time_builder__locals___next_time_eb151a48 eb151a4 load on device 'cuda:0' took 0.78 ms  (cached)
+  c|jax     mean=3.316e-03  median=2.195e-03
+  c|warp    mean=5.080e-04  median=3.309e-04
+  jax|warp  mean=3.355e-03  median=2.407e-03
+  Warp advantage (median ratio) = 5.96  95% CI [3.43, 13.13]  SIGNIFICANT
+
+=== variant B_geoms (npair=3) ===
+  c|jax     mean=3.316e-03  median=2.195e-03
+  c|warp    mean=4.768e-04  median=3.291e-04
+  jax|warp  mean=3.333e-03  median=2.288e-03
+  Warp advantage (median ratio) = 6.68  95% CI [4.54, 13.96]  SIGNIFICANT
+
+=== VERDICT ===
+  with explicit pairs   : 5.96 [3.43, 13.13]
+  with geom contacts    : 6.68 [4.54, 13.96]
+  => advantage survives conversion: contact representation is NOT the mechanism
+
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/contactrep_G1.json
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading config.yaml; uploading output.log
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: 
+wandb: Run summary:
+wandb:           A_pairs/c|jax/median 0.00219
+wandb:          A_pairs/c|warp/median 0.00033
+wandb:        A_pairs/jax|warp/median 0.00241
+wandb: A_pairs/warp_advantage_ci_high 13.13473
+wandb:  A_pairs/warp_advantage_ci_low 3.43235
+wandb:  A_pairs/warp_advantage_median 5.95983
+wandb:           B_geoms/c|jax/median 0.00219
+wandb:          B_geoms/c|warp/median 0.00033
+wandb:        B_geoms/jax|warp/median 0.00229
+wandb: B_geoms/warp_advantage_ci_high 13.96084
+wandb:                             +2 ...
+wandb: 
+wandb: 🚀 View run contactrep_G1 at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/yxe1nulf
+wandb: ⭐️ View project at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260807_034503-yxe1nulf/logs
