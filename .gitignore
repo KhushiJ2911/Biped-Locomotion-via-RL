@@ -30,3 +30,7 @@ paper/*.zip
 # Overleaf Workshop writes replica state here; it holds a project id
 # and is machine-specific, not part of the paper.
 paper/ieee/.overleaf/
+
+# Hardware design images: this study is simulation-only, and the paper
+# states it has no hardware. Kept locally, out of the repository.
+PCB/
