@@ -35,7 +35,12 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
 
-\graphicspath{{figures/}}
+% Several candidates on purpose. TeX resolves relative paths from the
+% compilation working directory, which on Overleaf is the project root --
+% not the directory holding this file. If the project was created by
+% uploading a zip that nested everything one level down, "figures/" alone
+% silently fails to find anything. Listing both costs nothing.
+\graphicspath{{figures/}{ieee/figures/}{./}}
 
 % Compact table font, so the wider tables fit one column.
 \newcommand{\tabfont}{\footnotesize}
