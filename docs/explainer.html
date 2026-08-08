@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Project Explainer</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm 20mm 16mm;
+          @bottom-center { content: counter(page) " / " counter(pages);
+                           font-family: sans-serif; font-size: 8pt; color: #888; } }
+  body { font-family: "DejaVu Sans", sans-serif; font-size: 10.5pt;
+         line-height: 1.55; color: #1a1a1a; }
+  h1 { font-size: 21pt; margin: 0 0 2mm 0; line-height: 1.2; }
+  h2 { font-size: 14pt; margin: 9mm 0 2mm 0; padding-top: 2mm;
+       border-top: 2px solid #2a78d6; color: #14406f; page-break-after: avoid; }
+  h3 { font-size: 11.5pt; margin: 5mm 0 1.5mm 0; color: #14406f;
+       page-break-after: avoid; }
+  p { margin: 0 0 2.5mm 0; }
+  .sub { color: #555; font-size: 10pt; margin-bottom: 6mm; }
+  .lead { background: #f4f7fb; border-left: 4px solid #2a78d6;
+          padding: 4mm 5mm; margin: 4mm 0 6mm 0; }
+  .lead p:last-child { margin-bottom: 0; }
+  table { width: 100%; border-collapse: collapse; margin: 3mm 0 4mm 0;
+          font-size: 9pt; page-break-inside: avoid; }
+  th { background: #eef2f7; text-align: left; padding: 2mm; font-weight: bold;
+       border-bottom: 1.5px solid #b8c4d4; }
+  td { padding: 2mm; border-bottom: 0.5px solid #dde3ea; vertical-align: top; }
+  code { font-family: "DejaVu Sans Mono", monospace; font-size: 8.8pt;
+         background: #f2f2f0; padding: 0.5mm 1mm; border-radius: 2px; }
+  .box { border: 1px solid #d8d8d4; border-radius: 3px; padding: 3.5mm 4mm;
+         margin: 3mm 0; page-break-inside: avoid; }
+  .warn { background: #fff8e8; border-left: 4px solid #e0a020; }
+  .key { background: #eefaf4; border-left: 4px solid #1baf7a; }
+  ul, ol { margin: 0 0 3mm 0; padding-left: 5mm; }
+  li { margin-bottom: 1.5mm; }
+  .q { font-weight: bold; color: #14406f; }
+  .small { font-size: 9pt; color: #555; }
+  .nobreak { page-break-inside: avoid; }
+</style>
+</head>
+<body>
+
+<h1>When Simulators Disagree</h1>
+<p class="sub">A guide to the project for co-authors &mdash; what we asked,
+why it mattered, what we did, and what we found.<br>
+Khushi Jaiswal &middot; COEP Technological University &middot; August 2026</p>
+
+<div class="lead">
+<p><strong>The one-paragraph version.</strong> If you train a walking robot in
+a simulator, you want to know it will work in the real world. Most people
+cannot test on a real robot, so they use a substitute: train in one simulator,
+test in a second one, and if the robot still walks, call it validated. We asked
+whether that substitute test actually proves anything. It mostly does not. We
+found the simulators genuinely disagree with each other, that the disagreement
+comes from the software rather than from rounding errors, and yet a trained
+robot barely notices. So passing the test tells you much less than people
+assume.</p>
+</div>
+
+<h2>1. What problem were we looking at?</h2>
+
+<p>Robots that walk are usually trained in simulation. Training on real
+hardware is slow, expensive, and breaks the robot. So you train in a physics
+simulator where the robot can fall over a million times for free.</p>
+
+<p>The catch is that simulators are not reality. A policy that walks
+beautifully in simulation may fall over immediately on a real robot. This is
+called the <strong>reality gap</strong>.</p>
+
+<p>Testing on hardware is the honest way to check. Most research groups,
+including ours, do not have a humanoid robot. So the field uses a stand-in
+called <strong>sim-to-sim validation</strong>:</p>
+
+<div class="box">
+<p><strong>Sim-to-sim validation, in plain terms.</strong> Train your robot in
+Simulator A. Then, without changing anything, run it in Simulator B. If it
+still walks well, that is taken as evidence it will survive the real world
+too.</p>
+<p class="small">The reasoning: if the controller is not fragile enough to
+break when the physics changes slightly, it is probably not fragile enough to
+break on hardware either.</p>
+</div>
+
+<p>This is done constantly and is rarely questioned.</p>
+
+<h2>2. The research gap: what nobody had checked</h2>
+
+<p>Here is the thing that bothered us. Everyone uses this test. Nobody had
+measured whether the test is any good.</p>
+
+<p class="q">Specifically, three questions had no published answer:</p>
+
+<ol>
+<li><strong>How different are these simulators, really?</strong> People say
+"we validated across simulators" without saying how far apart the two
+simulators actually are. If they barely differ, the test is trivial to
+pass.</li>
+<li><strong>Why do they differ?</strong> If it is just rounding error from
+using smaller numbers on a GPU, that will disappear as hardware improves. If
+the two programs actually disagree about physics, it will not.</li>
+<li><strong>Does a robot even notice?</strong> If the difference is smaller
+than the random variation you get from just retraining, then passing the test
+means nothing at all.</li>
+</ol>
+
+<p>There is also a hidden problem. The test has a setting nobody reports:
+<em>which physics configuration</em> you ran the check under. Things like how
+soft you make the ground contact. If the answer changes depending on that
+setting, then "we validated in sim-to-sim" is not even a well-defined claim,
+and two papers saying it may be saying completely different things.</p>
+
+<h2>3. What we actually studied</h2>
+
+<p>MuJoCo is the physics simulator most legged-robot research uses. It now
+exists in three versions, and this is the key point &mdash; <strong>they are
+supposed to be the same simulator</strong>:</p>
+
+<table>
+<tr><th>Version</th><th>What it is</th><th>Runs on</th><th>Number precision</th></tr>
+<tr><td><strong>MuJoCo-C</strong></td><td>The original. The reference everyone
+trusts.</td><td>CPU</td><td>float64 (high)</td></tr>
+<tr><td><strong>MJX-JAX</strong></td><td>A rewrite in JAX for GPU
+speed.</td><td>GPU</td><td>float32 (lower)</td></tr>
+<tr><td><strong>MuJoCo Warp</strong></td><td>A rewrite in CUDA for GPU
+speed.</td><td>GPU</td><td>float32 (lower)</td></tr>
+</table>
+
+<p>People swap between these freely, assuming they are interchangeable. That
+assumption is exactly what we tested.</p>
+
+<p>We used the four humanoid robots that ship with MuJoCo Playground:</p>
+
+<table>
+<tr><th>Robot</th><th>Motors</th><th>Mass</th><th>Height</th></tr>
+<tr><td>Unitree G1</td><td>29</td><td>33.34 kg</td><td>0.785 m</td></tr>
+<tr><td>Booster T1</td><td>23</td><td>31.61 kg</td><td>0.665 m</td></tr>
+<tr><td>ROBOTIS Op3</td><td>20</td><td>3.15 kg</td><td>0.244 m</td></tr>
+<tr><td>Berkeley Humanoid</td><td>12</td><td>16.06 kg</td><td>0.515 m</td></tr>
+</table>
+
+<p class="small">These are not all alike. Op3 is a 3 kg desktop toy; G1 is a
+33 kg full-size humanoid. Ten times the mass, twice the motors.</p>
+
+<h3>How the measurement works</h3>
+
+<p>Simple idea. We build one robot model, put it in the exact same starting
+pose, give it the exact same motor commands, and run it in all three
+simulators at once. After one second of simulated time we measure how far
+apart the three robots have drifted.</p>
+
+<p>Because everything else is identical, any difference must come from the
+simulator itself. Nothing else is left to blame.</p>
+
+<h2>4. The experiments, one at a time</h2>
+
+<h3>Experiment 0 &mdash; Are the simulators even correct?</h3>
+<p><span class="q">Question:</span> before comparing simulators to each other,
+are any of them right?</p>
+<p><span class="q">Method:</span> we used four physics problems where the
+answer can be worked out on paper &mdash; a dropped ball, a swinging pendulum,
+a block sliding down a slope, and a block that should sit still on a slope.</p>
+<p><span class="q">Result:</span> with no contact, all three agree to the limit
+of float32 precision, and the two GPU versions are <em>identical</em>. Once
+contact is involved, they separate.</p>
+<div class="box key">
+<p><strong>Why this matters:</strong> it proves that any bigger disagreement we
+find later comes from contact and the physics solver, not from rounding. It
+sets the floor for everything else.</p>
+<p><strong>A bonus finding that affects everyone:</strong> in the "block should
+not move" test, <em>every</em> simulator lets it creep about 1.1 mm per second.
+That is MuJoCo's contact model itself, not any one version. For a walking
+robot that is a planted foot sliding about a centimetre over ten seconds.</p>
+</div>
+
+<h3>Experiment 1 &mdash; How far apart are they on a real humanoid?</h3>
+<p><span class="q">Method:</span> the G1 humanoid, held in a standing pose,
+changing one physics setting at a time.</p>
+<p><span class="q">Result:</span> Warp is about 8&times; closer to the trusted
+C reference than JAX is. The revealing detail is that JAX-vs-Warp is the same
+size as C-vs-JAX. So Warp and C sit together, and <strong>JAX is the odd one
+out</strong> &mdash; not simply "CPU differs from GPU."</p>
+<p>Also: contact softness controls the size. Stiff contacts 2.1&times;, default
+8.1&times;, soft contacts 28.2&times;. So the answer genuinely depends on that
+unreported setting we worried about in Section 2.</p>
+
+<h3>Experiment 1b &mdash; Does this hold on other robots?</h3>
+<p>We repeated everything on all four robots across 14 physics settings, giving
+56 combinations.</p>
+<p><span class="q">Result:</span> <strong>34 of 56</strong> show a real
+difference after correcting for multiple testing, ranging from 2&times; to
+82&times;.</p>
+<div class="box warn">
+<p><strong>An important lesson for how people test.</strong> We first compared
+the robots only at their default settings &mdash; which is exactly what one
+sim-to-sim check does &mdash; and concluded "only G1 is affected." The full
+grid showed that was wrong. Testing at one configuration gives a misleading
+answer.</p>
+</div>
+
+<h3>Experiment 1c &mdash; The Op3 surprise</h3>
+<p>One robot, Op3, looked immune: only 1 of 14 settings showed anything. We
+nearly wrote that up as "some robots are unaffected."</p>
+<p>Then we noticed Op3 ships with <em>coarser</em> simulation settings than the
+others (a bigger time step, and one solver iteration instead of three). We
+matched its settings to the other robots and changed nothing else.</p>
+<div class="box key">
+<p><strong>1 of 14 became 13 of 14.</strong> The biggest effect was 63&times;.
+Op3 was never immune. Its default settings were simply too coarse to detect the
+problem.</p>
+<p>This is arguably our most practically useful finding: <strong>a sim-to-sim
+check can pass simply because your settings are too rough to notice the
+failure.</strong></p>
+</div>
+
+<h3>Experiments 6 and 7 &mdash; Why do they differ?</h3>
+<p>This is the core of the paper. There were three possible explanations, and
+we ruled out two of them.</p>
+
+<p><strong>Could it be rounding?</strong> GPUs use lower-precision numbers. So
+we re-ran JAX using high precision.</p>
+<ul>
+<li>The no-contact difference vanished &mdash; it shrank by a factor of a
+billion. This proves the change worked.</li>
+<li>The contact difference did not move at all (ratio 1.05).</li>
+</ul>
+<p class="small">The first bullet is what makes the second one convincing.
+Without it, "high precision did not help" could just mean we did it wrong.</p>
+
+<p><strong>Could it be step size?</strong> Simulators advance in small time
+steps. Errors from that shrink as you use smaller steps. So we made the steps
+8&times; smaller.</p>
+<ul>
+<li>Warp's disagreement shrank steadily toward zero, exactly as a step-size
+error should.</li>
+<li>JAX's disagreement stopped shrinking and flattened out. Smaller steps did
+not help.</li>
+</ul>
+
+<div class="box key">
+<p><strong>Conclusion.</strong> Two independent tests, same answer. Warp behaves
+like the same physics computed slightly differently. JAX behaves like
+<em>different physics</em>. The disagreement is in the software's logic, not in
+its arithmetic.</p>
+<p>This matters for the future: a rounding problem would fade as hardware
+improves. A logic difference will not. It stays until someone changes the
+code.</p>
+</div>
+
+<h3>Experiments 2 and 5 &mdash; Does a trained robot notice?</h3>
+<p>Now the question a robotics audience actually cares about. We trained three
+walking policies and tested each one in the different simulators.</p>
+<p>The crucial part is what we compare against. A difference only counts if it
+is bigger than the noise you get from just retraining with a different random
+seed. So we measured that noise from the same runs.</p>
+<table>
+<tr><th>Comparison</th><th>Difference found</th><th>Verdict</th></tr>
+<tr><td>JAX vs Warp</td><td>t = 1.400</td><td>0.56&times; seed noise &mdash;
+nothing</td></tr>
+<tr><td>JAX vs C reference</td><td>2.7% worse, t = 2.877</td><td>0.53&times;
+seed noise &mdash; real but irrelevant</td></tr>
+</table>
+<p>Two things are true at once. There <em>is</em> a consistent, measurable
+effect. And it is <em>smaller than simply retraining the robot</em>. We report
+it as no effect, using a rule we fixed before looking at the results.</p>
+<p class="small">A related detail worth knowing: the robots' actual paths
+diverge a lot &mdash; 27 cm apart after ten seconds &mdash; while their scores
+stay the same. So any claim resting on one specific run (a demo video, a
+particular failure) is simulator-dependent, even though the averages are
+not.</p>
+
+<h3>Experiment 3 &mdash; How much difference can a robot tolerate?</h3>
+<p>The deeper question: performance must drop as two simulators get further
+apart. Where is the breaking point?</p>
+<p>We deliberately broke the physics by known amounts and measured the damage.
+The surprise was that the amount of difference is not what matters.</p>
+<table>
+<tr><th>What we changed</th><th>Damage at the same measured difference</th></tr>
+<tr><td>Friction (ground contact)</td><td><strong>51.7% worse</strong></td></tr>
+<tr><td>Armature (joint inertia)</td><td><strong>1.3% worse</strong></td></tr>
+</table>
+<div class="box key">
+<p><strong>A 40&times; difference in damage, at identical measured
+divergence.</strong> So <em>where</em> two simulators differ matters far more
+than <em>how much</em> they differ.</p>
+<p>This makes sense physically: the robot's controller can compensate for
+heavier joints, but it cannot compensate for the ground behaving differently
+under its feet.</p>
+<p>It also explains the null result above. A single number summarising
+"how different are these simulators" cannot distinguish a harmless mismatch
+from a damaging one &mdash; which is exactly what a naive sim-to-sim check
+reports.</p>
+</div>
+
+<h3>Experiment 4 &mdash; Testing our own best guess, and being wrong</h3>
+<p>G1 showed the biggest effect and was also the only robot describing foot
+contact in a particular way in its model file. Tempting explanation.</p>
+<p>So we tested it: we rewrote the model to describe the identical contact the
+other way, and confirmed the two versions are <em>bit-for-bit identical</em>
+under MuJoCo-C, meaning the change is genuinely cosmetic.</p>
+<p><span class="q">Result:</span> the effect survived unchanged. Our hypothesis
+was wrong. We include it because ruling out an explanation is worth more than
+leaving it hanging.</p>
+
+<h2>5. How we avoided fooling ourselves</h2>
+
+<p>This section matters more than it sounds. <strong>Four times during this
+project we got a confident, plausible, completely wrong answer.</strong> No
+crash, no error message, just a wrong number that looked fine.</p>
+
+<table>
+<tr><th>The mistake</th><th>What it told us</th><th>The truth</th></tr>
+<tr><td>Compared runs of equal <em>steps</em> instead of equal
+<em>time</em></td><td>Time step is the dominant factor, 109&times;</td>
+<td>No effect at all</td></tr>
+<tr><td>Used averages on very skewed data</td><td>One robot's effect was
+3.32&times;</td><td>2.91&times;, once measured properly</td></tr>
+<tr><td>Compared two quantities with different units</td><td>A 3.17&times;
+effect</td><td>The data contained no effect</td></tr>
+<tr><td>Simulator silently dropped contacts</td><td>A full set of Op3
+results</td><td>Physically meaningless; all discarded</td></tr>
+</table>
+
+<p>Each now has a guard that makes it fail loudly instead of quietly. The last
+one is the scariest: the simulator was printing a warning to a place nothing
+was reading, and returning wrong physics as if all was well.</p>
+
+<div class="box warn">
+<p><strong>One thing to know before you run anything.</strong> Results on GPU
+are not exactly repeatable. Run the identical evaluation twice and you get
+answers differing by about 1.86%. If you see a small difference from a number
+in the paper, that may be why &mdash; not a bug. Any improvement smaller than
+that is indistinguishable from simply running again.</p>
+</div>
+
+<h2>6. What we conclude</h2>
+
+<ol>
+<li><strong>The three MuJoCo versions are not interchangeable once contact is
+involved.</strong> 34 of 56 tests across four robots, differences of 2&times;
+to 82&times;.</li>
+<li><strong>The cause is the software's logic, not rounding or step size.</strong>
+Two independent tests each rule out one explanation while the difference
+survives.</li>
+<li><strong>A trained robot absorbs it anyway.</strong> The 2.7% drop is real
+but smaller than the effect of retraining with a different seed.</li>
+<li><strong>Where simulators differ matters more than how much.</strong>
+Contact errors are ~40&times; more damaging than joint-inertia errors of the
+same size.</li>
+<li><strong>Therefore sim-to-sim validation is a weak test.</strong> It probes
+a difference below the level a robot responds to. Passing it is not strong
+evidence of anything.</li>
+</ol>
+
+<p>What we suggest people do instead: report the physics configuration the
+check was run under, compare any difference against retraining noise from the
+same runs, and be suspicious of a clean pass at default settings &mdash;
+remember Op3.</p>
+
+<h2>7. What we cannot claim</h2>
+
+<p>Being honest about limits is part of the paper, and reviewers will look for
+this.</p>
+<ul>
+<li><strong>No hardware.</strong> We can say which simulators disagree and by
+how much. We cannot say which one is closest to reality. This bounds
+everything above.</li>
+<li><strong>One task.</strong> The four-robot comparison is broad, but all the
+robot-learning results are flat-ground walking on G1.</li>
+<li><strong>Limited compute.</strong> A 4 GB laptop GPU, so policies are
+trained to about a quarter of the usual budget.</li>
+<li><strong>Mechanism unknown.</strong> We show the difference is in the
+software's logic, and we ruled out one explanation, but we have not found
+which part of the solver differs.</li>
+</ul>
+
+<h2>8. Where things stand, and how to start</h2>
+
+<p>All experiments are finished. The paper is written in IEEE conference
+format and every number in it has been checked automatically against the raw
+data files.</p>
+
+<p><strong>Still to do:</strong> confirm the reference details in the
+bibliography, trim to the page limit for the target conference, and decide
+where to submit.</p>
+
+<div class="box">
+<p><strong>To get started:</strong></p>
+<ul>
+<li>Repository: <code>github.com/KhushiJ2911/Biped-Locomotion-via-RL</code>
+&mdash; the README covers layout and findings.</li>
+<li>The paper is in <code>paper/ieee/</code>. The longer working draft, with
+reasoning the paper leaves out, is <code>paper/draft.md</code>.</li>
+<li>Raw data is in <code>results/</code>. Every number traces back to a file
+there.</li>
+<li>Run <code>python3 paper/ieee/verify_tex_numbers.py</code> after changing
+any number in the paper. It re-reads all 84 of them from the raw data.</li>
+</ul>
+</div>
+
+<p class="small" style="margin-top:6mm; color:#777;">Every figure and number in
+this document comes from a script in the repository and has been checked
+against its source data file.</p>
+
+</body>
+</html>
