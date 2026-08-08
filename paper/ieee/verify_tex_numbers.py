@@ -127,6 +127,37 @@ for robot, want in [("G1", 13), ("Berkeley", 13), ("T1", 6), ("Op3", 2)]:
     n = sum(1 for r in rows if r["robot"] == robot and r["significant"] == "True")
     claim(f"{robot} significant", n, want, tol=0.0)
 
+# ---- Robot specification table ----------------------------------------
+# Read back from the compiled models, so a model or Playground version bump
+# that changes a robot cannot silently leave a stale number in the table.
+rs = json.loads((R / "robot_specs.json").read_text())
+for robot, nu, mass, height, pairs, dt, iters in [
+    ("Unitree G1",        29, 33.34, 0.785, 5, 0.002, 3),
+    ("Booster T1",        23, 31.61, 0.665, 0, 0.002, 3),
+    ("ROBOTIS Op3",       20,  3.15, 0.244, 0, 0.004, 1),
+    ("Berkeley Humanoid", 12, 16.06, 0.515, 0, 0.002, 3),
+]:
+    s = rs[robot]
+    claim(f"{robot} nu", s["nu"], nu, tol=0.0)
+    claim(f"{robot} mass", s["mass_kg"], mass, tol=0.005)
+    claim(f"{robot} height", s["standing_height_m"], height, tol=0.005)
+    claim(f"{robot} pairs", s["explicit_pairs"], pairs, tol=0.0)
+    claim(f"{robot} dt", s["shipped_dt"], dt, tol=0.001)
+    claim(f"{robot} iters", s["shipped_iterations"], iters, tol=0.0)
+
+# G1 being the ONLY robot with explicit pairs is load-bearing for the
+# contact-representation section; assert the uniqueness, not just the count.
+only = [k for k, v in rs.items() if v["explicit_pairs"] > 0]
+checks += 1
+if only != ["Unitree G1"]:
+    fails.append(f"paper says only G1 uses explicit <pair>; models say {only}")
+
+# Likewise Op3 being the only coarse configuration.
+coarse = [k for k, v in rs.items() if v["shipped_iterations"] < 3]
+checks += 1
+if coarse != ["ROBOTIS Op3"]:
+    fails.append(f"paper says only Op3 ships coarse settings; models say {coarse}")
+
 # ---- Claims that must appear verbatim ---------------------------------
 in_tex("34 of 56")
 in_tex("$t(191)=2.877$")

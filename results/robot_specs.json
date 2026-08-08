@@ -1,0 +1,58 @@
+{
+  "Unitree G1": {
+    "nq": 36,
+    "nv": 35,
+    "nu": 29,
+    "n_bodies": 31,
+    "n_geoms": 72,
+    "mass_kg": 33.34,
+    "standing_height_m": 0.785,
+    "explicit_pairs": 5,
+    "shipped_dt": 0.002,
+    "shipped_iterations": 3,
+    "shipped_ls_iterations": 5,
+    "env": "G1JoystickFlatTerrain"
+  },
+  "Berkeley Humanoid": {
+    "nq": 19,
+    "nv": 18,
+    "nu": 12,
+    "n_bodies": 14,
+    "n_geoms": 27,
+    "mass_kg": 16.06,
+    "standing_height_m": 0.515,
+    "explicit_pairs": 0,
+    "shipped_dt": 0.002,
+    "shipped_iterations": 3,
+    "shipped_ls_iterations": 5,
+    "env": "BerkeleyHumanoidJoystickFlatTerrain"
+  },
+  "Booster T1": {
+    "nq": 30,
+    "nv": 29,
+    "nu": 23,
+    "n_bodies": 25,
+    "n_geoms": 45,
+    "mass_kg": 31.61,
+    "standing_height_m": 0.665,
+    "explicit_pairs": 0,
+    "shipped_dt": 0.002,
+    "shipped_iterations": 3,
+    "shipped_ls_iterations": 5,
+    "env": "T1JoystickFlatTerrain"
+  },
+  "ROBOTIS Op3": {
+    "nq": 27,
+    "nv": 26,
+    "nu": 20,
+    "n_bodies": 22,
+    "n_geoms": 51,
+    "mass_kg": 3.15,
+    "standing_height_m": 0.244,
+    "explicit_pairs": 0,
+    "shipped_dt": 0.004,
+    "shipped_iterations": 1,
+    "shipped_ls_iterations": 5,
+    "env": "Op3Joystick"
+  }
+}

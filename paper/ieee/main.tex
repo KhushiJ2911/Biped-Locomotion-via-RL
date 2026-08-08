@@ -250,6 +250,41 @@ drifted apart after one second of physics, using base position error,
 base orientation error, and joint RMSE. Because everything upstream is
 shared, any difference is attributable to the engine.
 
+\begin{table}[t]
+\caption{The four bipeds, read from the models MuJoCo compiles rather than
+from datasheets. Two columns anticipate later results: G1 is the only robot
+declaring foot contact through explicit \texttt{<pair>} elements, and Op3 is
+the only one shipping a coarse solver configuration.}
+\label{tab:robots}
+\centering
+\tabfont
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+\textbf{Robot} & \textbf{Actuated} & \textbf{Mass} & \textbf{Height} &
+\textbf{Contact} & \textbf{Shipped} \\
+ & \textbf{DoF} & \textbf{(kg)} & \textbf{(m)} & \textbf{pairs} & \textbf{$dt$ / iters} \\
+\midrule
+Unitree G1        & 29 & 33.34 & 0.785 & \textbf{5} & 0.002 / 3 \\
+Booster T1        & 23 & 31.61 & 0.665 & 0 & 0.002 / 3 \\
+ROBOTIS Op3       & 20 & \phantom{0}3.15 & 0.244 & 0 & \textbf{0.004 / 1} \\
+Berkeley Humanoid & 12 & 16.06 & 0.515 & 0 & 0.002 / 3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:robots} lists the four bipeds. They span more than a factor
+of ten in mass and better than two in actuated degrees of freedom, so
+``humanoid'' covers a wide range here. Height is the base $z$ of the
+keyframe each task resets to, which is the pose these comparisons start
+from.
+
+Two columns matter later. G1 is the only robot declaring foot contact
+through explicit \verb|<pair>| elements, which is the correlation we test
+directly in Section~\ref{sec:contactrep}. Op3 is the only one shipping
+$dt=0.004$ with a single solver iteration, against $dt=0.002$ and three
+iterations everywhere else, which turns out to explain its apparent
+immunity to the whole effect.
+
 Two design choices materially change the numbers, and we state them
 because getting either wrong produces a confident wrong answer.
 
