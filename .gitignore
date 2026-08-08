@@ -26,3 +26,7 @@ __pycache__/
 
 # Overleaf upload bundle - regenerable from paper/ieee/
 paper/*.zip
+
+# Overleaf Workshop writes replica state here; it holds a project id
+# and is machine-specific, not part of the paper.
+paper/ieee/.overleaf/
