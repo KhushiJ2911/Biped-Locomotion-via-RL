@@ -1,0 +1,146 @@
+%=======================================================================
+%  References
+%
+%  VERIFY BEFORE SUBMISSION.  Entries are grouped by how confident the
+%  venue/year information is.  Reviewers do check these, and a wrong
+%  venue is an easy and avoidable mistake.
+%
+%  GROUP A -- peer-reviewed, venue confirmed:
+%     todorov2012mujoco, rudin2022learning, tobin2017domain,
+%     peng2018sim, kumar2021rma, siekmann2021sim,
+%     benjamini1995controlling
+%
+%  GROUP B -- arXiv preprints, NOT conference-published.  Cited as
+%  preprints on purpose.  Do not upgrade to a conference citation
+%  without checking:
+%     zakka2025playground, gu2024humanoidgym, freeman2021brax
+%
+%  GROUP C -- check the exact volume/page numbers against the publisher
+%  page before submitting:
+%     makoviychuk2021isaac  (also appeared in the NeurIPS Datasets &
+%                            Benchmarks track; arXiv cited here)
+%     radosavovic2024real   (Science Robotics; confirm volume/issue)
+%=======================================================================
+
+% ---------------- Group A ----------------
+
+@inproceedings{todorov2012mujoco,
+  title     = {{MuJoCo}: A physics engine for model-based control},
+  author    = {Todorov, Emanuel and Erez, Tom and Tassa, Yuval},
+  booktitle = {IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  pages     = {5026--5033},
+  year      = {2012}
+}
+
+@inproceedings{rudin2022learning,
+  title     = {Learning to Walk in Minutes Using Massively Parallel Deep
+               Reinforcement Learning},
+  author    = {Rudin, Nikita and Hoeller, David and Reist, Philipp and
+               Hutter, Marco},
+  booktitle = {Conference on Robot Learning (CoRL)},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {164},
+  pages     = {91--100},
+  year      = {2022}
+}
+
+@inproceedings{tobin2017domain,
+  title     = {Domain randomization for transferring deep neural networks
+               from simulation to the real world},
+  author    = {Tobin, Josh and Fong, Rachel and Ray, Alex and Schneider,
+               Jonas and Zaremba, Wojciech and Abbeel, Pieter},
+  booktitle = {IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  pages     = {23--30},
+  year      = {2017}
+}
+
+@inproceedings{peng2018sim,
+  title     = {Sim-to-Real Transfer of Robotic Control with Dynamics
+               Randomization},
+  author    = {Peng, Xue Bin and Andrychowicz, Marcin and Zaremba,
+               Wojciech and Abbeel, Pieter},
+  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
+  pages     = {3803--3810},
+  year      = {2018}
+}
+
+@inproceedings{kumar2021rma,
+  title     = {{RMA}: Rapid Motor Adaptation for Legged Robots},
+  author    = {Kumar, Ashish and Fu, Zipeng and Pathak, Deepak and
+               Malik, Jitendra},
+  booktitle = {Robotics: Science and Systems (RSS)},
+  year      = {2021}
+}
+
+@inproceedings{siekmann2021sim,
+  title     = {Sim-to-Real Learning of All Common Bipedal Gaits via
+               Periodic Reward Composition},
+  author    = {Siekmann, Jonah and Godse, Yesh and Fern, Alan and
+               Hurst, Jonathan},
+  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
+  pages     = {7309--7315},
+  year      = {2021}
+}
+
+@article{benjamini1995controlling,
+  title   = {Controlling the False Discovery Rate: A Practical and
+             Powerful Approach to Multiple Testing},
+  author  = {Benjamini, Yoav and Hochberg, Yosef},
+  journal = {Journal of the Royal Statistical Society: Series B},
+  volume  = {57},
+  number  = {1},
+  pages   = {289--300},
+  year    = {1995}
+}
+
+% ---------------- Group B: preprints ----------------
+
+@article{zakka2025playground,
+  title         = {{MuJoCo} Playground},
+  author        = {Zakka, Kevin and others},
+  journal       = {arXiv preprint arXiv:2502.08844},
+  year          = {2025},
+  note          = {Preprint}
+}
+
+@article{gu2024humanoidgym,
+  title         = {Humanoid-Gym: Reinforcement Learning for Humanoid Robot
+                   with Zero-Shot Sim2Real Transfer},
+  author        = {Gu, Xinyang and Wang, Yen-Jen and Chen, Jianyu},
+  journal       = {arXiv preprint arXiv:2404.05695},
+  year          = {2024},
+  note          = {Preprint}
+}
+
+@article{freeman2021brax,
+  title         = {Brax -- A Differentiable Physics Engine for Large Scale
+                   Rigid Body Simulation},
+  author        = {Freeman, C. Daniel and Frey, Erik and Raichuk, Anton and
+                   Girgin, Sertan and Mordatch, Igor and Bachem, Olivier},
+  journal       = {arXiv preprint arXiv:2106.13281},
+  year          = {2021},
+  note          = {Preprint}
+}
+
+% ---------------- Group C: check details ----------------
+
+@article{makoviychuk2021isaac,
+  title         = {Isaac Gym: High Performance {GPU}-Based Physics
+                   Simulation for Robot Learning},
+  author        = {Makoviychuk, Viktor and Wawrzyniak, Lukasz and Guo, Yunrong
+                   and Lu, Michelle and Storey, Kier and Macklin, Miles and
+                   Hoeller, David and Rudin, Nikita and Allshire, Arthur and
+                   Handa, Ankur and State, Gavriel},
+  journal       = {arXiv preprint arXiv:2108.10470},
+  year          = {2021}
+}
+
+@article{radosavovic2024real,
+  title   = {Real-World Humanoid Locomotion with Reinforcement Learning},
+  author  = {Radosavovic, Ilija and Xiao, Tete and Zhang, Bike and
+             Darrell, Trevor and Malik, Jitendra and Sreenath, Koushil},
+  journal = {Science Robotics},
+  volume  = {9},
+  number  = {89},
+  year    = {2024}
+}
