@@ -10,7 +10,7 @@ for S in 0 1 2; do
   echo "=== seed $S  $(date -Is) ==="
   $PY -u -m sim2sim.ceval \
       --ckpt "checkpoints/G1JoystickFlatTerrain_impl-jax_seed${S}" \
-      --episodes 64 --max-steps 1000 --impl jax
+      --episodes 64 --max-steps 500 --impl jax
   echo "[cooldown]"; sleep 60
 done
 echo "=== CEVAL DONE $(date -Is) ==="

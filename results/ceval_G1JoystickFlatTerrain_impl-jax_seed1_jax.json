@@ -1,6 +1,6 @@
 {
   "env": "G1JoystickFlatTerrain",
-  "ckpt": "checkpoints/G1JoystickFlatTerrain_impl-jax_seed0",
+  "ckpt": "checkpoints/G1JoystickFlatTerrain_impl-jax_seed1",
   "mjx_impl": "jax",
   "max_steps": 500,
   "episodes": [
@@ -15,8 +15,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.12810189837869257,
-      "c_track_err": 0.12567233517129342
+      "mjx_track_err": 0.10437341519072652,
+      "c_track_err": 0.10513032439994893
     },
     {
       "episode": 1,
@@ -29,8 +29,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.4153121571838856,
-      "c_track_err": 0.4466260952181822
+      "mjx_track_err": 0.499318247795105,
+      "c_track_err": 0.5250556115252235
     },
     {
       "episode": 2,
@@ -43,8 +43,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.27808642898499963,
-      "c_track_err": 0.28092665585252896
+      "mjx_track_err": 0.2996118272989988,
+      "c_track_err": 0.297722678981001
     },
     {
       "episode": 3,
@@ -57,8 +57,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.1641607639566064,
-      "c_track_err": 0.18144377909069778
+      "mjx_track_err": 0.21772436034679413,
+      "c_track_err": 0.22631215543908628
     },
     {
       "episode": 4,
@@ -71,8 +71,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.10577433065325022,
-      "c_track_err": 0.10720511644865617
+      "mjx_track_err": 0.14833690731972457,
+      "c_track_err": 0.1503336292997512
     },
     {
       "episode": 5,
@@ -85,8 +85,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.09679227188345976,
-      "c_track_err": 0.09700788825145625
+      "mjx_track_err": 0.13880202823411672,
+      "c_track_err": 0.13997761905642814
     },
     {
       "episode": 6,
@@ -95,12 +95,12 @@
         -0.36852526664733887,
         -0.48009252548217773
       ],
-      "mjx_length": 500,
-      "c_length": 500,
-      "mjx_terminated": false,
-      "c_terminated": false,
-      "mjx_track_err": 0.2696550361290574,
-      "c_track_err": 0.2863705407817416
+      "mjx_length": 148,
+      "c_length": 156,
+      "mjx_terminated": true,
+      "c_terminated": true,
+      "mjx_track_err": 0.4597020192021454,
+      "c_track_err": 0.6609312767043691
     },
     {
       "episode": 7,
@@ -113,8 +113,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.2723534355759621,
-      "c_track_err": 0.2766420771805237
+      "mjx_track_err": 0.17134168466180563,
+      "c_track_err": 0.17089744676894472
     },
     {
       "episode": 8,
@@ -127,8 +127,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.3631808385550976,
-      "c_track_err": 0.36461320826663507
+      "mjx_track_err": 0.3716419008076191,
+      "c_track_err": 0.36401237697347144
     },
     {
       "episode": 9,
@@ -141,8 +141,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.18646846229210495,
-      "c_track_err": 0.1857825469890824
+      "mjx_track_err": 0.11636197685915976,
+      "c_track_err": 0.1122023016768853
     },
     {
       "episode": 10,
@@ -155,8 +155,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.3227981195747852,
-      "c_track_err": 0.32377929213721085
+      "mjx_track_err": 0.34877873614430427,
+      "c_track_err": 0.3495023112554963
     },
     {
       "episode": 11,
@@ -169,8 +169,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.15675307951495052,
-      "c_track_err": 0.15797707598890987
+      "mjx_track_err": 0.1405811685360968,
+      "c_track_err": 0.14457443375369086
     },
     {
       "episode": 12,
@@ -183,8 +183,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.2909821792691946,
-      "c_track_err": 0.3042021324145433
+      "mjx_track_err": 0.257258688442409,
+      "c_track_err": 0.2607593972869
     },
     {
       "episode": 13,
@@ -197,8 +197,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.46377496266365054,
-      "c_track_err": 0.4648841987762525
+      "mjx_track_err": 0.4731296509504318,
+      "c_track_err": 0.47182978985755264
     },
     {
       "episode": 14,
@@ -211,8 +211,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.36990853321552275,
-      "c_track_err": 0.40880362550628135
+      "mjx_track_err": 0.45793770921230315,
+      "c_track_err": 0.4884041967218726
     },
     {
       "episode": 15,
@@ -225,8 +225,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.19354321348667144,
-      "c_track_err": 0.2054672919899799
+      "mjx_track_err": 0.22560787140391766,
+      "c_track_err": 0.23222105886585093
     },
     {
       "episode": 16,
@@ -239,8 +239,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.3705532903969288,
-      "c_track_err": 0.39687178110433463
+      "mjx_track_err": 0.44434730315208437,
+      "c_track_err": 0.4691963163793545
     },
     {
       "episode": 17,
@@ -253,8 +253,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.3317569588422775,
-      "c_track_err": 0.3620341645962038
+      "mjx_track_err": 0.30174643436074255,
+      "c_track_err": 0.328668606652947
     },
     {
       "episode": 18,
@@ -267,8 +267,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.33035972890257836,
-      "c_track_err": 0.33013907952135185
+      "mjx_track_err": 0.16434662362886593,
+      "c_track_err": 0.16209342248241518
     },
     {
       "episode": 19,
@@ -281,8 +281,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.22679838110506534,
-      "c_track_err": 0.22353067206673932
+      "mjx_track_err": 0.15777823924273252,
+      "c_track_err": 0.1534727016797696
     },
     {
       "episode": 20,
@@ -295,8 +295,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.4098662278950214,
-      "c_track_err": 0.41259420568415417
+      "mjx_track_err": 0.43535013365745545,
+      "c_track_err": 0.43493793812727866
     },
     {
       "episode": 21,
@@ -309,8 +309,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.17233969171717764,
-      "c_track_err": 0.17331425153159727
+      "mjx_track_err": 0.1368697359152138,
+      "c_track_err": 0.13904395704041173
     },
     {
       "episode": 22,
@@ -323,8 +323,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.5128863607048988,
-      "c_track_err": 0.516926459713178
+      "mjx_track_err": 0.36165497354790566,
+      "c_track_err": 0.3599437385997666
     },
     {
       "episode": 23,
@@ -337,8 +337,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.28334422183036806,
-      "c_track_err": 0.2958301019356985
+      "mjx_track_err": 0.333341864168644,
+      "c_track_err": 0.33840237815382057
     },
     {
       "episode": 24,
@@ -351,8 +351,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.2916362084150314,
-      "c_track_err": 0.28527108832756837
+      "mjx_track_err": 0.27348096346855166,
+      "c_track_err": 0.2693592105409615
     },
     {
       "episode": 25,
@@ -365,8 +365,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.3100888087749481,
-      "c_track_err": 0.30422430642502424
+      "mjx_track_err": 0.27957364021241665,
+      "c_track_err": 0.2773575031991085
     },
     {
       "episode": 26,
@@ -379,8 +379,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.09998754050210118,
-      "c_track_err": 0.10081364314296792
+      "mjx_track_err": 0.14035898526012897,
+      "c_track_err": 0.14279771482252102
     },
     {
       "episode": 27,
@@ -393,8 +393,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.4281961200833321,
-      "c_track_err": 0.4180753980232205
+      "mjx_track_err": 0.2402963035106659,
+      "c_track_err": 0.2347338097141483
     },
     {
       "episode": 28,
@@ -404,11 +404,11 @@
         -0.24971628189086914
       ],
       "mjx_length": 500,
-      "c_length": 500,
+      "c_length": 92,
       "mjx_terminated": false,
-      "c_terminated": false,
-      "mjx_track_err": 0.2853755627572536,
-      "c_track_err": 0.296361599775993
+      "c_terminated": true,
+      "mjx_track_err": 0.1897881688233465,
+      "c_track_err": 0.5588571632680152
     },
     {
       "episode": 29,
@@ -421,8 +421,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.37881932228803633,
-      "c_track_err": 0.4167876013749363
+      "mjx_track_err": 0.44841689786314964,
+      "c_track_err": 0.4717745200719817
     },
     {
       "episode": 30,
@@ -435,8 +435,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.370957111209631,
-      "c_track_err": 0.3655366613879027
+      "mjx_track_err": 0.252580370798707,
+      "c_track_err": 0.2508042259927808
     },
     {
       "episode": 31,
@@ -449,8 +449,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.2870113316178322,
-      "c_track_err": 0.3147092402630213
+      "mjx_track_err": 0.3418969873189926,
+      "c_track_err": 0.3574381404786966
     },
     {
       "episode": 32,
@@ -463,8 +463,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.12040563955530524,
-      "c_track_err": 0.1258030077855951
+      "mjx_track_err": 0.1674861014634371,
+      "c_track_err": 0.17290507666015287
     },
     {
       "episode": 33,
@@ -477,8 +477,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.49291862225532534,
-      "c_track_err": 0.49861616015429217
+      "mjx_track_err": 0.3921894691437483,
+      "c_track_err": 0.38905116149337926
     },
     {
       "episode": 34,
@@ -491,8 +491,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.4692820352315903,
-      "c_track_err": 0.465459415310351
+      "mjx_track_err": 0.2972999467849731,
+      "c_track_err": 0.29733249479173113
     },
     {
       "episode": 35,
@@ -505,8 +505,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.4630128028988838,
-      "c_track_err": 0.4625701858133209
+      "mjx_track_err": 0.29570801082625986,
+      "c_track_err": 0.2987061077594505
     },
     {
       "episode": 36,
@@ -519,8 +519,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.3550764708518982,
-      "c_track_err": 0.34663669878413694
+      "mjx_track_err": 0.2719842637181282,
+      "c_track_err": 0.2681290204408466
     },
     {
       "episode": 37,
@@ -533,8 +533,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.1433212017789483,
-      "c_track_err": 0.14751971111354453
+      "mjx_track_err": 0.15508688129484655,
+      "c_track_err": 0.16265926251082846
     },
     {
       "episode": 38,
@@ -547,8 +547,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.19727933420985938,
-      "c_track_err": 0.19659168226555668
+      "mjx_track_err": 0.22098657393455506,
+      "c_track_err": 0.22118898439544268
     },
     {
       "episode": 39,
@@ -561,8 +561,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.47387445452809335,
-      "c_track_err": 0.4769337531509042
+      "mjx_track_err": 0.48985012370347975,
+      "c_track_err": 0.49124548871677726
     },
     {
       "episode": 40,
@@ -575,8 +575,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.12686075810343028,
-      "c_track_err": 0.13005130092297315
+      "mjx_track_err": 0.18089248186349868,
+      "c_track_err": 0.1828722366454311
     },
     {
       "episode": 41,
@@ -589,8 +589,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.36938311624526976,
-      "c_track_err": 0.39448612505288977
+      "mjx_track_err": 0.36670909655094147,
+      "c_track_err": 0.3770064682764743
     },
     {
       "episode": 42,
@@ -603,8 +603,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.2743242602050304,
-      "c_track_err": 0.28557757349636337
+      "mjx_track_err": 0.3246916083097458,
+      "c_track_err": 0.3278965883112106
     },
     {
       "episode": 43,
@@ -617,8 +617,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.2779055281430483,
-      "c_track_err": 0.3184005795994767
+      "mjx_track_err": 0.2744013936854899,
+      "c_track_err": 0.29447245251302195
     },
     {
       "episode": 44,
@@ -631,8 +631,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.479862181186676,
-      "c_track_err": 0.47426736006192677
+      "mjx_track_err": 0.5007432526350022,
+      "c_track_err": 0.4938293908665864
     },
     {
       "episode": 45,
@@ -645,8 +645,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.2991252203881741,
-      "c_track_err": 0.29431570299180304
+      "mjx_track_err": 0.16293221231549979,
+      "c_track_err": 0.16278497515868695
     },
     {
       "episode": 46,
@@ -659,8 +659,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.2373959598839283,
-      "c_track_err": 0.24322373044628123
+      "mjx_track_err": 0.14708177839033307,
+      "c_track_err": 0.15011960517969267
     },
     {
       "episode": 47,
@@ -673,8 +673,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.10576703368499875,
-      "c_track_err": 0.10784002733794296
+      "mjx_track_err": 0.16356571711599827,
+      "c_track_err": 0.1655884247475094
     },
     {
       "episode": 48,
@@ -687,8 +687,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.31857988971471785,
-      "c_track_err": 0.31371463860989035
+      "mjx_track_err": 0.21832824837975204,
+      "c_track_err": 0.20173419060125192
     },
     {
       "episode": 49,
@@ -701,8 +701,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.34259292486310006,
-      "c_track_err": 0.352836505873114
+      "mjx_track_err": 0.1912928798496723,
+      "c_track_err": 0.19180380208169323
     },
     {
       "episode": 50,
@@ -715,8 +715,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.2666060412973166,
-      "c_track_err": 0.2717095081432329
+      "mjx_track_err": 0.26719650004804135,
+      "c_track_err": 0.2656214642666046
     },
     {
       "episode": 51,
@@ -729,8 +729,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.12267715944722295,
-      "c_track_err": 0.1273504767909822
+      "mjx_track_err": 0.15473372448980807,
+      "c_track_err": 0.15757748758629003
     },
     {
       "episode": 52,
@@ -743,8 +743,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.32773566898703577,
-      "c_track_err": 0.3249502998271043
+      "mjx_track_err": 0.1832751682503149,
+      "c_track_err": 0.18138886094352047
     },
     {
       "episode": 53,
@@ -757,8 +757,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.17908962056040764,
-      "c_track_err": 0.1895855766880687
+      "mjx_track_err": 0.1981707148849964,
+      "c_track_err": 0.2049493211270783
     },
     {
       "episode": 54,
@@ -771,8 +771,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.4112327374517918,
-      "c_track_err": 0.40215601987525074
+      "mjx_track_err": 0.4532437282800674,
+      "c_track_err": 0.4504958344165311
     },
     {
       "episode": 55,
@@ -785,8 +785,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.12293397295288741,
-      "c_track_err": 0.13182170245848557
+      "mjx_track_err": 0.1541494606025517,
+      "c_track_err": 0.15924180156514353
     },
     {
       "episode": 56,
@@ -799,8 +799,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.09494881276786328,
-      "c_track_err": 0.09259456566642266
+      "mjx_track_err": 0.11035363857448101,
+      "c_track_err": 0.11196844347180428
     },
     {
       "episode": 57,
@@ -813,8 +813,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.4270993294119835,
-      "c_track_err": 0.42479537181826194
+      "mjx_track_err": 0.2882001459598541,
+      "c_track_err": 0.2859156793006292
     },
     {
       "episode": 58,
@@ -827,8 +827,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.3179563314113766,
-      "c_track_err": 0.3091511117073711
+      "mjx_track_err": 0.18560073335468769,
+      "c_track_err": 0.18639030141671264
     },
     {
       "episode": 59,
@@ -841,8 +841,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.2919732827991247,
-      "c_track_err": 0.3050459621155536
+      "mjx_track_err": 0.25381465220451355,
+      "c_track_err": 0.2602548505586687
     },
     {
       "episode": 60,
@@ -855,8 +855,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.14123199826106428,
-      "c_track_err": 0.14153196929091721
+      "mjx_track_err": 0.14680796077102423,
+      "c_track_err": 0.15045988624214618
     },
     {
       "episode": 61,
@@ -869,8 +869,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.0997546892100945,
-      "c_track_err": 0.10137177444445024
+      "mjx_track_err": 0.13878287943452597,
+      "c_track_err": 0.13994632408154148
     },
     {
       "episode": 62,
@@ -883,8 +883,8 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.4773709478378296,
-      "c_track_err": 0.48028813034491147
+      "mjx_track_err": 0.28845733069814744,
+      "c_track_err": 0.2890318940026806
     },
     {
       "episode": 63,
@@ -897,26 +897,26 @@
       "c_length": 500,
       "mjx_terminated": false,
       "c_terminated": false,
-      "mjx_track_err": 0.3150894298404455,
-      "c_track_err": 0.3411333483824213
+      "mjx_track_err": 0.3806077628023922,
+      "c_track_err": 0.39509329039006585
     }
   ],
   "summary": {
     "episode_length": {
-      "mjx_mean": 500.0,
-      "c_mean": 500.0,
-      "paired_diff": 0.0,
-      "t_stat": NaN,
+      "mjx_mean": 494.5,
+      "c_mean": 488.25,
+      "paired_diff": -6.25,
+      "t_stat": -0.9798989319036537,
       "n": 64,
-      "c_worse_count": 0
+      "c_worse_count": 1
     },
     "tracking_error": {
-      "mjx_mean": 0.2860982817863296,
-      "c_mean": 0.29232428267596355,
-      "paired_diff": 0.0062260008896338915,
-      "t_stat": 4.085214387924082,
+      "mjx_mean": 0.26495250402587545,
+      "c_mean": 0.2771313925982818,
+      "paired_diff": 0.012178888572406338,
+      "t_stat": 1.8612447798100662,
       "n": 64,
-      "c_worse_count": 44
+      "c_worse_count": 42
     }
   }
 }

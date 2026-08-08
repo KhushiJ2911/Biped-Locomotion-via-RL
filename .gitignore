@@ -10,6 +10,9 @@ results/*.npz
 # Corrupted Op3 sweeps - kept locally as evidence, not published
 results/INVALID_op3_nefc_overflow/
 
+# Spurious command-resample run - kept locally as evidence, not published
+results/INVALID_ceval_command_resample/
+
 # Already synced to the W&B cloud
 wandb/
 

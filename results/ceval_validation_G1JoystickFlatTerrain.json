@@ -1,0 +1,19 @@
+{
+  "env": "G1JoystickFlatTerrain",
+  "steps": 200,
+  "reset": {
+    "ok": true,
+    "max_abs_diff": 2.384185791015625e-07,
+    "worst_index": 8,
+    "n_trials": 8
+  },
+  "trajectory": {
+    "ok": true,
+    "max_bookkeeping_diff": 5.960464477539063e-08,
+    "at_step": 2,
+    "obs_index": 99,
+    "max_phase_diff": 0.0,
+    "steps_checked": 200,
+    "note": "sensor-derived blocks excluded (MuJoCo sensor staging); they are covered by validate_observation"
+  }
+}

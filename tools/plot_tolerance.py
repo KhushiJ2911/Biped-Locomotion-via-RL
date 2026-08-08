@@ -32,6 +32,12 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
+plt.rcParams.update({
+    "font.family": "DejaVu Sans", "font.size": 9,
+    "axes.linewidth": 0.8, "legend.frameon": False,
+    "pdf.fonttype": 42, "ps.fonttype": 42,
+})
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 RESULTS = ROOT / "results"
 FIGS = ROOT / "figures"
@@ -42,7 +48,8 @@ SERIES = {
     "friction_scale": ("#eb6834", "s", "friction"),
     "armature_scale": ("#1baf7a", "^", "armature"),
 }
-INK, INK_MUTED, GRID = "#0b0b0b", "#52514e", "#d8d7d2"
+INK, INK_MUTED, GRID = "#0b0b0b", "#52514e", "#dcdbd6"
+SURFACE = "#ffffff"
 
 
 def load_points():
@@ -93,7 +100,7 @@ def main():
     gaps = engine_gaps()
 
     fig, axes = plt.subplots(1, 2, figsize=(10.4, 4.3), sharex=True)
-    fig.patch.set_facecolor("#fcfcfb")
+    fig.patch.set_facecolor(SURFACE)
 
     # Termination rate leads: it is bounded [0,1] and monotonic, whereas
     # return-loss-% diverges once returns cross zero and lets one extreme
@@ -106,7 +113,7 @@ def main():
     ]
 
     for ax, field, ylabel, ylim, title in panels:
-        ax.set_facecolor("#fcfcfb")
+        ax.set_facecolor(SURFACE)
         for name, x in sorted(gaps.items(), key=lambda kv: kv[1]):
             if name == "jax|warp":
                 continue  # near-duplicate of c|jax; adds clutter, not information
@@ -130,7 +137,7 @@ def main():
                 continue
             ax.errorbar(xs, ys, yerr=es, color=color, marker=marker, ms=7, lw=0,
                         capsize=2.5, elinewidth=1.0, label=label, zorder=3,
-                        markeredgecolor="#fcfcfb", markeredgewidth=0.8)
+                        markeredgecolor=SURFACE, markeredgewidth=0.8)
 
         # Two trends, not one. Pooling them would assert that divergence
         # magnitude alone predicts loss, which the data refutes: within the
@@ -191,13 +198,13 @@ def main():
 
     FIGS.mkdir(exist_ok=True)
     for ext in ("pdf", "png"):
-        out = FIGS / f"tolerance_curve.{ext}"
-        fig.savefig(out, dpi=200, bbox_inches="tight", facecolor=fig.get_facecolor())
+        out = FIGS / f"fig4_tolerance.{ext}"
+        fig.savefig(out, dpi=200, bbox_inches="tight", facecolor=SURFACE)
         print(f"[saved] {out}")
 
     # A table view accompanies the figure: the aqua series sits below 3:1
     # against the surface, so the numbers must be readable without colour.
-    csv = FIGS / "tolerance_curve.csv"
+    csv = FIGS / "fig4_tolerance.csv"
     with open(csv, "w") as fh:
         fh.write("param,scale,dose_m,return_loss_pct,termination_rate,n_seeds\n")
         for (p, s), v in sorted(pts.items(), key=lambda kv: np.mean(kv[1]["dose"])):

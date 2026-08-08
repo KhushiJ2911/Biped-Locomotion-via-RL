@@ -1,0 +1,165 @@
+=== seed 0  2026-08-08T00:26:18+05:30 ===
+[cenv] nu=29 obs_dim=103 (expected 103)
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run xp2861cj
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260808_002628-xp2861cj
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ceval_G1JoystickFlatTerrain_impl-jax_seed0_jax
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/xp2861cj
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/xp2861cj
+  resuming: 64 episodes already on disk
+
+  episode length         MJX  500.000  C  500.000  diff  +0.0000  t(63)=    nan  C worse in 0/64
+  velocity tracking err  MJX    0.286  C    0.292  diff  +0.0062  t(63)=  4.085  C worse in 44/64
+  termination rate       MJX    0.000  C    0.000
+  NOTE: no episode terminated in either engine at this horizon, so episode length carries no signal here -- tracking error is the informative metric. Raise --max-steps to probe survival.
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/ceval_G1JoystickFlatTerrain_impl-jax_seed0_jax.json
+wandb: updating run metadata; uploading console lines 0-0
+wandb: uploading wandb-metadata.json; uploading requirements.txt; uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading wandb-metadata.json; uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading summary, console lines 1-7
+wandb: 
+wandb: Run summary:
+wandb:        episode_length/c_mean 500
+wandb: episode_length/c_worse_count 0
+wandb:      episode_length/mjx_mean 500
+wandb:             episode_length/n 64
+wandb:   episode_length/paired_diff 0
+wandb:        tracking_error/c_mean 0.29232
+wandb: tracking_error/c_worse_count 44
+wandb:      tracking_error/mjx_mean 0.2861
+wandb:             tracking_error/n 64
+wandb:   tracking_error/paired_diff 0.00623
+wandb:                           +1 ...
+wandb: 
+wandb: 🚀 View run ceval_G1JoystickFlatTerrain_impl-jax_seed0_jax at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/xp2861cj
+wandb: ⭐️ View project at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260808_002628-xp2861cj/logs
+[cooldown]
+=== seed 1  2026-08-08T00:27:33+05:30 ===
+[cenv] nu=29 obs_dim=103 (expected 103)
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run ocemlxx8
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260808_002742-ocemlxx8
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ceval_G1JoystickFlatTerrain_impl-jax_seed1_jax
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/ocemlxx8
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/ocemlxx8
+  resuming: 64 episodes already on disk
+
+  episode length         MJX  494.500  C  488.250  diff  -6.2500  t(63)= -0.980  C worse in 1/64
+  velocity tracking err  MJX    0.265  C    0.277  diff  +0.0122  t(63)=  1.861  C worse in 42/64
+  termination rate       MJX    0.016  C    0.031
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/ceval_G1JoystickFlatTerrain_impl-jax_seed1_jax.json
+wandb: updating run metadata; uploading console lines 0-0
+wandb: uploading config.yaml; uploading wandb-metadata.json; uploading requirements.txt; uploading output.log; uploading wandb-summary.json
+wandb: uploading requirements.txt
+wandb: uploading summary, console lines 1-6
+wandb: 
+wandb: Run summary:
+wandb:        episode_length/c_mean 488.25
+wandb: episode_length/c_worse_count 1
+wandb:      episode_length/mjx_mean 494.5
+wandb:             episode_length/n 64
+wandb:   episode_length/paired_diff -6.25
+wandb:        episode_length/t_stat -0.9799
+wandb:        tracking_error/c_mean 0.27713
+wandb: tracking_error/c_worse_count 42
+wandb:      tracking_error/mjx_mean 0.26495
+wandb:             tracking_error/n 64
+wandb:                           +2 ...
+wandb: 
+wandb: 🚀 View run ceval_G1JoystickFlatTerrain_impl-jax_seed1_jax at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/ocemlxx8
+wandb: ⭐️ View project at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260808_002742-ocemlxx8/logs
+[cooldown]
+=== seed 2  2026-08-08T00:28:46+05:30 ===
+[cenv] nu=29 obs_dim=103 (expected 103)
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run zi6exubb
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260808_002854-zi6exubb
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ceval_G1JoystickFlatTerrain_impl-jax_seed2_jax
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/zi6exubb
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/zi6exubb
+  resuming: 26 episodes already on disk
+  ep  26  mjx_len= 500 c_len= 500  track mjx=0.124 c=0.128
+  ep  27  mjx_len= 500 c_len= 500  track mjx=0.473 c=0.469
+  ep  28  mjx_len=  67 c_len=  69  track mjx=0.590 c=0.592
+  ep  29  mjx_len= 500 c_len= 500  track mjx=0.275 c=0.355
+  ep  30  mjx_len= 500 c_len= 500  track mjx=0.338 c=0.334
+  ep  31  mjx_len= 500 c_len= 500  track mjx=0.283 c=0.347
+  ep  32  mjx_len= 500 c_len= 500  track mjx=0.138 c=0.144
+  ep  33  mjx_len= 500 c_len= 500  track mjx=0.460 c=0.464
+  ep  34  mjx_len= 500 c_len= 500  track mjx=0.473 c=0.467
+  ep  35  mjx_len= 500 c_len= 500  track mjx=0.453 c=0.455
+  ep  36  mjx_len= 500 c_len= 500  track mjx=0.393 c=0.380
+  ep  37  mjx_len= 500 c_len= 500  track mjx=0.167 c=0.172
+  ep  38  mjx_len= 500 c_len= 500  track mjx=0.211 c=0.199
+  ep  39  mjx_len= 500 c_len= 500  track mjx=0.462 c=0.452
+  ep  40  mjx_len= 500 c_len= 500  track mjx=0.155 c=0.158
+  ep  41  mjx_len= 500 c_len= 500  track mjx=0.347 c=0.348
+  ep  42  mjx_len= 500 c_len= 500  track mjx=0.253 c=0.283
+  ep  43  mjx_len= 500 c_len= 500  track mjx=0.247 c=0.272
+  ep  44  mjx_len= 500 c_len= 500  track mjx=0.460 c=0.452
+  ep  45  mjx_len= 500 c_len= 500  track mjx=0.294 c=0.295
+  ep  46  mjx_len= 500 c_len= 500  track mjx=0.215 c=0.217
+  ep  47  mjx_len= 500 c_len= 500  track mjx=0.121 c=0.121
+  ep  48  mjx_len= 500 c_len= 500  track mjx=0.327 c=0.319
+  ep  49  mjx_len= 500 c_len= 500  track mjx=0.305 c=0.307
+  ep  50  mjx_len= 500 c_len= 500  track mjx=0.276 c=0.269
+  ep  51  mjx_len= 500 c_len= 500  track mjx=0.135 c=0.139
+  ep  52  mjx_len= 500 c_len= 500  track mjx=0.293 c=0.290
+  ep  53  mjx_len= 500 c_len= 500  track mjx=0.150 c=0.182
+  ep  54  mjx_len= 500 c_len= 500  track mjx=0.406 c=0.399
+  ep  55  mjx_len= 500 c_len= 500  track mjx=0.154 c=0.159
+  ep  56  mjx_len= 500 c_len= 500  track mjx=0.109 c=0.109
+  ep  57  mjx_len= 500 c_len= 500  track mjx=0.410 c=0.406
+  ep  58  mjx_len= 500 c_len= 500  track mjx=0.334 c=0.327
+  ep  59  mjx_len= 500 c_len= 500  track mjx=0.340 c=0.345
+  ep  60  mjx_len= 500 c_len= 500  track mjx=0.167 c=0.172
+  ep  61  mjx_len= 500 c_len= 500  track mjx=0.131 c=0.130
+  ep  62  mjx_len= 500 c_len= 500  track mjx=0.456 c=0.455
+  ep  63  mjx_len= 500 c_len= 500  track mjx=0.233 c=0.333
+
+  episode length         MJX  488.609  C  487.641  diff  -0.9688  t(63)= -0.968  C worse in 1/64
+  velocity tracking err  MJX    0.292  C    0.296  diff  +0.0040  t(63)=  1.015  C worse in 33/64
+  termination rate       MJX    0.031  C    0.031
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/ceval_G1JoystickFlatTerrain_impl-jax_seed2_jax.json
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading summary, console lines 39-44
+wandb: 
+wandb: Run summary:
+wandb:        episode_length/c_mean 487.64062
+wandb: episode_length/c_worse_count 1
+wandb:      episode_length/mjx_mean 488.60938
+wandb:             episode_length/n 64
+wandb:   episode_length/paired_diff -0.96875
+wandb:        episode_length/t_stat -0.9678
+wandb:        tracking_error/c_mean 0.29576
+wandb: tracking_error/c_worse_count 33
+wandb:      tracking_error/mjx_mean 0.29175
+wandb:             tracking_error/n 64
+wandb:                           +2 ...
+wandb: 
+wandb: 🚀 View run ceval_G1JoystickFlatTerrain_impl-jax_seed2_jax at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/zi6exubb
+wandb: ⭐️ View project at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260808_002854-zi6exubb/logs
+[cooldown]
+=== CEVAL DONE 2026-08-08T01:08:15+05:30 ===

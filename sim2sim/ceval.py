@@ -33,6 +33,7 @@ difference. That check is the point of this module as much as the evaluation is.
 from __future__ import annotations
 
 import argparse
+import json
 import pathlib
 
 import mujoco
@@ -280,6 +281,15 @@ def rollout_pair(env, cenv: CPolicyEnv, policy_fn, episode: int,
                  max_steps: int) -> dict:
     """Run one episode from an identical initial state in MJX and in MuJoCo-C.
 
+    HORIZON LIMIT. The environment resamples the velocity command once
+    ``info["step"] > 500`` (joystick.py: state.info["command"] = where(step >
+    500, sample_command(...), command)). This module holds the command fixed,
+    so beyond 500 steps MJX would be tracking a target this function is not
+    measuring against while MuJoCo-C still matches the original -- which
+    manufactures a large spurious advantage for C (t = -11 at 1000 steps, C
+    "better" in 61/64 episodes, correlated with command magnitude). Keep
+    max_steps <= 500.
+
     Performance is scored on episode length, termination and velocity-tracking
     error rather than on reward. Reproducing the ~20 reward terms against MjData
     would add a large surface for exactly the silent reimplementation bugs this
@@ -345,7 +355,9 @@ def main() -> None:
     ap.add_argument("--steps", type=int, default=100)
     ap.add_argument("--episodes", type=int, default=0,
                     help="run the paired MJX vs MuJoCo-C comparison over N episodes")
-    ap.add_argument("--max-steps", type=int, default=500)
+    ap.add_argument("--max-steps", type=int, default=500,
+                    help="must stay <= 500: the env resamples the command past "
+                         "that point, which invalidates the tracking comparison")
     ap.add_argument("--impl", default="jax", choices=["jax", "warp"])
     ap.add_argument("--no-wandb", action="store_true")
     ap.add_argument("--resume", action="store_true", default=True,
@@ -366,9 +378,15 @@ def main() -> None:
           f"(expected {env.observation_size['state'][0]})")
 
     if args.validate:
+        # Persisted, not just printed. The paper quotes these agreement figures
+        # as evidence the reimplementation is faithful, and tools/
+        # verify_paper_numbers.py can only trace a claim back to a file on disk.
+        report = {"env": args.env, "steps": args.steps}
+
         rep = validate_observation(env, cenv)
         print(f"[validate reset] {rep}")
         print("  PASS" if rep.get("ok") else "  FAIL -- do not evaluate until fixed")
+        report["reset"] = rep
 
         if args.ckpt:
             from brax.io import model as brax_model
@@ -386,14 +404,23 @@ def main() -> None:
             print("  PASS -- observation and phase track MJX along the episode"
                   if rep2.get("ok") else
                   "  FAIL -- bookkeeping diverges over time; fix before evaluating")
+            report["trajectory"] = rep2
         else:
             print("  (pass --ckpt to also run the trajectory-wide check)")
+
+        out = RESULTS / f"ceval_validation_{args.env}.json"
+        out.parent.mkdir(exist_ok=True)
+        out.write_text(json.dumps(report, indent=2, default=float))
+        print(f"[saved] {out}")
 
     if args.episodes:
         if not args.ckpt:
             raise SystemExit("--episodes requires --ckpt")
-        import json
-
+        if args.max_steps > 500:
+            raise SystemExit(
+                f"--max-steps {args.max_steps} exceeds the command-resample "
+                "boundary at 500. Past it the two engines track different "
+                "commands and the comparison is invalid.")
         from brax.io import model as brax_model
         from mujoco_playground.config import locomotion_params
 

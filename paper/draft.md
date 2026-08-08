@@ -1,9 +1,8 @@
 # What Actually Drives the Sim-to-Sim Gap in Humanoid Locomotion?
 
-**Status: working draft.** Experiments 0 and 1 are complete and final. Experiment 2
-is running; its section states the design and the decision rule, and contains no
-results. No number appears in this document that was not produced by a committed
-script in this repository.
+**Status: working draft.** All eight experiments are complete. No number appears
+in this document that was not produced by a committed script in this repository
+and checked against its source JSON by `tools/verify_paper_numbers.py`.
 
 ---
 
@@ -12,26 +11,39 @@ script in this repository.
 Sim-to-sim transfer — training a locomotion policy in one physics backend and
 verifying it in another — is the field's standard hardware-free validation
 protocol, used precisely when authors lack access to a robot. Its own
-reliability has not been audited. We measure what actually drives disagreement
-between the three MuJoCo backends in common use (the C reference, MJX-JAX, and
-MuJoCo Warp) on a 29-DoF humanoid, and find three things.
+reliability has not been audited. We measure how far the three MuJoCo backends
+in common use actually diverge (the C reference, MJX-JAX, and MuJoCo Warp),
+whether that divergence matters to a trained policy, and what it takes to
+measure either correctly.
 
-First, engine disagreement is **entirely a contact phenomenon**: on
-contact-free systems with closed-form solutions, MJX-JAX and MuJoCo Warp are
-numerically identical and both sit within float32 precision of the C reference.
+**MJX-JAX does not converge to MuJoCo-C.** Contact-free, all three backends
+agree to float32 round-off and the two GPU backends are numerically identical.
+Under contact they separate, with MJX-JAX the outlier in **34 of 56 robot x
+condition tests** across four bipeds (Benjamini-Hochberg, 5%), spanning 2x to
+82x. Two independent controls show this is not numerical: running MJX in
+**double precision** leaves the contact gap unchanged (ratio 1.05) while
+eliminating the contact-free gap by nine orders of magnitude, and **refining the
+solver** drives MuJoCo-Warp's disagreement toward zero at O(dt) while MJX-JAX
+plateaus at a floor of ~1.9e-03 that no refinement removes. Warp and C are the
+same algorithm discretised differently; MJX-JAX is not.
 
-Second, of thirteen physics factors swept at n=10, **only contact stiffness
-significantly changes the gap** (`solref` scaling, 13.3x, p < 0.05 by a 2-sigma
-criterion). Integration timestep — the factor we initially believed dominant —
-is statistically indistinguishable from baseline once simulated duration is held
-constant, and solver iteration count is *bit-identical* from 10 to 100
-iterations.
+**Policy performance is nevertheless unaffected.** Evaluated against Warp and
+against the C reference itself, a trained locomotion policy shows a small,
+consistent, statistically detectable degradation (2.7%, pooled t(191) = 2.88)
+that is **smaller than the variation from choosing a different training seed**
+(0.53x). Section 5 explains why: contact-parameter mismatch is ~40x more
+damaging than inertial mismatch at equal divergence, and the measured engine gap
+lands in the regime where a policy tolerates it.
 
-Third, **MuJoCo Warp tracks the C reference 8x more closely than MJX-JAX at
-default settings, but this advantage is contact-stiffness dependent**, ranging
-from 2.1x under stiff contacts to 28.2x under soft ones. This matters because
-MuJoCo Playground now defaults to Warp for training while the sim-to-sim
-convention validates against MJX-JAX.
+**Measuring this correctly is harder than it appears.** We document four
+protocol errors that each produced a confident wrong answer in our own pipeline
+— unmatched simulated duration (a 109x artefact), means over heavy-tailed
+distributions, dimensionally mismatched null models, and silently dropped solver
+constraints — together with the guards that now make each of them fail loudly.
+
+The practical consequence: sim-to-sim validation across MuJoCo backends is a
+**weak test**. The gap it exercises falls below the threshold at which policies
+respond, so an unchanged policy is not evidence of much.
 
 ---
 
@@ -59,6 +71,12 @@ against each other.
 
 **Purpose.** Establish an external reference, and separate integrator error from
 contact-solver error.
+
+![Figure 6](../figures/fig6_schematic.pdf)
+**Figure 6.** What is held fixed, what is varied, and what is measured. All
+three engines are built from one compiled model and driven from identical
+initial state and control, so any divergence is attributable to the
+implementation.
 
 **Method.** Four systems with exact analytic solutions, each rolled out
 identically in all three backends (`sim2sim/groundtruth.py`).
@@ -129,6 +147,12 @@ The magnitude is near-identical across engines, so this is inherited from
 MuJoCo's soft-contact *model*, not from any implementation. For locomotion this
 is a planted foot sliding ~1 cm over a 10-second episode, and it affects all
 MuJoCo-based work regardless of backend.
+
+![Figure 5](../figures/fig5_groundtruth.pdf)
+**Figure 5.** All three engines scored against closed-form solutions. MJX-JAX
+and MuJoCo-Warp coincide to plotting precision in every case; MuJoCo-C is
+separated only in the contact-free cases, where the difference is float64 vs
+float32.
 
 ### 2.4 What Experiment 0 establishes
 
@@ -235,6 +259,11 @@ Experiment 1 was replicated on every biped MuJoCo Playground ships -- Unitree
 G1, Booster T1, Berkeley Humanoid and ROBOTIS Op3 -- under an identical
 protocol.
 
+![Figure 2](../figures/fig2_crossembodiment.pdf)
+**Figure 2.** The full robot x condition grid; 34 of 56 cells are significant
+after Benjamini-Hochberg correction at 5%. Reading only the baseline row is
+what produced our initial and wrong conclusion that only G1 differs.
+
 **Comparing engines at each robot's shipped baseline is not sufficient.** The
 discrepancy is strongly condition-dependent: T1 shows no advantage at baseline
 (1.27 [0.64, 2.86]) and a significant one in six other configurations. Reading
@@ -295,6 +324,11 @@ backends over 128 episodes x 1000 steps, giving 384 matched episode pairs.
 | mean return (over 3 policies) | 12.523 | 12.849 |
 | seed-to-seed sd of that mean | 0.582 | 0.396 |
 | within-backend episode sd | 8.651 | 8.714 |
+
+![Figure 3](../figures/fig3_policy_null.pdf)
+**Figure 3.** The measured backend effect against the seed-to-seed variation it
+must be judged relative to. The effect falls inside the band that retraining
+alone produces.
 
 ### 4.1 No systematic performance shift
 
@@ -420,6 +454,11 @@ Plotting against measured divergence rather than parameter value is what makes
 the result transferable: no other group's simulator pair is characterised by our
 ``solref_scale``, but every pair can be located by how far apart it is.
 
+![Figure 4](../figures/fig4_tolerance.pdf)
+**Figure 4.** Closed-loop cost against measured open-loop divergence, with the
+real engine gaps marked on the same axis. Contact and inertial perturbations of
+equal dose produce very different closed-loop consequences.
+
 ### 5.1 Distance alone is not a sufficient statistic
 
 Within each parameter, divergence predicts loss well. Across parameters, it does
@@ -525,7 +564,172 @@ eliminated by construction rather than left untested, and the mechanism behind
 G1's uniqueness remains open -- remaining candidates (foot geometry type, robot
 scale, contact count) cannot be separated with four robots.
 
-## 8. Limitations
+## 8. Experiment 5 — the comparison the field actually performs
+
+Experiment 2 compared MJX-JAX against MuJoCo-Warp: two GPU reimplementations of
+the same engine. The sim-to-sim protocol in the literature validates against
+**MuJoCo-C**, and Section 3 shows that is where the discrepancy lives. So the
+comparison that matters had not been run.
+
+**Method.** Playground environments are MJX-native (``impl='cpp'`` cannot step),
+so we reproduce against ``mujoco.MjData`` the parts of the environment the
+policy depends on: the 103-dim ``state`` observation, the action-to-motor-target
+map, the gait phase, and the termination condition. Observation noise and random
+pushes are disabled in both, making the environment a deterministic function of
+(qpos, qvel, phase, last_action, command).
+
+**Validation.** The reimplementation agrees with MJX to **2.38e-07** on the full
+observation at reset and **5.96e-08** on bookkeeping across 200 steps, with the
+gait phase exact. This mattered: four bugs were found only because these checks
+existed, each of which produced plausible output and no error -- a frozen gait
+clock, an off-by-one in ``last_act`` and ``phase`` (the environment calls
+``_get_obs`` *before* updating them), an inverted termination test
+(``get_gravity`` reads the ``upvector_torso`` **sensor**, whose sign is opposite
+to the ``site_xmat`` product used for the pelvis in the observation), and a flaw
+in the validator itself (MuJoCo evaluates sensors before the final integration,
+so imposing qpos/qvel and calling ``mj_forward`` compares two different
+instants).
+
+**Horizon.** Episodes are capped at 500 steps because the environment resamples
+the velocity command once ``step > 500``. Beyond that the two engines track
+different targets, which manufactures a large spurious advantage for MuJoCo-C
+(t = -11 at 1000 steps, "better" in 61/64 episodes, correlated with command
+magnitude). The runner refuses horizons above 500.
+
+**Result.** Three policies, 64 paired episodes each, scored on velocity-tracking
+error:
+
+| seed | n | MJX-JAX | MuJoCo-C | paired diff | t |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 64 | 0.2861 | 0.2923 | +0.0062 | 4.09 |
+| 1 | 64 | 0.2650 | 0.2771 | +0.0122 | 1.86 |
+| 2 | 64 | 0.2917 | 0.2958 | +0.0040 | 1.02 |
+| pooled | 192 | | | **+0.0075** | **2.877** |
+
+Two statements are simultaneously true and answer different questions. There
+**is** a systematic effect: pooled over 192 paired episodes the policy tracks
+worse in MuJoCo-C, t(191) = 2.877, consistent in sign across all three seeds,
+Cohen's d = 0.21. And it **does not matter**: against the pre-registered rule of
+Section 4, the difference of means (0.0075) is **0.53x** the seed-to-seed spread
+(0.0141), below the threshold of 2.
+
+We report the null, as pre-registered, despite the paired test being
+significant. The observed 2.7% degradation is also the size Section 5's
+contact-parameter curve predicts at G1's measured gap.
+
+Both policy-level experiments therefore agree, now including the comparison the
+field actually performs.
+
+## 9. Experiment 6 — is the discrepancy arithmetic or algorithmic?
+
+Section 2 showed the *contact-free* difference is float32 versus float64.
+Section 3 found gaps three orders of magnitude larger under contact. Whether
+those are the same phenomenon scaled up is the first question a reader should
+ask, and it decides how much the result means.
+
+**Method.** Re-run the MuJoCo-C vs MJX-JAX comparison with JAX in double
+precision (``jax_enable_x64``), across conditions spanning Experiment 1's
+largest and smallest gaps. MuJoCo Warp rejects float64 arrays, so this is
+JAX-only -- which is the relevant comparison, since JAX is the backend that
+departs from the reference.
+
+**Positive control.** In float64 the contact-free free-fall error falls from
+6.97e-06 to **4.441e-15**, exactly matching MuJoCo-C. The precision change
+demonstrably works and demonstrably removes precision-driven discrepancy.
+
+**Result (median over 20 initial conditions):**
+
+| condition | float32 | float64 | ratio |
+| --- | --- | --- | --- |
+| baseline | 1.921e-03 | 2.013e-03 | 1.048 |
+| solref_scale=2.0 | 3.101e-02 | 3.310e-02 | 1.067 |
+| solref_scale=0.5 | 2.928e-03 | 3.120e-03 | 1.065 |
+| friction_scale=2.0 | 2.236e-03 | 2.261e-03 | 1.011 |
+| timestep=0.001 | 1.955e-03 | 2.062e-03 | 1.055 |
+
+**Double precision does not close the contact gap.** Every ratio is ~1.0, and if
+anything marginally above it.
+
+The control makes this decisive rather than inferential: the same switch that
+erases the contact-free gap by nine orders of magnitude leaves the contact gap
+untouched. **The contact discrepancy between MJX-JAX and MuJoCo-C is
+algorithmic, not arithmetic** -- the implementations disagree about contact
+dynamics, not merely about rounding.
+
+This also changes the practical outlook. A precision difference would shrink as
+hardware and libraries improve; an algorithmic one will persist until an
+implementation changes.
+
+## 10. Experiment 7 — does the gap survive solver refinement?
+
+Experiment 6 ruled out arithmetic. This rules out discretisation. A difference
+that is merely an artefact of finite step size and finite solver iterations
+should vanish as both are refined; one that persists means two implementations
+converging to different answers.
+
+**Method.** A 4x4 grid over ``dt`` in {4e-3, 2e-3, 1e-3, 5e-4} and solver
+``iterations`` in {1, 3, 10, 50}, baseline condition only, 20 initial conditions
+per cell, all three engines. This reuses the validated Experiment 1 sweep rather
+than new code.
+
+### 10.1 Solver iterations saturate at 3
+
+Across every timestep, the gap drops sharply from 1 to 3 iterations and then
+stops changing:
+
+| dt | iters=1 | 3 | 10 | 50 |
+| --- | --- | --- | --- | --- |
+| 0.004 | 1.098e-02 | 3.232e-03 | 3.649e-03 | 3.668e-03 |
+| 0.002 | 4.881e-03 | 2.164e-03 | 2.323e-03 | 2.216e-03 |
+| 0.001 | 5.895e-03 | 2.017e-03 | 1.993e-03 | 1.915e-03 |
+| 0.0005 | 3.600e-03 | 1.892e-03 | 1.940e-03 | 1.956e-03 |
+
+(``c|jax``, median over 20 initial conditions.) This independently reproduces
+Experiment 1's bit-identical iterations result on a different grid and a
+different measurement. Playground's shipped default of 3 is already converged.
+
+### 10.2 The two backends refine differently
+
+At the most-converged iteration count (50), refining the timestep:
+
+| dt | c \| jax | c \| warp |
+| --- | --- | --- |
+| 0.004 | 3.668e-03 | 6.359e-04 |
+| 0.002 | 2.216e-03 | 2.536e-04 |
+| 0.001 | 1.915e-03 | 1.511e-04 |
+| **0.0005** | **1.956e-03** | **7.459e-05** |
+
+**MuJoCo-Warp converges to MuJoCo-C.** Each halving of dt roughly halves the gap
+(ratios 0.40, 0.60, 0.49) -- clean first-order convergence toward zero. An
+eight-fold refinement yields an 8.5x reduction.
+
+**MJX-JAX converges to something else.** It falls to ~1.9e-03 and stops; the
+finest timestep is marginally *worse* than the next-coarsest. Refinement cannot
+remove it.
+
+At the finest settings the MJX-JAX gap is **26x** the Warp gap, and that ratio
+grows as refinement continues.
+
+![Figure 1](../figures/fig1_algorithmic.pdf)
+**Figure 1.** The two independent controls. (a) Refining dt: MuJoCo-Warp
+converges toward MuJoCo-C along slope 1 while MJX-JAX flattens at a floor.
+(b) Doubling precision: float64 collapses the contact-free gap by nine orders
+of magnitude and leaves the contact gap unchanged.
+
+### 10.3 Two orthogonal controls, one conclusion
+
+Experiments 6 and 7 vary independent knobs -- arithmetic precision and
+discretisation -- and each removes every *other* candidate explanation while
+leaving the MJX-JAX gap intact. Warp's disagreement with C behaves exactly as a
+discretisation difference should under both; MJX-JAX's does not under either.
+
+This also explains the cross-embodiment pattern in Section 3.5. The Warp
+advantage is visible wherever MJX-JAX's algorithmic floor dominates and hidden
+wherever discretisation error is large enough to mask it -- which is precisely
+why Op3's coarse shipped settings (dt=0.004, iterations=1) concealed the effect
+until they were matched to the other robots.
+
+## 11. Limitations
 
 - **No hardware.** We can rank engines by agreement with the C reference and by
   accuracy on closed-form problems. We cannot say which is closer to reality.
@@ -542,7 +746,7 @@ scale, contact count) cannot be separated with four robots.
 
 ---
 
-## 6. Reproducing
+## 12. Reproducing
 
 ```bash
 python -m sim2sim.groundtruth --engines c jax warp          # Experiment 0
@@ -551,6 +755,25 @@ python -m sim2sim.divergence  --duration 1.0 --seeds 10 \
 python3 tools/report_divergence.py results/divergence_*.json
 tools/run_experiment2.sh 50000000 3 jax                     # Experiment 2
 python3 tools/compare_transfer.py results/eval_*.json
+python -m sim2sim.doseresponse --ckpt CKPT                   # Experiment 3
+python -m sim2sim.contactrep                                # Experiment 4
+python -m sim2sim.ceval --validate --ckpt CKPT --steps 200  # Experiment 5 check
+tools/run_ceval.sh                                          # Experiment 5
+python -m sim2sim.precision            # Experiment 6, float32
+python -m sim2sim.precision --x64      # Experiment 6, float64
+tools/run_convergence.sh                                    # Experiment 7
+tools/run_cross_embodiment.sh                               # Section 3.5
+
+# Figures (each reads only from results/ and writes figures/)
+python3 tools/plot_convergence.py       # Figure 1
+python3 tools/analyze_conditions.py --csv figures/condition_level.csv
+python3 tools/plot_crossembodiment.py   # Figure 2
+python3 tools/plot_policy_null.py       # Figure 3
+python3 tools/plot_tolerance.py         # Figure 4
+python3 tools/plot_groundtruth.py       # Figure 5
+python3 tools/plot_schematic.py         # Figure 6
+
+python3 tools/verify_paper_numbers.py   # traces every number back to results/
 ```
 
 Environment: MuJoCo 3.11.0, mujoco-mjx 3.11.0, JAX 0.10.2 (CUDA 12), brax

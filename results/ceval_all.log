@@ -1,20 +1,249 @@
-=== seed 0  2026-08-07T18:11:36+05:30 ===
+=== seed 0  2026-08-07T20:44:10+05:30 ===
 [cenv] nu=29 obs_dim=103 (expected 103)
 wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
 wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
 wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
-wandb: setting up run 6g57h8fq
+wandb: setting up run i9nl98ia
 wandb: Tracking run with wandb version 0.28.1
-wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260807_181146-6g57h8fq
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260807_204418-i9nl98ia
 wandb: Run `wandb offline` to turn off syncing.
 wandb: Syncing run ceval_G1JoystickFlatTerrain_impl-jax_seed0_jax
 wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
-wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/6g57h8fq
-[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/6g57h8fq
-  ep   0  mjx_len=1000 c_len=1000  track mjx=0.120 c=0.119
-  ep   1  mjx_len=1000 c_len=1000  track mjx=0.710 c=0.429
-  ep   2  mjx_len=1000 c_len=1000  track mjx=0.485 c=0.275
-  ep   3  mjx_len=1000 c_len=1000  track mjx=0.322 c=0.187
-  ep   4  mjx_len=1000 c_len=1000  track mjx=0.173 c=0.107
-  ep   5  mjx_len=1000 c_len=1000  track mjx=0.224 c=0.091
-  ep   6  mjx_len=1000 c_len=1000  track mjx=0.474 c=0.288
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/i9nl98ia
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/i9nl98ia
+  ep   0  mjx_len= 500 c_len= 500  track mjx=0.128 c=0.126
+  ep   1  mjx_len= 500 c_len= 500  track mjx=0.415 c=0.447
+  ep   2  mjx_len= 500 c_len= 500  track mjx=0.278 c=0.281
+  ep   3  mjx_len= 500 c_len= 500  track mjx=0.164 c=0.181
+  ep   4  mjx_len= 500 c_len= 500  track mjx=0.106 c=0.107
+  ep   5  mjx_len= 500 c_len= 500  track mjx=0.097 c=0.097
+  ep   6  mjx_len= 500 c_len= 500  track mjx=0.270 c=0.286
+  ep   7  mjx_len= 500 c_len= 500  track mjx=0.272 c=0.277
+  ep   8  mjx_len= 500 c_len= 500  track mjx=0.363 c=0.365
+  ep   9  mjx_len= 500 c_len= 500  track mjx=0.186 c=0.186
+  ep  10  mjx_len= 500 c_len= 500  track mjx=0.323 c=0.324
+  ep  11  mjx_len= 500 c_len= 500  track mjx=0.157 c=0.158
+  ep  12  mjx_len= 500 c_len= 500  track mjx=0.291 c=0.304
+  ep  13  mjx_len= 500 c_len= 500  track mjx=0.464 c=0.465
+  ep  14  mjx_len= 500 c_len= 500  track mjx=0.370 c=0.409
+  ep  15  mjx_len= 500 c_len= 500  track mjx=0.194 c=0.205
+  ep  16  mjx_len= 500 c_len= 500  track mjx=0.371 c=0.397
+  ep  17  mjx_len= 500 c_len= 500  track mjx=0.332 c=0.362
+  ep  18  mjx_len= 500 c_len= 500  track mjx=0.330 c=0.330
+  ep  19  mjx_len= 500 c_len= 500  track mjx=0.227 c=0.224
+  ep  20  mjx_len= 500 c_len= 500  track mjx=0.410 c=0.413
+  ep  21  mjx_len= 500 c_len= 500  track mjx=0.172 c=0.173
+  ep  22  mjx_len= 500 c_len= 500  track mjx=0.513 c=0.517
+  ep  23  mjx_len= 500 c_len= 500  track mjx=0.283 c=0.296
+  ep  24  mjx_len= 500 c_len= 500  track mjx=0.292 c=0.285
+  ep  25  mjx_len= 500 c_len= 500  track mjx=0.310 c=0.304
+  ep  26  mjx_len= 500 c_len= 500  track mjx=0.100 c=0.101
+  ep  27  mjx_len= 500 c_len= 500  track mjx=0.428 c=0.418
+  ep  28  mjx_len= 500 c_len= 500  track mjx=0.285 c=0.296
+  ep  29  mjx_len= 500 c_len= 500  track mjx=0.379 c=0.417
+  ep  30  mjx_len= 500 c_len= 500  track mjx=0.371 c=0.366
+  ep  31  mjx_len= 500 c_len= 500  track mjx=0.287 c=0.315
+  ep  32  mjx_len= 500 c_len= 500  track mjx=0.120 c=0.126
+  ep  33  mjx_len= 500 c_len= 500  track mjx=0.493 c=0.499
+  ep  34  mjx_len= 500 c_len= 500  track mjx=0.469 c=0.465
+  ep  35  mjx_len= 500 c_len= 500  track mjx=0.463 c=0.463
+  ep  36  mjx_len= 500 c_len= 500  track mjx=0.355 c=0.347
+  ep  37  mjx_len= 500 c_len= 500  track mjx=0.143 c=0.148
+  ep  38  mjx_len= 500 c_len= 500  track mjx=0.197 c=0.197
+  ep  39  mjx_len= 500 c_len= 500  track mjx=0.474 c=0.477
+  ep  40  mjx_len= 500 c_len= 500  track mjx=0.127 c=0.130
+  ep  41  mjx_len= 500 c_len= 500  track mjx=0.369 c=0.394
+  ep  42  mjx_len= 500 c_len= 500  track mjx=0.274 c=0.286
+  ep  43  mjx_len= 500 c_len= 500  track mjx=0.278 c=0.318
+  ep  44  mjx_len= 500 c_len= 500  track mjx=0.480 c=0.474
+  ep  45  mjx_len= 500 c_len= 500  track mjx=0.299 c=0.294
+  ep  46  mjx_len= 500 c_len= 500  track mjx=0.237 c=0.243
+  ep  47  mjx_len= 500 c_len= 500  track mjx=0.106 c=0.108
+  ep  48  mjx_len= 500 c_len= 500  track mjx=0.319 c=0.314
+  ep  49  mjx_len= 500 c_len= 500  track mjx=0.343 c=0.353
+  ep  50  mjx_len= 500 c_len= 500  track mjx=0.267 c=0.272
+  ep  51  mjx_len= 500 c_len= 500  track mjx=0.123 c=0.127
+  ep  52  mjx_len= 500 c_len= 500  track mjx=0.328 c=0.325
+  ep  53  mjx_len= 500 c_len= 500  track mjx=0.179 c=0.190
+  ep  54  mjx_len= 500 c_len= 500  track mjx=0.411 c=0.402
+  ep  55  mjx_len= 500 c_len= 500  track mjx=0.123 c=0.132
+  ep  56  mjx_len= 500 c_len= 500  track mjx=0.095 c=0.093
+  ep  57  mjx_len= 500 c_len= 500  track mjx=0.427 c=0.425
+  ep  58  mjx_len= 500 c_len= 500  track mjx=0.318 c=0.309
+  ep  59  mjx_len= 500 c_len= 500  track mjx=0.292 c=0.305
+  ep  60  mjx_len= 500 c_len= 500  track mjx=0.141 c=0.142
+  ep  61  mjx_len= 500 c_len= 500  track mjx=0.100 c=0.101
+  ep  62  mjx_len= 500 c_len= 500  track mjx=0.477 c=0.480
+  ep  63  mjx_len= 500 c_len= 500  track mjx=0.315 c=0.341
+
+  episode length         MJX  500.000  C  500.000  diff  +0.0000  t(63)=    nan  C worse in 0/64
+  velocity tracking err  MJX    0.286  C    0.292  diff  +0.0062  t(63)=  4.085  C worse in 44/64
+  termination rate       MJX    0.000  C    0.000
+  NOTE: no episode terminated in either engine at this horizon, so episode length carries no signal here -- tracking error is the informative metric. Raise --max-steps to probe survival.
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/ceval_G1JoystickFlatTerrain_impl-jax_seed0_jax.json
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading config.yaml
+wandb: uploading summary, console lines 64-70
+wandb: 
+wandb: Run summary:
+wandb:        episode_length/c_mean 500
+wandb: episode_length/c_worse_count 0
+wandb:      episode_length/mjx_mean 500
+wandb:             episode_length/n 64
+wandb:   episode_length/paired_diff 0
+wandb:        tracking_error/c_mean 0.29232
+wandb: tracking_error/c_worse_count 44
+wandb:      tracking_error/mjx_mean 0.2861
+wandb:             tracking_error/n 64
+wandb:   tracking_error/paired_diff 0.00623
+wandb:                           +1 ...
+wandb: 
+wandb: 🚀 View run ceval_G1JoystickFlatTerrain_impl-jax_seed0_jax at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/i9nl98ia
+wandb: ⭐️ View project at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260807_204418-i9nl98ia/logs
+[cooldown]
+=== seed 1  2026-08-07T22:04:20+05:30 ===
+[cenv] nu=29 obs_dim=103 (expected 103)
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run u410wnbr
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260807_220430-u410wnbr
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ceval_G1JoystickFlatTerrain_impl-jax_seed1_jax
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/u410wnbr
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/u410wnbr
+  ep   0  mjx_len= 500 c_len= 500  track mjx=0.104 c=0.105
+  ep   1  mjx_len= 500 c_len= 500  track mjx=0.499 c=0.525
+  ep   2  mjx_len= 500 c_len= 500  track mjx=0.300 c=0.298
+  ep   3  mjx_len= 500 c_len= 500  track mjx=0.218 c=0.226
+  ep   4  mjx_len= 500 c_len= 500  track mjx=0.148 c=0.150
+  ep   5  mjx_len= 500 c_len= 500  track mjx=0.139 c=0.140
+  ep   6  mjx_len= 148 c_len= 156  track mjx=0.460 c=0.661
+  ep   7  mjx_len= 500 c_len= 500  track mjx=0.171 c=0.171
+  ep   8  mjx_len= 500 c_len= 500  track mjx=0.372 c=0.364
+  ep   9  mjx_len= 500 c_len= 500  track mjx=0.116 c=0.112
+  ep  10  mjx_len= 500 c_len= 500  track mjx=0.349 c=0.350
+  ep  11  mjx_len= 500 c_len= 500  track mjx=0.141 c=0.145
+  ep  12  mjx_len= 500 c_len= 500  track mjx=0.257 c=0.261
+  ep  13  mjx_len= 500 c_len= 500  track mjx=0.473 c=0.472
+  ep  14  mjx_len= 500 c_len= 500  track mjx=0.458 c=0.488
+  ep  15  mjx_len= 500 c_len= 500  track mjx=0.226 c=0.232
+  ep  16  mjx_len= 500 c_len= 500  track mjx=0.444 c=0.469
+  ep  17  mjx_len= 500 c_len= 500  track mjx=0.302 c=0.329
+  ep  18  mjx_len= 500 c_len= 500  track mjx=0.164 c=0.162
+  ep  19  mjx_len= 500 c_len= 500  track mjx=0.158 c=0.153
+  ep  20  mjx_len= 500 c_len= 500  track mjx=0.435 c=0.435
+  ep  21  mjx_len= 500 c_len= 500  track mjx=0.137 c=0.139
+  ep  22  mjx_len= 500 c_len= 500  track mjx=0.362 c=0.360
+  ep  23  mjx_len= 500 c_len= 500  track mjx=0.333 c=0.338
+  ep  24  mjx_len= 500 c_len= 500  track mjx=0.273 c=0.269
+  ep  25  mjx_len= 500 c_len= 500  track mjx=0.280 c=0.277
+  ep  26  mjx_len= 500 c_len= 500  track mjx=0.140 c=0.143
+  ep  27  mjx_len= 500 c_len= 500  track mjx=0.240 c=0.235
+  ep  28  mjx_len= 500 c_len=  92  track mjx=0.190 c=0.559
+  ep  29  mjx_len= 500 c_len= 500  track mjx=0.448 c=0.472
+  ep  30  mjx_len= 500 c_len= 500  track mjx=0.253 c=0.251
+  ep  31  mjx_len= 500 c_len= 500  track mjx=0.342 c=0.357
+  ep  32  mjx_len= 500 c_len= 500  track mjx=0.167 c=0.173
+  ep  33  mjx_len= 500 c_len= 500  track mjx=0.392 c=0.389
+  ep  34  mjx_len= 500 c_len= 500  track mjx=0.297 c=0.297
+  ep  35  mjx_len= 500 c_len= 500  track mjx=0.296 c=0.299
+  ep  36  mjx_len= 500 c_len= 500  track mjx=0.272 c=0.268
+  ep  37  mjx_len= 500 c_len= 500  track mjx=0.155 c=0.163
+  ep  38  mjx_len= 500 c_len= 500  track mjx=0.221 c=0.221
+  ep  39  mjx_len= 500 c_len= 500  track mjx=0.490 c=0.491
+  ep  40  mjx_len= 500 c_len= 500  track mjx=0.181 c=0.183
+  ep  41  mjx_len= 500 c_len= 500  track mjx=0.367 c=0.377
+  ep  42  mjx_len= 500 c_len= 500  track mjx=0.325 c=0.328
+  ep  43  mjx_len= 500 c_len= 500  track mjx=0.274 c=0.294
+  ep  44  mjx_len= 500 c_len= 500  track mjx=0.501 c=0.494
+  ep  45  mjx_len= 500 c_len= 500  track mjx=0.163 c=0.163
+  ep  46  mjx_len= 500 c_len= 500  track mjx=0.147 c=0.150
+  ep  47  mjx_len= 500 c_len= 500  track mjx=0.164 c=0.166
+  ep  48  mjx_len= 500 c_len= 500  track mjx=0.218 c=0.202
+  ep  49  mjx_len= 500 c_len= 500  track mjx=0.191 c=0.192
+  ep  50  mjx_len= 500 c_len= 500  track mjx=0.267 c=0.266
+  ep  51  mjx_len= 500 c_len= 500  track mjx=0.155 c=0.158
+  ep  52  mjx_len= 500 c_len= 500  track mjx=0.183 c=0.181
+  ep  53  mjx_len= 500 c_len= 500  track mjx=0.198 c=0.205
+  ep  54  mjx_len= 500 c_len= 500  track mjx=0.453 c=0.450
+  ep  55  mjx_len= 500 c_len= 500  track mjx=0.154 c=0.159
+  ep  56  mjx_len= 500 c_len= 500  track mjx=0.110 c=0.112
+  ep  57  mjx_len= 500 c_len= 500  track mjx=0.288 c=0.286
+  ep  58  mjx_len= 500 c_len= 500  track mjx=0.186 c=0.186
+  ep  59  mjx_len= 500 c_len= 500  track mjx=0.254 c=0.260
+  ep  60  mjx_len= 500 c_len= 500  track mjx=0.147 c=0.150
+  ep  61  mjx_len= 500 c_len= 500  track mjx=0.139 c=0.140
+  ep  62  mjx_len= 500 c_len= 500  track mjx=0.288 c=0.289
+  ep  63  mjx_len= 500 c_len= 500  track mjx=0.381 c=0.395
+
+  episode length         MJX  494.500  C  488.250  diff  -6.2500  t(63)= -0.980  C worse in 1/64
+  velocity tracking err  MJX    0.265  C    0.277  diff  +0.0122  t(63)=  1.861  C worse in 42/64
+  termination rate       MJX    0.016  C    0.031
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/ceval_G1JoystickFlatTerrain_impl-jax_seed1_jax.json
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading summary, console lines 64-69
+wandb: 
+wandb: Run summary:
+wandb:        episode_length/c_mean 488.25
+wandb: episode_length/c_worse_count 1
+wandb:      episode_length/mjx_mean 494.5
+wandb:             episode_length/n 64
+wandb:   episode_length/paired_diff -6.25
+wandb:        episode_length/t_stat -0.9799
+wandb:        tracking_error/c_mean 0.27713
+wandb: tracking_error/c_worse_count 42
+wandb:      tracking_error/mjx_mean 0.26495
+wandb:             tracking_error/n 64
+wandb:                           +2 ...
+wandb: 
+wandb: 🚀 View run ceval_G1JoystickFlatTerrain_impl-jax_seed1_jax at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/u410wnbr
+wandb: ⭐️ View project at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260807_220430-u410wnbr/logs
+[cooldown]
+=== seed 2  2026-08-07T23:30:04+05:30 ===
+[cenv] nu=29 obs_dim=103 (expected 103)
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run uil0nsat
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260807_233013-uil0nsat
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ceval_G1JoystickFlatTerrain_impl-jax_seed2_jax
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/uil0nsat
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/uil0nsat
+  ep   0  mjx_len= 500 c_len= 500  track mjx=0.119 c=0.119
+  ep   1  mjx_len= 500 c_len= 500  track mjx=0.360 c=0.352
+  ep   2  mjx_len= 500 c_len= 500  track mjx=0.309 c=0.297
+  ep   3  mjx_len= 500 c_len= 500  track mjx=0.126 c=0.149
+  ep   4  mjx_len= 500 c_len= 500  track mjx=0.119 c=0.124
+  ep   5  mjx_len= 500 c_len= 500  track mjx=0.107 c=0.107
+  ep   6  mjx_len= 204 c_len= 140  track mjx=0.734 c=0.559
+  ep   7  mjx_len= 500 c_len= 500  track mjx=0.246 c=0.247
+  ep   8  mjx_len= 500 c_len= 500  track mjx=0.355 c=0.351
+  ep   9  mjx_len= 500 c_len= 500  track mjx=0.184 c=0.180
+  ep  10  mjx_len= 500 c_len= 500  track mjx=0.321 c=0.311
+  ep  11  mjx_len= 500 c_len= 500  track mjx=0.169 c=0.173
+  ep  12  mjx_len= 500 c_len= 500  track mjx=0.340 c=0.346
+  ep  13  mjx_len= 500 c_len= 500  track mjx=0.451 c=0.435
+  ep  14  mjx_len= 500 c_len= 500  track mjx=0.310 c=0.352
+  ep  15  mjx_len= 500 c_len= 500  track mjx=0.203 c=0.221
+  ep  16  mjx_len= 500 c_len= 500  track mjx=0.313 c=0.374
+  ep  17  mjx_len= 500 c_len= 500  track mjx=0.242 c=0.275
+  ep  18  mjx_len= 500 c_len= 500  track mjx=0.325 c=0.330
+  ep  19  mjx_len= 500 c_len= 500  track mjx=0.189 c=0.185
+  ep  20  mjx_len= 500 c_len= 500  track mjx=0.389 c=0.376
+  ep  21  mjx_len= 500 c_len= 500  track mjx=0.183 c=0.184
+  ep  22  mjx_len= 500 c_len= 500  track mjx=0.487 c=0.485
+  ep  23  mjx_len= 500 c_len= 500  track mjx=0.254 c=0.286
+  ep  24  mjx_len= 500 c_len= 500  track mjx=0.312 c=0.304
+  ep  25  mjx_len= 500 c_len= 500  track mjx=0.362 c=0.359

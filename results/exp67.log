@@ -1,0 +1,368 @@
+=== [1/3] precision float32  2026-08-08T01:07:14+05:30 ===
+[precision] jax_enable_x64=False  jnp default dtype=float32
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run r2jgibjt
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260808_010719-r2jgibjt
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run precision_G1JoystickFlatTerrain_f32
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/r2jgibjt
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/r2jgibjt
+  baseline             c|jax median=1.9206e-03  mean=3.5049e-03
+  solref_scale=2.0     c|jax median=3.1008e-02  mean=4.2670e-02
+  solref_scale=0.5     c|jax median=2.9283e-03  mean=4.0314e-03
+  friction_scale=2.0   c|jax median=2.2361e-03  mean=2.4732e-03
+  timestep=0.001       c|jax median=1.9547e-03  mean=3.2980e-03
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/precision_G1JoystickFlatTerrain_f32.json
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml; uploading summary, console lines 5-6
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading data
+wandb: 
+wandb: Run summary:
+wandb:             baseline/mean 0.0035
+wandb:           baseline/median 0.00192
+wandb:   friction_scale=2.0/mean 0.00247
+wandb: friction_scale=2.0/median 0.00224
+wandb:     solref_scale=0.5/mean 0.00403
+wandb:   solref_scale=0.5/median 0.00293
+wandb:     solref_scale=2.0/mean 0.04267
+wandb:   solref_scale=2.0/median 0.03101
+wandb:       timestep=0.001/mean 0.0033
+wandb:     timestep=0.001/median 0.00195
+wandb: 
+wandb: 🚀 View run precision_G1JoystickFlatTerrain_f32 at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/r2jgibjt
+wandb: ⭐️ View project at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260808_010719-r2jgibjt/logs
+=== [2/3] precision float64  2026-08-08T01:27:38+05:30 ===
+[precision] jax_enable_x64=True  jnp default dtype=float64
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/keyu/.netrc.
+wandb: Currently logged in as: jaiswalkhushi2911 (jaiswalkhushi2911-coep-technological-university-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run pspfrsil
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /home/keyu/Downloads/Biped-Locomotion-via-RL/wandb/run-20260808_012742-pspfrsil
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run precision_G1JoystickFlatTerrain_f64
+wandb: ⭐️ View project at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: 🚀 View run at https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/pspfrsil
+[wandb] logging to https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/pspfrsil
+  baseline             c|jax median=2.0131e-03  mean=3.4785e-03
+  solref_scale=2.0     c|jax median=3.3098e-02  mean=3.9423e-02
+  solref_scale=0.5     c|jax median=3.1197e-03  mean=4.1176e-03
+  friction_scale=2.0   c|jax median=2.2609e-03  mean=2.5036e-03
+  timestep=0.001       c|jax median=2.0622e-03  mean=3.2871e-03
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/precision_G1JoystickFlatTerrain_f64.json
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading summary, console lines 5-6
+wandb: 
+wandb: Run summary:
+wandb:             baseline/mean 0.00348
+wandb:           baseline/median 0.00201
+wandb:   friction_scale=2.0/mean 0.0025
+wandb: friction_scale=2.0/median 0.00226
+wandb:     solref_scale=0.5/mean 0.00412
+wandb:   solref_scale=0.5/median 0.00312
+wandb:     solref_scale=2.0/mean 0.03942
+wandb:   solref_scale=2.0/median 0.0331
+wandb:       timestep=0.001/mean 0.00329
+wandb:     timestep=0.001/median 0.00206
+wandb: 
+wandb: 🚀 View run precision_G1JoystickFlatTerrain_f64 at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim/runs/pspfrsil
+wandb: ⭐️ View project at: https://wandb.ai/jaiswalkhushi2911-coep-technological-university-/biped-sim2sim
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260808_012742-pspfrsil/logs
+=== [3/3] convergence grid  2026-08-08T01:51:10+05:30 ===
+=== dt=0.004 iterations=1  2026-08-08T01:51:10+05:30 ===
+[load] G1JoystickFlatTerrain
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+[model] nq=36 nv=35 nu=29 dt=0.004 solver=2 iters=1 cone=0
+[plan] duration=1.0s -> 250 baseline steps
+[1/1] baseline ...
+    c|jax      base_pos=2.469e-02+-9.0e-03  base_rot=4.147e-02+-1.4e-02  (n=20)
+    c|warp     base_pos=9.946e-03+-3.4e-03  base_rot=1.868e-02+-5.0e-03  (n=20)
+    jax|warp   base_pos=2.213e-02+-8.9e-03  base_rot=3.501e-02+-1.4e-02  (n=20)
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/divergence_G1JoystickFlatTerrain_conv_dt0.004_it1.json
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/traj_G1JoystickFlatTerrain_conv_dt0.004_it1.npz
+=== dt=0.004 iterations=3  2026-08-08T01:56:05+05:30 ===
+[load] G1JoystickFlatTerrain
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+[model] nq=36 nv=35 nu=29 dt=0.004 solver=2 iters=3 cone=0
+[plan] duration=1.0s -> 250 baseline steps
+[1/1] baseline ...
+    c|jax      base_pos=4.892e-03+-1.1e-03  base_rot=1.007e-02+-1.7e-03  (n=20)
+    c|warp     base_pos=1.292e-03+-2.9e-04  base_rot=3.412e-03+-8.9e-04  (n=20)
+    jax|warp   base_pos=5.551e-03+-1.1e-03  base_rot=1.130e-02+-1.7e-03  (n=20)
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/divergence_G1JoystickFlatTerrain_conv_dt0.004_it3.json
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/traj_G1JoystickFlatTerrain_conv_dt0.004_it3.npz
+=== dt=0.004 iterations=10  2026-08-08T02:00:56+05:30 ===
+[load] G1JoystickFlatTerrain
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+[model] nq=36 nv=35 nu=29 dt=0.004 solver=2 iters=10 cone=0
+[plan] duration=1.0s -> 250 baseline steps
+[1/1] baseline ...
+    c|jax      base_pos=4.298e-03+-7.9e-04  base_rot=1.060e-02+-1.5e-03  (n=20)
+    c|warp     base_pos=7.522e-04+-1.1e-04  base_rot=3.231e-03+-4.9e-04  (n=20)
+    jax|warp   base_pos=4.382e-03+-8.7e-04  base_rot=9.948e-03+-1.7e-03  (n=20)
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/divergence_G1JoystickFlatTerrain_conv_dt0.004_it10.json
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/traj_G1JoystickFlatTerrain_conv_dt0.004_it10.npz
+=== dt=0.004 iterations=50  2026-08-08T02:05:51+05:30 ===
+[load] G1JoystickFlatTerrain
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+[model] nq=36 nv=35 nu=29 dt=0.004 solver=2 iters=50 cone=0
+[plan] duration=1.0s -> 250 baseline steps
+[1/1] baseline ...
+    c|jax      base_pos=4.411e-03+-7.8e-04  base_rot=1.095e-02+-1.5e-03  (n=20)
+    c|warp     base_pos=7.229e-04+-1.1e-04  base_rot=3.208e-03+-5.2e-04  (n=20)
+    jax|warp   base_pos=4.429e-03+-8.5e-04  base_rot=9.875e-03+-1.6e-03  (n=20)
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/divergence_G1JoystickFlatTerrain_conv_dt0.004_it50.json
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/traj_G1JoystickFlatTerrain_conv_dt0.004_it50.npz
+=== dt=0.002 iterations=1  2026-08-08T02:10:48+05:30 ===
+[load] G1JoystickFlatTerrain
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+[model] nq=36 nv=35 nu=29 dt=0.002 solver=2 iters=1 cone=0
+[plan] duration=1.0s -> 500 baseline steps
+[1/1] baseline ...
+    c|jax      base_pos=6.139e-03+-1.0e-03  base_rot=1.056e-02+-1.6e-03  (n=20)
+    c|warp     base_pos=2.808e-03+-4.8e-04  base_rot=6.125e-03+-9.0e-04  (n=20)
+    jax|warp   base_pos=5.708e-03+-9.7e-04  base_rot=9.860e-03+-1.5e-03  (n=20)
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/divergence_G1JoystickFlatTerrain_conv_dt0.002_it1.json
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/traj_G1JoystickFlatTerrain_conv_dt0.002_it1.npz
+=== dt=0.002 iterations=3  2026-08-08T02:19:00+05:30 ===
+[load] G1JoystickFlatTerrain
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+[model] nq=36 nv=35 nu=29 dt=0.002 solver=2 iters=3 cone=0
+[plan] duration=1.0s -> 500 baseline steps
+[1/1] baseline ...
+    c|jax      base_pos=3.555e-03+-7.1e-04  base_rot=6.430e-03+-1.1e-03  (n=20)
+    c|warp     base_pos=5.305e-04+-1.4e-04  base_rot=1.798e-03+-4.1e-04  (n=20)
+    jax|warp   base_pos=3.607e-03+-7.2e-04  base_rot=6.458e-03+-1.1e-03  (n=20)
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/divergence_G1JoystickFlatTerrain_conv_dt0.002_it3.json
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/traj_G1JoystickFlatTerrain_conv_dt0.002_it3.npz
+=== dt=0.002 iterations=10  2026-08-08T02:27:28+05:30 ===
+[load] G1JoystickFlatTerrain
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+[model] nq=36 nv=35 nu=29 dt=0.002 solver=2 iters=10 cone=0
+[plan] duration=1.0s -> 500 baseline steps
+[1/1] baseline ...
+    c|jax      base_pos=3.858e-03+-7.8e-04  base_rot=7.008e-03+-1.3e-03  (n=20)
+    c|warp     base_pos=3.846e-04+-5.8e-05  base_rot=1.196e-03+-2.3e-04  (n=20)
+    jax|warp   base_pos=3.851e-03+-7.9e-04  base_rot=7.235e-03+-1.3e-03  (n=20)
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/divergence_G1JoystickFlatTerrain_conv_dt0.002_it10.json
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/traj_G1JoystickFlatTerrain_conv_dt0.002_it10.npz
+=== dt=0.002 iterations=50  2026-08-08T02:36:17+05:30 ===
+[load] G1JoystickFlatTerrain
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+[model] nq=36 nv=35 nu=29 dt=0.002 solver=2 iters=50 cone=0
+[plan] duration=1.0s -> 500 baseline steps
+[1/1] baseline ...
+    c|jax      base_pos=3.849e-03+-7.8e-04  base_rot=7.238e-03+-1.3e-03  (n=20)
+    c|warp     base_pos=3.760e-04+-6.9e-05  base_rot=1.432e-03+-2.5e-04  (n=20)
+    jax|warp   base_pos=3.819e-03+-7.9e-04  base_rot=7.405e-03+-1.3e-03  (n=20)
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/divergence_G1JoystickFlatTerrain_conv_dt0.002_it50.json
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/traj_G1JoystickFlatTerrain_conv_dt0.002_it50.npz
+=== dt=0.001 iterations=1  2026-08-08T02:43:53+05:30 ===
+[load] G1JoystickFlatTerrain
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+[model] nq=36 nv=35 nu=29 dt=0.001 solver=2 iters=1 cone=0
+[plan] duration=1.0s -> 1000 baseline steps
+[1/1] baseline ...
+    c|jax      base_pos=6.819e-03+-1.3e-03  base_rot=1.138e-02+-2.2e-03  (n=20)
+    c|warp     base_pos=1.973e-03+-6.4e-04  base_rot=4.031e-03+-1.0e-03  (n=20)
+    jax|warp   base_pos=6.966e-03+-1.3e-03  base_rot=1.123e-02+-2.3e-03  (n=20)
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/divergence_G1JoystickFlatTerrain_conv_dt0.001_it1.json
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/traj_G1JoystickFlatTerrain_conv_dt0.001_it1.npz
+=== dt=0.001 iterations=3  2026-08-08T02:55:57+05:30 ===
+[load] G1JoystickFlatTerrain
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+[model] nq=36 nv=35 nu=29 dt=0.001 solver=2 iters=3 cone=0
+[plan] duration=1.0s -> 1000 baseline steps
+[1/1] baseline ...
+    c|jax      base_pos=3.281e-03+-6.7e-04  base_rot=5.820e-03+-1.1e-03  (n=20)
+    c|warp     base_pos=2.756e-04+-6.5e-05  base_rot=1.024e-03+-2.2e-04  (n=20)
+    jax|warp   base_pos=3.253e-03+-6.8e-04  base_rot=5.838e-03+-1.1e-03  (n=20)
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/divergence_G1JoystickFlatTerrain_conv_dt0.001_it3.json
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/traj_G1JoystickFlatTerrain_conv_dt0.001_it3.npz
+=== dt=0.001 iterations=10  2026-08-08T03:08:03+05:30 ===
+[load] G1JoystickFlatTerrain
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+[model] nq=36 nv=35 nu=29 dt=0.001 solver=2 iters=10 cone=0
+[plan] duration=1.0s -> 1000 baseline steps
+[1/1] baseline ...
+    c|jax      base_pos=3.585e-03+-7.9e-04  base_rot=6.309e-03+-1.3e-03  (n=20)
+    c|warp     base_pos=1.879e-04+-3.0e-05  base_rot=1.018e-03+-2.1e-04  (n=20)
+    jax|warp   base_pos=3.592e-03+-8.0e-04  base_rot=6.430e-03+-1.3e-03  (n=20)
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/divergence_G1JoystickFlatTerrain_conv_dt0.001_it10.json
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/traj_G1JoystickFlatTerrain_conv_dt0.001_it10.npz
+=== dt=0.001 iterations=50  2026-08-08T03:20:32+05:30 ===
+[load] G1JoystickFlatTerrain
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+[model] nq=36 nv=35 nu=29 dt=0.001 solver=2 iters=50 cone=0
+[plan] duration=1.0s -> 1000 baseline steps
+[1/1] baseline ...
+    c|jax      base_pos=3.606e-03+-7.9e-04  base_rot=6.284e-03+-1.3e-03  (n=20)
+    c|warp     base_pos=2.012e-04+-4.9e-05  base_rot=1.079e-03+-2.9e-04  (n=20)
+    jax|warp   base_pos=3.628e-03+-7.9e-04  base_rot=6.597e-03+-1.3e-03  (n=20)
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/divergence_G1JoystickFlatTerrain_conv_dt0.001_it50.json
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/traj_G1JoystickFlatTerrain_conv_dt0.001_it50.npz
+=== dt=0.0005 iterations=1  2026-08-08T03:33:00+05:30 ===
+[load] G1JoystickFlatTerrain
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+[model] nq=36 nv=35 nu=29 dt=0.0005 solver=2 iters=1 cone=0
+[plan] duration=1.0s -> 2000 baseline steps
+[1/1] baseline ...
+    c|jax      base_pos=5.871e-03+-1.4e-03  base_rot=9.757e-03+-2.4e-03  (n=20)
+    c|warp     base_pos=1.171e-03+-3.8e-04  base_rot=1.885e-03+-5.2e-04  (n=20)
+    jax|warp   base_pos=6.127e-03+-1.4e-03  base_rot=1.007e-02+-2.4e-03  (n=20)
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/divergence_G1JoystickFlatTerrain_conv_dt0.0005_it1.json
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/traj_G1JoystickFlatTerrain_conv_dt0.0005_it1.npz
+=== dt=0.0005 iterations=3  2026-08-08T03:56:15+05:30 ===
+[load] G1JoystickFlatTerrain
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+[model] nq=36 nv=35 nu=29 dt=0.0005 solver=2 iters=3 cone=0
+[plan] duration=1.0s -> 2000 baseline steps
+[1/1] baseline ...
+    c|jax      base_pos=3.371e-03+-6.7e-04  base_rot=5.838e-03+-1.1e-03  (n=20)
+    c|warp     base_pos=1.555e-04+-4.4e-05  base_rot=6.053e-04+-1.2e-04  (n=20)
+    jax|warp   base_pos=3.352e-03+-6.7e-04  base_rot=5.812e-03+-1.1e-03  (n=20)
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/divergence_G1JoystickFlatTerrain_conv_dt0.0005_it3.json
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/traj_G1JoystickFlatTerrain_conv_dt0.0005_it3.npz
+=== dt=0.0005 iterations=10  2026-08-08T04:20:09+05:30 ===
+[load] G1JoystickFlatTerrain
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+[model] nq=36 nv=35 nu=29 dt=0.0005 solver=2 iters=10 cone=0
+[plan] duration=1.0s -> 2000 baseline steps
+[1/1] baseline ...
+    c|jax      base_pos=3.652e-03+-7.4e-04  base_rot=6.133e-03+-1.2e-03  (n=20)
+    c|warp     base_pos=1.062e-04+-3.7e-05  base_rot=4.813e-04+-8.1e-05  (n=20)
+    jax|warp   base_pos=3.610e-03+-7.4e-04  base_rot=6.131e-03+-1.3e-03  (n=20)
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/divergence_G1JoystickFlatTerrain_conv_dt0.0005_it10.json
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/traj_G1JoystickFlatTerrain_conv_dt0.0005_it10.npz
+=== dt=0.0005 iterations=50  2026-08-08T04:44:09+05:30 ===
+[load] G1JoystickFlatTerrain
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 3050 4GB Laptop GPU" (4 GiB, sm_86, mempool enabled)
+   Kernel cache:
+     /home/keyu/.cache/warp/1.15.0
+[model] nq=36 nv=35 nu=29 dt=0.0005 solver=2 iters=50 cone=0
+[plan] duration=1.0s -> 2000 baseline steps
+[1/1] baseline ...
+    c|jax      base_pos=3.665e-03+-7.3e-04  base_rot=6.427e-03+-1.2e-03  (n=20)
+    c|warp     base_pos=1.189e-04+-3.4e-05  base_rot=5.545e-04+-9.8e-05  (n=20)
+    jax|warp   base_pos=3.623e-03+-7.4e-04  base_rot=6.479e-03+-1.3e-03  (n=20)
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/divergence_G1JoystickFlatTerrain_conv_dt0.0005_it50.json
+[saved] /home/keyu/Downloads/Biped-Locomotion-via-RL/results/traj_G1JoystickFlatTerrain_conv_dt0.0005_it50.npz
+=== CONVERGENCE DONE 2026-08-08T05:07:41+05:30 ===
+=== EXP 6+7 DONE 2026-08-08T05:07:41+05:30 ===
